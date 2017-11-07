@@ -8,6 +8,7 @@ STEP1で今まで作ってきたファイルを管理してみましょう。
 サンプルコードやこのWebサイトのソース管理をするため[GitHub](https://github.com/)を使ってみます。
 GitHubではGitというバージョン管理システムを用いて進めます。
 
+
 ### githubアカウント作成
 
 [アカウントを作成](https://github.com/join)にアクセスし、個人のアカウントを作成しましょう。
@@ -19,16 +20,24 @@ GitHubではGitというバージョン管理システムを用いて進めま�
 github上で、リポジトリを作成します。レポジトリというのはアプリケーションのソースやデータの格納場所のことです。
 上のタブの `Repositories` からレポジトリ一覧ページに進み、 `New` ボタンを押し、名前をつけて新しいレポジトリを作成します。ここでは、仮に「onlineskillup_step1」としてみます。
 
-https://github.com/<ユーザ名>/onlineskillup_step1  
+https://github.com/<githubユーザ名>/onlineskillup_step1  
 このようなURLのページが出来上がっているはずです。
 中身はまだ空ですが、こちらが作成したレポジトリになります。
 
+## gitのインストール
+
+自分のパソコンにgitをインストールをします。
+
+macの方はデフォルトでgitが入っていますので、何もしなくても大丈夫です。  
+Windowsの方は、以下のサイトなどを参考にして、gitをインストールしてみてください。  
+https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409
 
 ### ソースコードをあげる
 
 上で作成したレポジトリにソースコードをあげます。この行為を「プッシュ」と言います。
 
-コマンドラインで次のコマンドを叩き、プッシュしてみてください。
+念のため自分のソースコードのバックアップをとった上、ターミナル/コマンドプロンプトを開き下記のコマンドを実行してみましょう。
+Windowsの方はコマンドプロンプトを開くとき、右クリックメニューから管理者権限で実行しましょう。
 ```
 # 作成したソースコードがあるフォルダに移動
 cd <フォルダ>
@@ -40,7 +49,7 @@ git init
 git remote add origin https://github.com/<githubユーザ名>/onlineskillup_step1.git
 
 # ユーザの登録
-git config --local user.name <ユーザ名>
+git config --local user.name <githubユーザ名>
 git config --local user.email <メールアドレス>
 
 # 変更を確定させる
