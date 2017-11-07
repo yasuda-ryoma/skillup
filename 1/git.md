@@ -1,8 +1,8 @@
 ---
 layout: default
-title: github使ってソースをあげてみる
+title: STEP1-10.github使ってソースをあげてみる
 ---
-# github使ってソースをあげてみる
+# STEP1-10.github使ってソースをあげてみる
 
 STEP1で今まで作ってきたファイルを管理してみましょう。
 サンプルコードやこのWebサイトのソース管理をするため[GitHub](https://github.com/)を使ってみます。
