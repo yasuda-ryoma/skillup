@@ -12,6 +12,7 @@ GitHubではGitというバージョン管理システムを用いて進めま�
 ### githubアカウント作成
 
 [アカウントを作成](https://github.com/join)にアクセスし、個人のアカウントを作成しましょう。
+
 すでにアカウントをお持ちの方は既存のアカウントを使っていただいてOKです。
 
 
@@ -20,7 +21,8 @@ GitHubではGitというバージョン管理システムを用いて進めま�
 github上で、リポジトリを作成します。レポジトリというのはアプリケーションのソースやデータの格納場所のことです。
 上のタブの `Repositories` からレポジトリ一覧ページに進み、 `New` ボタンを押し、名前をつけて新しいレポジトリを作成します。ここでは、仮に「onlineskillup_step1」としてみます。
 
-https://github.com/<githubユーザ名>/onlineskillup_step1  
+`https://github.com/<githubユーザ名>/onlineskillup_step1`
+
 このようなURLのページが出来上がっているはずです。
 中身はまだ空ですが、こちらが作成したレポジトリになります。
 
@@ -29,7 +31,9 @@ https://github.com/<githubユーザ名>/onlineskillup_step1
 自分のパソコンにgitをインストールをします。
 
 macの方はデフォルトでgitが入っていますので、何もしなくても大丈夫です。  
+
 Windowsの方は、以下のサイトなどを参考にして、gitをインストールしてみてください。  
+
 https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409
 
 ### ソースコードをあげる
