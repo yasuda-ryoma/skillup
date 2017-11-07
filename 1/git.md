@@ -5,8 +5,8 @@ title: STEP1-10.github使ってソースをあげてみる
 # STEP1-10.github使ってソースをあげてみる
 
 STEP1で今まで作ってきたファイルを管理してみましょう。
-サンプルコードやこのWebサイトのソース管理をするため[GitHub](https://github.com/)を使ってみます。
-GitHubではGitというバージョン管理システムを用いて進めます。
+サンプルコードやこのWebサイトのソース管理をするため[github](https://github.com/)を使ってみます。
+githubではgitというバージョン管理システムを用いて進めます。
 
 
 ### githubアカウント作成
@@ -67,26 +67,26 @@ git push -u origin master
 
 ### 詳しく
 
-#### Gitについて
+#### gitについて
 
-Gitを使うことでファイルの編集を履歴として保存することができ、プログラムの変更を確認したり復活させたりすることができます。
+gitを使うことでファイルの編集を履歴として保存することができ、プログラムの変更を確認したり復活させたりすることができます。
 また複数人で1つのプログラムを編集して開発する際にもよく使われています。
 
-Gitについては[GitBook](http://git-scm.com/book/ja)に詳しく書かれているので参考になります。
-Chapter1でGitの基本やインストール、Capter2で基本コマンドについて書かれています。
+gitについては[gitBook](http://git-scm.com/book/ja)に詳しく書かれているので参考になります。
+Chapter1でgitの基本やインストール、Capter2で基本コマンドについて書かれています。
 
-GitクライアントとしてはGitBookにも書かれている[Git for Windows](https://git-for-windows.github.io/)があります。
-他にも[GitHub Windows](https://windows.github.com/)や[SourceTree](http://www.sourcetreeapp.com/)といったクライアントが主に使われています。
-どのクライアントも同じGitの作業はできます。
+gitクライアントとしてはgitBookにも書かれている[git for Windows](https://git-for-windows.github.io/)があります。
+他にも[gitHub Windows](https://windows.github.com/)や[SourceTree](http://www.sourcetreeapp.com/)といったクライアントが主に使われています。
+どのクライアントも同じgitの作業はできます。
 
-#### Githubについて
+#### githubについて
 
-GithubはGitというバージョン管理ツールを用いたプロジェクトを複数人で共有するためのツールです。GitとGithubの違いをはっきりさせておくと理解が捗るかもしれません。
-Githubについては[GitHub入門](http://www.slideshare.net/hideaki_honda/gitgithub-16508298)が参考になります。また、[ギットクエスト](http://gigazine.net/news/20160126-gitquest-review/)のようなものもあり、勉強になります。
+githubはgitというバージョン管理ツールを用いたプロジェクトを複数人で共有するためのツールです。gitとgithubの違いをはっきりさせておくと理解が捗るかもしれません。
+githubについては[gitHub入門](http://www.slideshare.net/hideaki_honda/gitgithub-16508298)が参考になります。また、[ギットクエスト](http://gigazine.net/news/20160126-gitquest-review/)のようなものもあり、勉強になります。
 
 ***  
 
 **[課題]gitを使いこなしてみよう**  
-gitは開発をスムーズにするための機能がたくさんあります。余裕があれば、Gitの基礎から学ぶことのできる[入門サイト](http://www.backlog.jp/git-guide/)やGitのコマンドを説明してくれる[チュートリアル](https://www.atlassian.com/ja/git/tutorial)などが公開されていますので、色々なコマンドを使ってみて、gitによるバージョン管理に慣れてみましょう。
+gitは開発をスムーズにするための機能がたくさんあります。余裕があれば、gitの基礎から学ぶことのできる[入門サイト](http://www.backlog.jp/git-guide/)やgitのコマンドを説明してくれる[チュートリアル](https://www.atlassian.com/ja/git/tutorial)などが公開されていますので、色々なコマンドを使ってみて、gitによるバージョン管理に慣れてみましょう。
 
 
