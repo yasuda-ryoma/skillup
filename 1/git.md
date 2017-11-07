@@ -1,15 +1,15 @@
 ---
 layout: default
-title: STEP1-10.github使ってソースをあげてみる
+title: STEP1-10.GitHub使ってソースをあげてみる
 ---
-# STEP1-10.github使ってソースをあげてみる
+# STEP1-10.GitHub使ってソースをあげてみる
 
 STEP1で今まで作ってきたファイルを管理してみましょう。
-サンプルコードやこのWebサイトのソース管理をするため[github](https://github.com/)を使ってみます。
-githubではgitというバージョン管理システムを用いて進めます。
+サンプルコードやこのWebサイトのソース管理をするため[GitHub](https://github.com/)を使ってみます。
+GitHubではGitというバージョン管理システムを用いて進めます。
 
 
-### githubアカウント作成
+### GitHubアカウント作成
 
 [アカウントを作成](https://github.com/join)にアクセスし、個人のアカウントを作成しましょう。
 
@@ -18,20 +18,20 @@ githubではgitというバージョン管理システムを用いて進めま�
 
 ### リポジトリ作成
 
-github上で、リポジトリを作成します。レポジトリというのはアプリケーションのソースやデータの格納場所のことです。
+GitHub上で、リポジトリを作成します。レポジトリというのはアプリケーションのソースやデータの格納場所のことです。
 上のタブの `Repositories` からレポジトリ一覧ページに進み、 `New` ボタンを押し、名前をつけて新しいレポジトリを作成します。ここでは、仮に「onlineskillup_step1」としてみます。
 
-`https://github.com/<githubユーザ名>/onlineskillup_step1`
+`https://github.com/<GitHubユーザ名>/onlineskillup_step1`
 
 このようなURLのページが出来上がっているはずです。
 中身はまだ空ですが、こちらが作成したレポジトリになります。
 
-### gitのインストール
+### Gitのインストール
 
-自分のパソコンにgitをインストールをします。
+自分のパソコンにGitをインストールをします。
 
-macの方はデフォルトでgitが入っていますので、何もしなくても大丈夫です。  
-Windowsの方は、以下のサイトなどを参考にして、gitをインストールしてみてください。  
+macの方はデフォルトでGitが入っていますので、何もしなくても大丈夫です。  
+Windowsの方は、以下のサイトなどを参考にして、Gitをインストールしてみてください。  
 https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409
 
 ### ソースコードをあげる
@@ -44,21 +44,21 @@ Windowsの方はコマンドプロンプトを開くとき、右クリックメ�
 # 作成したソースコードがあるフォルダに移動
 cd <フォルダ>
 
-# gitの初期化を行う
+# Gitの初期化を行う
 git init
 
 # レポジトリの登録
-git remote add origin https://github.com/<githubユーザ名>/onlineskillup_step1.git
+git remote add origin https://github.com/<GitHubユーザ名>/onlineskillup_step1.git
 
 # ユーザの登録
-git config --local user.name <githubユーザ名>
+git config --local user.name <GitHubユーザ名>
 git config --local user.email <メールアドレス>
 
 # 変更を確定させる
 git add .
 git commit -m "first commit"
 
-# 変更をプッシュする(パスワードが聞かれたら、githubの登録時のパスワードを入力)
+# 変更をプッシュする(パスワードが聞かれたら、GitHubの登録時のパスワードを入力)
 git push -u origin master
 ```
 
@@ -67,26 +67,26 @@ git push -u origin master
 
 ### 詳しく
 
-#### gitについて
+#### Gitについて
 
-gitを使うことでファイルの編集を履歴として保存することができ、プログラムの変更を確認したり復活させたりすることができます。
+Gitを使うことでファイルの編集を履歴として保存することができ、プログラムの変更を確認したり復活させたりすることができます。
 また複数人で1つのプログラムを編集して開発する際にもよく使われています。
 
-gitについては[gitBook](http://git-scm.com/book/ja)に詳しく書かれているので参考になります。
-Chapter1でgitの基本やインストール、Capter2で基本コマンドについて書かれています。
+Gitについては[GitBook](http://git-scm.com/book/ja)に詳しく書かれているので参考になります。
+Chapter1でGitの基本やインストール、Capter2で基本コマンドについて書かれています。
 
-gitクライアントとしてはgitBookにも書かれている[git for Windows](https://git-for-windows.github.io/)があります。
-他にも[gitHub Windows](https://windows.github.com/)や[SourceTree](http://www.sourcetreeapp.com/)といったクライアントが主に使われています。
+GitクライアントとしてはGitBookにも書かれている[Git for Windows](https://git-for-windows.github.io/)があります。
+他にも[GitHub Windows](https://windows.github.com/)や[SourceTree](http://www.sourcetreeapp.com/)といったクライアントが主に使われています。
 どのクライアントも同じgitの作業はできます。
 
-#### githubについて
+#### GitHubについて
 
-githubはgitというバージョン管理ツールを用いたプロジェクトを複数人で共有するためのツールです。gitとgithubの違いをはっきりさせておくと理解が捗るかもしれません。
-githubについては[gitHub入門](http://www.slideshare.net/hideaki_honda/gitgithub-16508298)が参考になります。また、[ギットクエスト](http://gigazine.net/news/20160126-gitquest-review/)のようなものもあり、勉強になります。
+GitHubはGitというバージョン管理ツールを用いたプロジェクトを複数人で共有するためのツールです。GitとGitHubの違いをはっきりさせておくと理解が捗るかもしれません。
+GitHubについては[GitHub入門](http://www.slideshare.net/hideaki_honda/gitgithub-16508298)が参考になります。また、[ギットクエスト](http://gigazine.net/news/20160126-gitquest-review/)のようなものもあり、勉強になります。
 
 ***  
 
-**[課題]gitを使いこなしてみよう**  
-gitは開発をスムーズにするための機能がたくさんあります。余裕があれば、gitの基礎から学ぶことのできる[入門サイト](http://www.backlog.jp/git-guide/)やgitのコマンドを説明してくれる[チュートリアル](https://www.atlassian.com/ja/git/tutorial)などが公開されていますので、色々なコマンドを使ってみて、gitによるバージョン管理に慣れてみましょう。
+**[課題]Gitを使いこなしてみよう**  
+Gitは開発をスムーズにするための機能がたくさんあります。余裕があれば、Gitの基礎から学ぶことのできる[入門サイト](http://www.backlog.jp/git-guide/)やGitのコマンドを説明してくれる[チュートリアル](https://www.atlassian.com/ja/git/tutorial)などが公開されていますので、色々なコマンドを使ってみて、Gitによるバージョン管理に慣れてみましょう。
 
 
