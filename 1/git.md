@@ -71,7 +71,7 @@ GitクライアントとしてはGitBookにも書かれている[Git for Windows
 #### Githubについて
 
 GithubはGitというバージョン管理ツールを用いたプロジェクトを複数人で共有するためのツールです。GitとGithubの違いをはっきりさせておくと理解が捗るかもしれません。
-Githubについては[GitHub入門](http://www.slideshare.net/hideaki_honda/gitgithub-16508298)が参考になります。
+Githubについては[GitHub入門](http://www.slideshare.net/hideaki_honda/gitgithub-16508298)が参考になります。また、[ギットクエスト](http://gigazine.net/news/20160126-gitquest-review/)のようなものもあり、勉強になります。
 
 ***  
 
