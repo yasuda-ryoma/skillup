@@ -1,0 +1,685 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9. PHPでデータベースを操作してみる · チームラボオンラインスキルアップ課題</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="teamLab inc">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="10-git.html" />
+    
+    
+    <link rel="prev" href="08-sql.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    オンラインスキルアップ課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    STEP1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01-internet.html">
+            
+                <a href="01-internet.html">
+            
+                    
+                    1. インターネットについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02-http.html">
+            
+                <a href="02-http.html">
+            
+                    
+                    2. WEBサーバについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03-html-css.html">
+            
+                <a href="03-html-css.html">
+            
+                    
+                    3. HTMLとCSSについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04a-docker.html">
+            
+                <a href="04a-docker.html">
+            
+                    
+                    4-a. 【Windows】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="04b-docker.html">
+            
+                <a href="04b-docker.html">
+            
+                    
+                    4-b. 【Mac】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="05-php.html">
+            
+                <a href="05-php.html">
+            
+                    
+                    5. PHPの説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="06-get-post.html">
+            
+                <a href="06-get-post.html">
+            
+                    
+                    6. PHPでGET/POSTをやってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="07-db.html">
+            
+                <a href="07-db.html">
+            
+                    
+                    7. データベースについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="08-sql.html">
+            
+                <a href="08-sql.html">
+            
+                    
+                    8. SQLを書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="09-php-sql.html">
+            
+                <a href="09-php-sql.html">
+            
+                    
+                    9. PHPでデータベースを操作してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="10-git.html">
+            
+                <a href="10-git.html">
+            
+                    
+                    10. GitとGitHubについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    STEP2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../step2/01-framework.html">
+            
+                <a href="../step2/01-framework.html">
+            
+                    
+                    1. フレームワークについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../step2/02-environment.html">
+            
+                <a href="../step2/02-environment.html">
+            
+                    
+                    2. Laravelで初期ページを表示してみよう(環境構築)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../step2/03-laravel-demo.html">
+            
+                <a href="../step2/03-laravel-demo.html">
+            
+                    
+                    3. Laravelを触ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../step2/04-laravel-form.html">
+            
+                <a href="../step2/04-laravel-form.html">
+            
+                    
+                    4. 入力フォームを作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../step2/05-laravel-bbs.html">
+            
+                <a href="../step2/05-laravel-bbs.html">
+            
+                    
+                    5. LaravelとPostgreSQLで掲示板を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../step2/06-laravel-login.html">
+            
+                <a href="../step2/06-laravel-login.html">
+            
+                    
+                    6. Laravelで掲示板にログイン機能を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../step2/07-upload.html">
+            
+                <a href="../step2/07-upload.html">
+            
+                    
+                    7. 画像アップロードしよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../step2/08-specification.html">
+            
+                <a href="../step2/08-specification.html">
+            
+                    
+                    8. 画面仕様書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../step2/09-db-design.html">
+            
+                <a href="../step2/09-db-design.html">
+            
+                    
+                    9. データーベース設計書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../step2/10-heroku.html">
+            
+                <a href="../step2/10-heroku.html">
+            
+                    
+                    10. Herokuで世界に公開してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../step2/11-task.html">
+            
+                <a href="../step2/11-task.html">
+            
+                    
+                    11. 最終課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../step2/insta_document.html">
+            
+                <a href="../step2/insta_document.html">
+            
+                    
+                    インスタグラムもどき画面仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >9. PHPでデータベースを操作してみる</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="step1-9php&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3092;&#x64CD;&#x4F5C;&#x3057;&#x3066;&#x307F;&#x308B;">STEP1-9.PHP&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3092;&#x64CD;&#x4F5C;&#x3057;&#x3066;&#x307F;&#x308B;</h1>
+<p>&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;PHP&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3092;&#x64CD;&#x4F5C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;
+&#x300C;<a href="step1/08-sql.md">8.SQL&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;</a>&#x300D;&#x3067;&#x884C;&#x3063;&#x305F;&#x5185;&#x5BB9;&#x3092;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x304B;&#x3089;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x63A5;&#x7D9A;&#x3059;&#x308B;">&#x63A5;&#x7D9A;&#x3059;&#x308B;</h2>
+<p>&#x307E;&#x305A;&#x306F;PHP&#x304B;&#x3089;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x63A5;&#x7D9A;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+<a href="http://php.net/manual/ja/book.pdo.php" target="_blank">PDO</a>&#x3068;&#x3044;&#x3046;&#x30C9;&#x30E9;&#x30A4;&#x30D0;&#x3092;&#x4F7F;&#x3063;&#x3066;PostgreSQL&#x306B;&#x63A5;&#x7D9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x65B0;&#x3057;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;<code>app/sql.php</code>&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x4E0B;&#x8A18;&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+$dsn = <span class="hljs-string">&apos;pgsql:dbname=TEST;host=pgsql;port=5432&apos;</span>;
+$user = <span class="hljs-string">&apos;postgres&apos;</span>;
+$pass = <span class="hljs-string">&apos;example&apos;</span>;
+
+<span class="hljs-keyword">try</span> {
+  <span class="hljs-comment">// DB&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;</span>
+  $dbh = <span class="hljs-keyword">new</span> PDO($dsn, $user, $pass);
+
+  <span class="hljs-comment">// &#x3053;&#x3053;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x5B9F;&#x884C;&#x3059;&#x308B;</span>
+
+  <span class="hljs-comment">// DB&#x3092;&#x5207;&#x65AD;&#x3059;&#x308B;</span>
+  $dbh = <span class="hljs-keyword">null</span>;
+} <span class="hljs-keyword">catch</span> (PDOException $e) {
+    <span class="hljs-comment">// &#x63A5;&#x7D9A;&#x306B;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x305F;&#x5834;&#x5408;&#x3053;&#x3053;&#x306B;&#x5165;&#x308B;</span>
+    <span class="hljs-keyword">print</span> <span class="hljs-string">&quot;DB ERROR: &quot;</span> . $e-&gt;getMessage() . <span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;
+    <span class="hljs-keyword">die</span>();
+}
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p><a href="http://localhost/sql" target="_blank">http://localhost/sql</a> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x4F55;&#x3082;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;&#xFF08;&#xFF1D;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;&#xFF09;&#x3088;&#x3046;&#x3067;&#x3042;&#x308C;&#x3070;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3078;&#x306E;&#x63A5;&#x7D9A;&#x306F;&#x6210;&#x529F;&#x3067;&#x3059;&#x3002;
+&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x767A;&#x751F;&#x3057;&#x305F;&#x3089;&#x3001;&#x5404;&#x7A2E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x304C;&#x5408;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x3001;PostgreSQL&#x304C;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x306A;&#x3069;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x4E0A;&#x8A18;&#x30B3;&#x30FC;&#x30C9;&#x5185;&#x306E;&#x4E0B;&#x8A18;&#x306E;&#x90E8;&#x5206;&#x3067;&#x3001;&#x5404;&#x7A2E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x5165;&#x308C;&#x3066;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3078;&#x306E;&#x63A5;&#x7D9A;&#x3092;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-comment">// DB&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;</span>
+$dbh = <span class="hljs-keyword">new</span> PDO($dsn, $user, $pass);
+</code></pre>
+<p><code>$dsn</code>&#x3001;<code>$user</code>&#x3001;<code>$pass</code>&#x306E;&#x5404;&#x5909;&#x6570;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;&#x305D;&#x306E;&#x4E0A;&#x306E;&#x90E8;&#x5206;&#x3067;&#x4EE3;&#x5165;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-php">$dsn = <span class="hljs-string">&apos;pgsql:dbname=&lt;DB&#x540D;&gt;;host=&lt;&#x30DB;&#x30B9;&#x30C8;&#x540D;&gt;;port=&lt;&#x30DD;&#x30FC;&#x30C8;&#x756A;&#x53F7;&gt;&apos;</span>;
+$user = <span class="hljs-string">&apos;&lt;&#x30E6;&#x30FC;&#x30B6;&#x540D;&gt;&apos;</span>;
+$pass = <span class="hljs-string">&apos;&lt;&#x30E6;&#x30FC;&#x30B6;&#x306E;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&gt;&apos;</span>;
+</code></pre>
+<p>&#x300C;<a href="step1/04-docker.md">4.Docker&#x3068;&#x958B;&#x767A;&#x74B0;&#x5883;&#x306E;&#x4F5C;&#x308A;&#x65B9;</a>&#x300D;&#x306E;&#x624B;&#x9806;&#x3067;&#x958B;&#x767A;&#x74B0;&#x5883;&#x3092;&#x69CB;&#x7BC9;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x3001;&#x30DB;&#x30B9;&#x30C8;&#x540D;&#x306F;<code>pgsql</code>&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x540D;&#x306F;<code>postgres</code>&#x3001;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x306F;<code>example</code>&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;
+&#x307E;&#x305F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x540D;&#x306F;&#x300C;<a href="step1/08-sql.md">8.SQL&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;</a>&#x300D;&#x3067;&#x4F5C;&#x3063;&#x305F;&#x3082;&#x306E;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;<code>TEST</code>&#x3092;&#x5165;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x9055;&#x3046;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x540D;&#x3092;&#x3064;&#x3051;&#x305F;&#x65B9;&#x3084;&#x3001;&#x6700;&#x7D42;&#x8AB2;&#x984C;&#x3067;&#x65B0;&#x305F;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3092;&#x4F5C;&#x308B;&#x5834;&#x5408;&#x306A;&#x3069;&#x306F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x540D;&#x3092;&#x9069;&#x3057;&#x305F;&#x3082;&#x306E;&#x306B;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x5B9F;&#x884C;&#x3059;&#x308B;">&#x5B9F;&#x884C;&#x3059;&#x308B;</h2>
+<p>PHP&#x304B;&#x3089;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x306B;&#x306F;&#x3001;&#x300C;<a href="http://php.net/manual/ja/pdo.query.php" target="_blank">query&#x30E1;&#x30BD;&#x30C3;&#x30C9;</a>&#x300D;&#x3092;&#x4F7F;&#x3046;&#x65B9;&#x6CD5;&#x3084;
+&#x300C;<a href="http://php.net/manual/ja/pdo.prepare.php" target="_blank">prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;</a>&#x300D;&#x3092;&#x4F7F;&#x3046;&#x65B9;&#x6CD5;&#x306A;&#x3069;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x5BFE;&#x3057;&#x3066;SELECT&#x3084;INSERT&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="query&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;select&#x306E;&#x4F8B;">query&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;SELECT&#x306E;&#x4F8B;</h3>
+<p>&#x4E0A;&#x8A18;&#x306E;&#x63A5;&#x7D9A;&#x90E8;&#x5206;&#x3067;&#x3001;<code>// &#x3053;&#x3053;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x5B9F;&#x884C;&#x3059;&#x308B;</code>&#x3068;&#x3044;&#x3046;&#x90E8;&#x5206;&#x304C;&#x3042;&#x3063;&#x305F;&#x304B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x3053;&#x306B;<a href="http://php.net/manual/ja/pdo.query.php" target="_blank">query&#x30E1;&#x30BD;&#x30C3;&#x30C9;</a>&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x66F8;&#x3044;&#x3066;&#x884C;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-comment">// &#x3053;&#x3053;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x5B9F;&#x884C;&#x3059;&#x308B;</span>
+<span class="hljs-comment">// query&#x30E1;&#x30BD;&#x30C3;&#x30C9;(SELECT)</span>
+$query_result = $dbh-&gt;query(<span class="hljs-string">&apos;SELECT * FROM test_comments&apos;</span>);
+</code></pre>
+<p>&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304F;&#x3053;&#x3068;&#x3067;&#x3001;<code>SELECT * FROM test_comments</code>&#x3068;&#x3044;&#x3046;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3001;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;<code>$query_result</code>&#x3068;&#x3044;&#x3046;&#x5909;&#x6570;&#x306E;&#x4E2D;&#x306B;&#x5165;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x308C;&#x3060;&#x3051;&#x3067;&#x306F;&#x3001;&#x3046;&#x307E;&#x304F;&#x53D6;&#x308A;&#x51FA;&#x305B;&#x305F;&#x304B;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;<code>$query_result</code>&#x3092;&#x8868;&#x793A;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p><code>sql.php</code>&#x306E;&#x6700;&#x4E0B;&#x90E8;&#x306B;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+  <span class="hljs-keyword">foreach</span>($query_result <span class="hljs-keyword">as</span> $row) {
+    <span class="hljs-keyword">print</span> $row[<span class="hljs-string">&quot;name&quot;</span>] . <span class="hljs-string">&quot;: &quot;</span> . $row[<span class="hljs-string">&quot;text&quot;</span>] . <span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;
+  }
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>&#x53D6;&#x5F97;&#x3057;&#x305F;<code>$query_result</code>&#x306F;&#x914D;&#x5217;&#x306E;&#x5F62;&#x3067;&#x5165;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;<a href="http://php.net/manual/ja/control-structures.foreach.php" target="_blank">foreach&#x6587;</a>&#x3092;&#x4F7F;&#x3063;&#x3066;&#x8981;&#x7D20;&#x3092;1&#x3064;&#x305A;&#x3064;<code>$row</code>&#x306B;&#x8A70;&#x3081;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x3053;&#x3067;&#x3044;&#x3046;&#x8981;&#x7D20;&#x306F;&#x3001;&#x53D6;&#x5F97;&#x3057;&#x305F;test_comments&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x5F53;&#x305F;&#x308A;&#x307E;&#x3059;&#x3002;
+<code>$row</code>&#x81EA;&#x4F53;&#x306F;map&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x3053;&#x3053;&#x3067;&#x306F;&#x300C;name&#x300D;&#x3068;&#x300C;text&#x300D;&#x306E;&#x307F;&#x3092;&#x53D6;&#x308A;&#x51FA;&#x3057;&#x3066;&#x3001;print&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3046;&#x307E;&#x304F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x5024;&#x304C;&#x53D6;&#x308A;&#x51FA;&#x305B;&#x307E;&#x3057;&#x305F;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;</p>
+<h3 id="prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;insert&#x306E;&#x4F8B;">prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;INSERT&#x306E;&#x4F8B;</h3>
+<p>&#x6B21;&#x306B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x767B;&#x9332;&#x3092;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;INSERT&#x306B;&#x306F;&#x3001;<a href="http://php.net/manual/ja/pdo.prepare.php" target="_blank">prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;</a>&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;
+query&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x540C;&#x69D8;&#x3001;<code>// &#x3053;&#x3053;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;</code>&#x90E8;&#x5206;&#x306B;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-comment">// &#x3053;&#x3053;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x5B9F;&#x884C;&#x3059;&#x308B;</span>
+<span class="hljs-comment">// prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;(INSERT)</span>
+$sth = $dbh-&gt;prepare(<span class="hljs-string">&apos;INSERT INTO test_comments (name, text) VALUES (?, ?)&apos;</span>);
+</code></pre>
+<p>&#x30AF;&#x30A8;&#x30EA;&#x306E;&#x4E2D;&#x306B;<code>?</code>&#x304C;&#x51FA;&#x3066;&#x304D;&#x305F;&#x3053;&#x3068;&#x306B;&#x6C17;&#x3065;&#x304D;&#x307E;&#x3057;&#x305F;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;&#x3053;&#x308C;&#x304C;&#x3001;prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x4E00;&#x756A;&#x306E;&#x7279;&#x5FB4;&#x3067;&#x3059;&#x3002;<br>prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x3001;&#x5F8C;&#x304B;&#x3089;&#x5909;&#x6570;&#x3068;&#x3057;&#x3066;&#x30AF;&#x30A8;&#x30EA;&#x306B;&#x5165;&#x308C;&#x8FBC;&#x3080;&#x5024;&#x3092;&#x5165;&#x308C;&#x308B;&#x3053;&#x3068;&#x304C;&#x51FA;&#x6765;&#x308B;&#x306E;&#x3067;&#x3059;&#x3002;&#x3067;&#x3059;&#x306E;&#x3067;&#x3001;&#x307E;&#x3060;&#x3053;&#x306E;&#x6BB5;&#x968E;&#x3067;&#x306F;INSERT&#x306F;&#x5B8C;&#x4E86;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p><code>sql.php</code>&#x306E;&#x6700;&#x4E0B;&#x90E8;&#x306B;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+  $name = <span class="hljs-string">&quot;John&quot;</span>;
+  $text = <span class="hljs-string">&quot;Power to the People&quot;</span>;
+  $sth-&gt;execute(<span class="hljs-keyword">array</span>($name, $text));
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>&#x4F55;&#x3092;&#x884C;&#x3063;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x5148;&#x305A;&#x306F;&#x3001;<code>$name</code>&#x3068;&#x3044;&#x3046;&#x5909;&#x6570;&#x306B;&#x300C;John&#x300D;&#x3092;<code>$text</code>&#x3068;&#x3044;&#x3046;&#x5909;&#x6570;&#x306B;&#x300C;Power to the People&#x300D;&#x3092;&#x4EE3;&#x5165;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x305D;&#x306E;&#x5F8C;&#x306E;</p>
+<pre><code class="lang-php">$sth-&gt;execute(<span class="hljs-keyword">array</span>($name, $text));
+</code></pre>
+<p>&#x306E;&#x90E8;&#x5206;&#x3067;&#x3001;&#x5909;&#x6570;&#x3092;&#x6E21;&#x3057;&#x3066;&#x3001;<code>$sth</code>&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x90E8;&#x5206;&#x304C;&#x30AF;&#x30A8;&#x30EA;&#x306E;&#x5B9F;&#x884C;&#x3067;&#x3059;&#x3002;<br>1&#x3064;&#x76EE;&#x306E;<code>?</code>&#x306B;<code>$name</code>&#x3092;&#x3001;2&#x3064;&#x3081;&#x306E;<code>?</code>&#x306B;<code>$text</code>&#x3092;&#x5165;&#x308C;&#x3066;&#x3001;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x3092;&#x66F4;&#x65B0;&#x3057;&#x305F;&#x3089;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x767B;&#x9332;&#x3055;&#x308C;&#x305F;&#x304B;&#x3001;pgAdmin&#x3067;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>John&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x5165;&#x3063;&#x3066;&#x5165;&#x308C;&#x3070;OK&#x3067;&#x3059;&#xFF01;</p>
+<p>&#x4ECA;&#x56DE;&#x306F;&#x81EA;&#x5206;&#x3067;&#x5909;&#x6570;&#x3092;&#x6C7A;&#x3081;&#x3046;&#x3061;&#x3067;&#x5165;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;&#x3042;&#x308A;&#x304C;&#x305F;&#x307F;&#x304C;&#x3042;&#x307E;&#x308A;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;
+&#x5B9F;&#x969B;&#x306F;&#x30A8;&#x30F3;&#x30C9;&#x30E6;&#x30FC;&#x30B6;&#x304B;&#x3089;POST&#x3067;&#x9001;&#x3089;&#x308C;&#x3066;&#x304D;&#x305F;&#x5024;&#x3092;&#x767B;&#x9332;&#x3059;&#x308B;&#x3068;&#x304D;&#x306B;&#x4F7F;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;select&#x306E;&#x4F8B;">prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;SELECT&#x306E;&#x4F8B;</h3>
+<p>&#x611F;&#x306E;&#x92ED;&#x3044;&#x65B9;&#x306F;&#x3082;&#x3046;&#x6C17;&#x3065;&#x304B;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x3082;&#x3061;&#x308D;&#x3093;SELECT&#x6587;&#x3067;&#x3082;&#x4F7F;&#x3048;&#x307E;&#x3059;&#x3002;
+WHERE&#x53E5;&#x3092;&#x5909;&#x6570;&#x306B;&#x3057;&#x3066;&#x7D5E;&#x308A;&#x8FBC;&#x307F;&#x691C;&#x7D22;&#x3092;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x307E;&#x305A;&#x3001;<code>// &#x3053;&#x3053;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;</code>&#x90E8;&#x5206;&#x306B;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-comment">// &#x3053;&#x3053;&#x3067;&#x30AF;&#x30A8;&#x30EA;&#x5B9F;&#x884C;&#x3059;&#x308B;</span>
+<span class="hljs-comment">// prepare&#x30E1;&#x30BD;&#x30C3;&#x30C9;(SELECT)</span>
+$sth_select = $dbh-&gt;prepare(<span class="hljs-string">&apos;SELECT * FROM test_comments WHERE name = ?&apos;</span>);
+</code></pre>
+<p><code>sql.php</code>&#x306E;&#x6700;&#x4E0B;&#x90E8;&#x306B;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+  $name = <span class="hljs-string">&quot;John&quot;</span>;
+  $sth_select-&gt;execute(<span class="hljs-keyword">array</span>($name));
+  $prepare_result = $sth_select-&gt;fetchAll();
+  <span class="hljs-keyword">foreach</span>($prepare_result <span class="hljs-keyword">as</span> $row) {
+    <span class="hljs-keyword">print</span> $row[<span class="hljs-string">&quot;name&quot;</span>] . <span class="hljs-string">&quot;: &quot;</span> . $row[<span class="hljs-string">&quot;text&quot;</span>] . <span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;
+  }
+  $sth_select-&gt;execute(<span class="hljs-keyword">array</span>($name));
+<span class="hljs-meta">?&gt;</span>
+</code></pre>
+<p>&#x65B0;&#x3057;&#x304F;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x305F;&#x90E8;&#x5206;&#x306F;&#x3001;</p>
+<pre><code class="lang-php">$prepare_result = $sth_select-&gt;fetchAll();
+</code></pre>
+<p>&#x304B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x30AF;&#x30A8;&#x30EA;&#x304B;&#x3089;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3001;<code>$prepare_result</code>&#x306B;&#x4EE3;&#x5165;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x3042;&#x3068;&#x306F;&#x3001;&#x4EE5;&#x524D;&#x3068;&#x540C;&#x69D8;&#x306B;foreach&#x6587;&#x3067;&#x56DE;&#x3057;&#x3066;&#x3044;&#x308B;&#x3060;&#x3051;&#x3067;&#x3059;&#x306D;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;name&#x304C;John&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x7D5E;&#x308A;&#x3053;&#x3093;&#x3067;&#x8868;&#x793A;&#x3067;&#x304D;&#x305F;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="08-sql.html" class="navigation navigation-prev " aria-label="Previous page: 8. SQLを書いてみる">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="10-git.html" class="navigation navigation-next " aria-label="Next page: 10. GitとGitHubについて">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9. PHPでデータベースを操作してみる","level":"1.2.10","depth":2,"next":{"title":"10. GitとGitHubについて","level":"1.2.11","depth":2,"path":"step1/10-git.md","ref":"step1/10-git.md","articles":[]},"previous":{"title":"8. SQLを書いてみる","level":"1.2.9","depth":2,"path":"step1/08-sql.md","ref":"step1/08-sql.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step1/09-php-sql.md","mtime":"2018-12-27T06:39:16.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T06:39:49.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

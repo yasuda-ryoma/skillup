@@ -1,0 +1,770 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>10. Herokuで世界に公開してみよう · チームラボオンラインスキルアップ課題</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="teamLab inc">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="11-task.html" />
+    
+    
+    <link rel="prev" href="09-db-design.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    オンラインスキルアップ課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    STEP1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../step1/01-internet.html">
+            
+                <a href="../step1/01-internet.html">
+            
+                    
+                    1. インターネットについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../step1/02-http.html">
+            
+                <a href="../step1/02-http.html">
+            
+                    
+                    2. WEBサーバについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../step1/03-html-css.html">
+            
+                <a href="../step1/03-html-css.html">
+            
+                    
+                    3. HTMLとCSSについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../step1/04a-docker.html">
+            
+                <a href="../step1/04a-docker.html">
+            
+                    
+                    4-a. 【Windows】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../step1/04b-docker.html">
+            
+                <a href="../step1/04b-docker.html">
+            
+                    
+                    4-b. 【Mac】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../step1/05-php.html">
+            
+                <a href="../step1/05-php.html">
+            
+                    
+                    5. PHPの説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../step1/06-get-post.html">
+            
+                <a href="../step1/06-get-post.html">
+            
+                    
+                    6. PHPでGET/POSTをやってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../step1/07-db.html">
+            
+                <a href="../step1/07-db.html">
+            
+                    
+                    7. データベースについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../step1/08-sql.html">
+            
+                <a href="../step1/08-sql.html">
+            
+                    
+                    8. SQLを書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../step1/09-php-sql.html">
+            
+                <a href="../step1/09-php-sql.html">
+            
+                    
+                    9. PHPでデータベースを操作してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../step1/10-git.html">
+            
+                <a href="../step1/10-git.html">
+            
+                    
+                    10. GitとGitHubについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    STEP2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01-framework.html">
+            
+                <a href="01-framework.html">
+            
+                    
+                    1. フレームワークについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02-environment.html">
+            
+                <a href="02-environment.html">
+            
+                    
+                    2. Laravelで初期ページを表示してみよう(環境構築)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="03-laravel-demo.html">
+            
+                <a href="03-laravel-demo.html">
+            
+                    
+                    3. Laravelを触ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="04-laravel-form.html">
+            
+                <a href="04-laravel-form.html">
+            
+                    
+                    4. 入力フォームを作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="05-laravel-bbs.html">
+            
+                <a href="05-laravel-bbs.html">
+            
+                    
+                    5. LaravelとPostgreSQLで掲示板を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="06-laravel-login.html">
+            
+                <a href="06-laravel-login.html">
+            
+                    
+                    6. Laravelで掲示板にログイン機能を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="07-upload.html">
+            
+                <a href="07-upload.html">
+            
+                    
+                    7. 画像アップロードしよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="08-specification.html">
+            
+                <a href="08-specification.html">
+            
+                    
+                    8. 画面仕様書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="09-db-design.html">
+            
+                <a href="09-db-design.html">
+            
+                    
+                    9. データーベース設計書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.10" data-path="10-heroku.html">
+            
+                <a href="10-heroku.html">
+            
+                    
+                    10. Herokuで世界に公開してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="11-task.html">
+            
+                <a href="11-task.html">
+            
+                    
+                    11. 最終課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="insta_document.html">
+            
+                <a href="insta_document.html">
+            
+                    
+                    インスタグラムもどき画面仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >10. Herokuで世界に公開してみよう</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="step2-10heroku&#x3068;&#x305D;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x3064;&#x3044;&#x3066;">STEP2-10.Heroku&#x3068;&#x305D;&#x306E;&#x4F7F;&#x3044;&#x65B9;&#x306B;&#x3064;&#x3044;&#x3066;</h1>
+<p>&#x4ECA;&#x307E;&#x3067;&#x306E;&#x30B9;&#x30C6;&#x30C3;&#x30D7;&#x3067;&#x3001;&#x30AA;&#x30EA;&#x30B8;&#x30CA;&#x30EB;&#x306E;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;Laravel&#x3092;&#x4F7F;&#x3063;&#x3066;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x6700;&#x4F4E;&#x9650;&#x306E;&#x77E5;&#x8B58;&#x306F;&#x624B;&#x306B;&#x5165;&#x308C;&#x3089;&#x308C;&#x305F;&#x306F;&#x305A;&#x3067;&#x3059;&#xFF01;<br>&#x3044;&#x3088;&#x3044;&#x3088;&#x4ECA;&#x56DE;&#x306F;&#x3001;&#x4F5C;&#x6210;&#x3057;&#x305F;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x516C;&#x958B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
+<p>&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306F;&#x69D8;&#x3005;&#x306A;&#x65B9;&#x6CD5;&#x3067;&#x516C;&#x958B;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x4ECA;&#x56DE;&#x306F;Heroku&#x3092;&#x7528;&#x3044;&#x3066;&#x516C;&#x958B;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;<br>Heroku&#x306F;&#x3001;&#x7121;&#x6599;&#x3067;PHP&#x3068;PostgreSQL&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x3001;&#x65E9;&#x3044;&#x901F;&#x5EA6;&#x3067;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x958B;&#x767A;&#x3057;&#x305F;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x516C;&#x958B;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;  </p>
+<h2 id="heroku&#x306B;&#x767B;&#x9332;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;">Heroku&#x306B;&#x767B;&#x9332;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;</h2>
+<p>&#x307E;&#x305A;&#x306F;&#x3001;<a href="https://jp.heroku.com/" target="_blank">Heroku&#x306E;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;</a>&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3001;&#x5229;&#x7528;&#x8005;&#x767B;&#x9332;&#x3092;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x4F1A;&#x793E;&#x540D;&#x306F;&#x5FC5;&#x9808;&#x3067;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x7A7A;&#x767D;&#x3067;&#x3082;&#x5927;&#x4E08;&#x592B;&#x3067;&#x3059;&#x3002;<br>&#x307E;&#x305F;&#x3001;&#x958B;&#x767A;&#x8A00;&#x8A9E;&#x306E;&#x9078;&#x629E;&#x3082;&#x5F71;&#x97FF;&#x304C;&#x3042;&#x308B;&#x3082;&#x306E;&#x3067;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x9069;&#x5F53;&#x3067;&#x5927;&#x4E08;&#x592B;&#x3067;&#x3059;&#x3002;  </p>
+<p><img src="../images/2_10_1.png" alt="2_10_1"></p>
+<p>&#x767B;&#x9332;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3068;&#x3001;&#x5165;&#x529B;&#x3057;&#x305F;&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306B;&#x8A8D;&#x8A3C;&#x30EA;&#x30F3;&#x30AF;&#x304C;&#x9001;&#x3089;&#x308C;&#x3066;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x30EA;&#x30F3;&#x30AF;&#x304B;&#x3089;&#x63A5;&#x7D9A;&#x3057;&#x3066;&#x3001;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002; </p>
+<p><img src="../images/2_10_2.png" width="300"></p>
+<p>&#x3053;&#x308C;&#x3067;Heroku&#x3078;&#x306E;&#x767B;&#x9332;&#x306F;&#x5B8C;&#x4E86;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="&#x4F5C;&#x3063;&#x305F;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x516C;&#x958B;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;">&#x4F5C;&#x3063;&#x305F;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x516C;&#x958B;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;</h2>
+<h3 id="herokutoolbelt&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;">HerokuToolbelt&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;</h3>
+<p>&#x6B21;&#x306B;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x304B;&#x3089;Heroku&#x3092;&#x64CD;&#x4F5C;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;HerokuToolbelt&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x3053;&#x3061;&#x3089;&#x306E;<a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">&#x30EA;&#x30F3;&#x30AF;</a>&#x304B;&#x3089;&#x3001;Mac&#x3068;Windows&#x305D;&#x308C;&#x305E;&#x308C;&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x65B9;&#x6CD5;&#x306E;&#x8A18;&#x8FF0;&#x306B;&#x5F93;&#x3063;&#x3066;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="heroku&#x306B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306E;&#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">Heroku&#x306B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306E;&#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h3>
+<p>HerokuToolbelt&#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;&#x3089;&#x3001;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x304B;&#x3089;Heroku&#x3092;&#x64CD;&#x4F5C;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x307E;&#x305A;&#x306F;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x306A;&#x304A;&#x3001;&#x5165;&#x529B;&#x3059;&#x308B;Email&#x3084;Password&#x306F;&#x3001;Heroku&#x306B;&#x767B;&#x9332;&#x3057;&#x305F;&#x6642;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x3082;&#x306E;&#x3067;&#x3059;&#x3002;</p>
+<pre><code>$ heroku auth:login
+Enter your Heroku credentials:
+Email: [&#x30E6;&#x30FC;&#x30B6;&#x767B;&#x9332;&#x3057;&#x305F;&#x3068;&#x304D;&#x306E;&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;]
+Password: [&#x30E6;&#x30FC;&#x30B6;&#x767B;&#x9332;&#x3057;&#x305F;&#x3068;&#x304D;&#x306E;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;]
+Logged in as [&#x30E6;&#x30FC;&#x30B6;&#x767B;&#x9332;&#x3057;&#x305F;&#x3068;&#x304D;&#x306E;&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;]
+</code></pre><p>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x304C;&#x3067;&#x304D;&#x305F;&#x3089;&#x3001;Heroku&#x306B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x52D5;&#x304B;&#x3059;&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x96DB;&#x5F62;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;&#x306F;&#x81EA;&#x7531;&#x306B;&#x5165;&#x529B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code>$ heroku create [&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;] --buildpack heroku/php
+Creating &#x2B22; [&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;]... done
+https://git.heroku.com/[&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;].git
+</code></pre><p>&#x3046;&#x307E;&#x304F;&#x3044;&#x304F;&#x3068;&#x3001;Heroku&#x306E;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3067;&#x3082;&#x4E0A;&#x8A18;&#x3067;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x30A2;&#x30D7;&#x30EA;&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br><img src="../images/2_10_3.png" alt="2_10_3"></p>
+<p>&#x306A;&#x304A;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;&#x306F;&#x3001;&#x4E16;&#x754C;&#x3067;&#x4E00;&#x610F;&#x3067;&#x3042;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;&#x8AB0;&#x304B;&#x3068;&#x88AB;&#x3089;&#x306A;&#x3044;&#x3088;&#x3046;&#x306A;&#x540D;&#x524D;&#x3092;&#x3064;&#x3051;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x3059;&#x3067;&#x306B;&#x4F7F;&#x308F;&#x308C;&#x3066;&#x3044;&#x308B;&#x3068;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x8FD4;&#x3055;&#x308C;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x306E;&#x6642;&#x70B9;&#x306E;Heroku&#x30A2;&#x30D7;&#x30EA;&#xFF08;&#x4EE5;&#x964D;&#x4F5C;&#x6210;&#x3057;&#x305F;Heroku&#x306E;&#x30A2;&#x30D7;&#x30EA;&#x306F;Heroku&#x30A2;&#x30D7;&#x30EA;&#x3068;&#x8A18;&#x8F09;&#xFF09;&#x306B;&#x306F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3068;&#x305D;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8A2D;&#x5B9A;&#x3084;&#x3001;Laravel&#x3001;&#x4ECA;&#x307E;&#x3067;&#x306E;&#x9805;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x304D;&#x305F;PHP&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x3001;&#x3069;&#x308C;&#x3082;&#x53CD;&#x6620;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;<br>&#x9806;&#x756A;&#x306B;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x3068;&#x3057;&#x3066;&#x767B;&#x9332;&#x3059;&#x308B;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x3068;&#x3057;&#x3066;&#x767B;&#x9332;&#x3059;&#x308B;</h3>
+<p>Heroku&#x3067;&#x306F;&#x3001;1-10&#x3067;&#x8AAC;&#x660E;&#x3057;&#x305F;&#x300C;git&#x300D;&#x3092;&#x5229;&#x7528;&#x3057;&#x3066;&#x30B3;&#x30FC;&#x30C9;&#x3092;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x53CD;&#x6620;&#x3057;&#x3066;&#x3044;&#x304F;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x305D;&#x3053;&#x3067;&#x3001;&#x4F5C;&#x3063;&#x305F;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3078;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ cd projectname
+$ git remote add heroku https://git.heroku.com/[&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;].git
+</code></pre><p>&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x308B;URL&#x306F;&#x3001;&#x4E00;&#x3064;&#x524D;&#x306B;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x300C;heroku create <em>*</em>&#x300D;&#x306E;&#x7D50;&#x679C;&#x3068;&#x3057;&#x3066;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;URL&#x3067;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x3067;&#x3001;&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306E;&#x8A2D;&#x5B9A;&#x306F;&#x3072;&#x3068;&#x307E;&#x305A;OK&#x3067;&#x3059;&#x3002;</p>
+<h3 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;appkey&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;APP_KEY&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;</h3>
+<p>APP_KEY&#x306F;&#x3001;Laravel&#x304C;&#x884C;&#x3046;&#x6697;&#x53F7;&#x5316;&#x3084;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x30EA;&#x30BB;&#x30C3;&#x30C8;&#x3068;&#x3044;&#x3063;&#x305F;&#x3001;&#x30BB;&#x30AD;&#x30E5;&#x30EA;&#x30C6;&#x30A3;&#x95A2;&#x4FC2;&#x7B87;&#x6240;&#x3067;&#x5229;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x300C;&#x3042;&#x306A;&#x305F;&#x304C;&#x4F5C;&#x3063;&#x305F;Laravel&#x306E;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3067;&#x3060;&#x3051;&#x4F7F;&#x3048;&#x308B;&#x9375;&#x300D;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x3068;&#x3044;&#x3046;&#x3068;&#x5C11;&#x3057;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x3044;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#x3002;<br>&#x305D;&#x3053;&#x3067;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x3082;&#x74B0;&#x5883;&#x5909;&#x6570;&#x3068;&#x3057;&#x3066;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x3042;&#x3052;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x5B9F;&#x969B;&#x306B;&#x300C;APP_KEY&#x300D;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x74B0;&#x5883;&#x5909;&#x6570;&#x306B;&#x300C;APP_KEY&#x300D;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x307E;&#x305A;&#x3001;APP_KEY&#x3092;&#x751F;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;
+laradock&#x306E;&#x968E;&#x5C64;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x6C17;&#x3092;&#x3064;&#x3051;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code>$ cd projectname/laradock
+$ docker-compose exec workspace php artisan --no-ansi key:generate --show
+base64:xxxxx
+</code></pre><p>&#x3053;&#x306E;<code>base64:xxxxx</code>&#x3068;&#x3044;&#x3046;&#x6587;&#x5B57;&#x5217;&#x304C;APP_KEY&#x3067;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x306B;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;APP_KEY&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x4ECA;&#x5EA6;&#x306F;&#x4E00;&#x3064;&#x4E0A;&#x306E;&#x968E;&#x5C64;&#xFF1D;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306E;&#x30C8;&#x30C3;&#x30D7;&#x968E;&#x5C64;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x6C17;&#x3092;&#x3064;&#x3051;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku config:set APP_KEY=base64:xxxxx
+Setting APP_KEY and restarting &#x2B22; [&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;]... done, v*
+APP_KEY: base64:xxxxx
+</code></pre><p>&#x30A8;&#x30E9;&#x30FC;&#x306A;&#x3069;&#x306A;&#x3051;&#x308C;&#x3070;&#x554F;&#x984C;&#x306A;&#x304F;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;postgresql&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x308B;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;PostgreSQL&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x308B;</h3>
+<p>Heroku&#x306F;&#x300C;docker-compose&#x300D;&#x306E;&#x3088;&#x3046;&#x306B;&#x8907;&#x6570;&#x306E;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x201D;&#x81EA;&#x7531;&#x306B;&#x5EFA;&#x3066;&#x3066;&#x201D;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x5B9F;&#x73FE;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x306F;&#x3067;&#x304D;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;<br>&#x4F8B;&#x3048;&#x3070;&#x3001;PostgreSQL&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x516C;&#x958B;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x300C;Heroku Postgres&#x300D;&#x3068;&#x3044;&#x3046;&#x30A2;&#x30C9;&#x30AA;&#x30F3;&#x3092;&#x4F7F;&#x3046;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x305D;&#x308C;&#x3067;&#x306F;&#x3001;&#x65E9;&#x901F;&#x300C;Heroku Postgres&#x300D;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku addons:add heroku-postgresql
+</code></pre><p>&#x3053;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x3001;Heroku&#x304C;&#x3042;&#x306A;&#x305F;&#x5C02;&#x7528;&#x306E;PostgreSQL&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x304F;&#x308C;&#x307E;&#x3059;&#x3002;<br>&#x305F;&#x3060;&#x3001;&#x305D;&#x306E;&#x307E;&#x307E;&#x3067;&#x306F;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x3060;&#x3051;&#x3067;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x3068;&#x306F;&#x7D10;&#x3065;&#x3051;&#x3089;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x306E;&#x3067;&#x3001;&#x7D10;&#x4ED8;&#x3051;&#x3092;&#x884C;&#x3044;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
+<p>Heroku&#x304C;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x60C5;&#x5831;&#x306F;&#x300C;heroku config&#x300D;&#x3067;&#x898B;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku config
+DATABASE_URL: postgres://[&#x30E6;&#x30FC;&#x30B6;&#x540D;]:[&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;]@[&#x30DB;&#x30B9;&#x30C8;&#x540D;]:[&#x30DD;&#x30FC;&#x30C8;]/[&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x540D;]
+APP_KEY: base64:xxxxx
+</code></pre><p>DATABASE_URL&#x306E;&#x5024;&#x304C;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x60C5;&#x5831;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>pgAdmin&#x304B;&#x3089;&#x63A5;&#x7D9A;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;&#x672C;&#x9805;&#x306E;&#x6700;&#x5F8C;&#x306B;&#x63A5;&#x7D9A;&#x65B9;&#x6CD5;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x3066;&#x304A;&#x304F;&#x306E;&#x3067;&#x53C2;&#x8003;&#x306B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;  </p>
+<p>&#x307E;&#x305F;&#x3001;<code>heroku config</code>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x8A2D;&#x5B9A;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x74B0;&#x5883;&#x5909;&#x6570;&#x3092;&#x8868;&#x793A;&#x3057;&#x3066;&#x304F;&#x308C;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x3059;&#x3002;<br>&#x305D;&#x306E;&#x305F;&#x3081;&#x3001;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x306B;&#x306F;&#x5148;&#x307B;&#x3069;&#x8A2D;&#x5B9A;&#x3057;&#x305F;<code>APP_KEY</code>&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
+<p>&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x60C5;&#x5831;&#x304C;&#x308F;&#x304B;&#x3063;&#x305F;&#x306E;&#x3067;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x74B0;&#x5883;&#x5909;&#x6570;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x60C5;&#x5831;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku config:set DB_CONNECTION=pgsql
+$ heroku config:set DB_HOST=[&#x30DB;&#x30B9;&#x30C8;&#x540D;]
+$ heroku config:set DB_PORT=[&#x30DD;&#x30FC;&#x30C8;]
+$ heroku config:set DB_DATABASE=[&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x540D;]
+$ heroku config:set DB_USERNAME=[&#x30E6;&#x30FC;&#x30B6;&#x540D;]
+$ heroku config:set DB_PASSWORD=[&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;]
+</code></pre><p>&#x3053;&#x308C;&#x3067;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x3068;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x7D10;&#x4ED8;&#x3051;&#x304C;&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<h3 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x753B;&#x9762;&#x30D1;&#x30B9;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x753B;&#x9762;&#x30D1;&#x30B9;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h3>
+<p>&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x74B0;&#x5883;&#x3067;&#x306F;&#x3001;HTTP&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;nginx&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF08;Laravel&#x306E;&#x74B0;&#x5883;&#x69CB;&#x7BC9;&#x3067;&#x300C;docker-compose up -d nginx&#x300D;&#x3068;&#x3046;&#x3044;&#x3046;&#x3088;&#x3046;&#x306B;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#xFF09;&#x3002;
+Heroku&#x3067;&#x306F;Apache&#x3092;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
+<p>&#x3068;&#x3044;&#x3063;&#x3066;&#x3082;&#x3001;&#x3053;&#x3053;&#x3067;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x306E;&#x306F;&#x3001;1&#x884C;&#x306E;&#x307F;&#x306E;&#x753B;&#x9762;&#x30D1;&#x30B9;&#x306E;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname/src
+$ echo web: vendor/bin/heroku-php-apache2 public/ &gt; Procfile
+</code></pre><p>&#x3053;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;<code>web: vendor/bin/heroku-php-apache2 public/</code>&#x3068;&#x66F8;&#x304D;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x300C;Procfile&#x300D;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x300C;projectname/src&#x300D;&#x914D;&#x4E0B;&#x306B;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x53CD;&#x6620;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x53CD;&#x6620;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;</h3>
+<p>&#x3044;&#x3088;&#x3044;&#x3088;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30EA;&#x30E2;&#x30FC;&#x30C8;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x306B;git&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;push&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ cd projectname
+$ git add .
+$ git commit -m &apos;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&apos;
+$ git subtree push --prefix app/ heroku master
+</code></pre><p>&#x6700;&#x5F8C;&#x306E;&#x884C;&#x306F;&#x3001;app/&#x914D;&#x4E0B;&#x3060;&#x3051;push&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x5C11;&#x3057;&#x66F8;&#x304D;&#x65B9;&#x304C;&#x8907;&#x96D1;&#x306B;&#x898B;&#x3048;&#x308B;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;<br>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x306B;Heroku&#x306E;&#x5B9F;&#x884C;&#x30ED;&#x30B0;&#x306E;&#x3088;&#x3046;&#x306A;&#x3082;&#x306E;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x3066;&#x3001;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x51FA;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;&#x81EA;&#x4F5C;&#x306E;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x304C;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x53CD;&#x6620;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#xFF01;<br>&#x305F;&#x3060;&#x3057;&#x3001;&#x307E;&#x3060;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x516C;&#x958B;&#x306F;&#x5B8C;&#x4E86;&#x3057;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;<br>&#x3053;&#x3053;&#x3067;&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x30DA;&#x30FC;&#x30B8;&#x306F;&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x72B6;&#x614B;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<h3 id="heroku&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;">Heroku&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;</h3>
+<p>&#x30A8;&#x30E9;&#x30FC;&#x306B;&#x306A;&#x308B;&#x306E;&#x306F;&#x3001;Heroku&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x3084;&#x8A2D;&#x5B9A;&#x304C;&#x53CD;&#x6620;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x305F;&#x3081;&#x3067;&#x3059;&#x3002;<br>Heroku&#x306B;&#x7D10;&#x4ED8;&#x3051;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3001;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x3084;&#x8A2D;&#x5B9A;&#x3092;&#x53CD;&#x6620;&#x3055;&#x305B;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x307E;&#x305A;&#x3001;migrate&#x3092;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku run &quot;php artisan migrate:install&quot;
+
+Running php artisan migrate:install on &#x2B22; laralabstep2... up, run.3189 (Free)
+Migration table created successfully.
+</code></pre><p>&#x6B21;&#x306B;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x3067;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku run &quot;php artisan migrate:status&quot;
+
+Running php artisan migrate:status on &#x2B22; laralabstep2... up, run.9034 (Free)
++------+------------------------------------------------+-------+
+| Ran? | Migration                                      | Batch |
++------+------------------------------------------------+-------+
+| No   | 2014_10_12_000000_create_users_table           |       |
+| No   | 2014_10_12_100000_create_password_resets_table |       |
+| No   | 2018_12_18_081501_create_bbs_table             |       |
++------+------------------------------------------------+-------+
+</code></pre><p>&#x5B58;&#x5728;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x305F;&#x3089;&#x3001;&#x3044;&#x3088;&#x3044;&#x3088;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x5B9F;&#x884C;&#x6642;&#x306B;&#x306F;&#x3001;&#x672C;&#x5F53;&#x306B;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3044;&#x3044;&#x304B;&#x306E;&#x78BA;&#x8A8D;&#x304C;&#x51FA;&#x308B;&#x306E;&#x3067;&#x300C;yes&#x300D;&#x3068;&#x6253;&#x3061;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku run &quot;php artisan migrate&quot;
+
+Running php artisan migrate on &#x2B22; laralabstep2... up, run.4824 (Free)
+**************************************
+*     Application In Production!     *
+**************************************
+
+ Do you really wish to run this command? (yes/no) [no]:
+ &gt; yes
+
+Migrating: 2014_10_12_000000_create_users_table
+Migrated:  2014_10_12_000000_create_users_table
+Migrating: 2014_10_12_100000_create_password_resets_table
+Migrated:  2014_10_12_100000_create_password_resets_table
+Migrating: 2018_12_18_081501_create_bbs_table
+Migrated:  2018_12_18_081501_create_bbs_table
+</code></pre><p>&#x304A;&#x75B2;&#x308C;&#x69D8;&#x3067;&#x3057;&#x305F;&#x3002;<br>&#x3053;&#x308C;&#x3067;&#x3001;Heroku&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x74B0;&#x5883;&#x3082;&#x3057;&#x3063;&#x304B;&#x308A;&#x6574;&#x3063;&#x305F;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<h3 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x3042;&#x3052;&#x305F;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304C;&#x52D5;&#x3044;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x306B;&#x3042;&#x3052;&#x305F;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304C;&#x52D5;&#x3044;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</h3>
+<p>&#x5B9F;&#x969B;&#x306B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304C;&#x52D5;&#x3044;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x53E9;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku open
+</code></pre><p>&#x3046;&#x307E;&#x304F;&#x3044;&#x3063;&#x3066;&#x3044;&#x308B;&#x3068;&#x3001;&#x4E0A;&#x8A18;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x304C;&#x958B;&#x304D;&#x3001;&#x81EA;&#x4F5C;&#x306E;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;  </p>
+<p><img src="../images/2_10_4.png" alt="2_10_4"></p>
+<h2 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x306B;&#x306F;&#xFF1F;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x306B;&#x306F;&#xFF1F;</h2>
+<p>Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306E;&#x5909;&#x66F4;&#x3092;&#x53CD;&#x6620;&#x3059;&#x308B;&#x3068;&#x304D;&#x306F;&#x3001;&#x300C;Heroku&#x306B;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x3092;&#x53CD;&#x6620;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;&#x300D;&#x3068;&#x540C;&#x3058;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x66F4;&#x65B0;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname
+$ git add .
+$ git commit -m &apos;&#x30B3;&#x30DF;&#x30C3;&#x30C8;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&apos;
+$ git subtree push --prefix app/ heroku master
+</code></pre><p>&#x307E;&#x305F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x5B9A;&#x7FA9;&#x306E;&#x5909;&#x66F4;&#x306A;&#x3069;&#x304C;&#x3042;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x4E0A;&#x8A18;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x5F8C;&#x306B;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3001;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x53CD;&#x6620;&#x3055;&#x305B;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku run &quot;php artisan migrate&quot;
+
+Running php artisan migrate on &#x2B22; laralabstep2... up, run.4824 (Free)
+**************************************
+*     Application In Production!     *
+**************************************
+
+ Do you really wish to run this command? (yes/no) [no]:
+ &gt; yes
+
+Migrating: 2018_12_18_081501_update_bbs_table
+Migrated:  2018_12_18_081501_update_bbs_table
+</code></pre><h2 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x306B;&#x306F;&#xFF1F;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x306B;&#x306F;&#xFF1F;</h2>
+<p>&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x30E9;&#x30A4;&#x30F3;&#x304B;&#x3089;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x53E9;&#x304F;&#x3068;Heroku&#x30A2;&#x30D7;&#x30EA;&#x304C;&#x524A;&#x9664;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku apps:destroy --app [&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;] --confirm [&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x540D;]
+</code></pre><p>Heroku&#x306E;Web&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304B;&#x3089;&#x3067;&#x3082;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x524A;&#x9664;&#x306F;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30ED;&#x30B0;&#x3067;laravel&#x306E;&#x30ED;&#x30B0;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x305F;&#x3044;">Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30ED;&#x30B0;&#x3067;Laravel&#x306E;&#x30ED;&#x30B0;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x305F;&#x3044;</h2>
+<p>&#x521D;&#x671F;&#x8A2D;&#x5B9A;&#x3067;&#x306F;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30ED;&#x30B0;&#x306B;&#x306F;&#x3001;Laravel&#x306E;&#x30A8;&#x30E9;&#x30FC;&#x30ED;&#x30B0;&#x306F;&#x51FA;&#x529B;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;<br>&#x3082;&#x3057;Laravel&#x306E;&#x30A8;&#x30E9;&#x30FC;&#x30ED;&#x30B0;&#x3092;&#x307F;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x74B0;&#x5883;&#x5909;&#x6570;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku config:set LOG_CHANNEL: errorlog
+</code></pre><p>&#x307E;&#x305F;&#x3001;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x898B;&#x308B;&#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x53E9;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ cd projectname
+$ heroku logs
+</code></pre><p>&#x3053;&#x308C;&#x3067;Heroku&#x30A2;&#x30D7;&#x30EA;&#x306E;&#x30ED;&#x30B0;&#x3092;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x3001;&#x305D;&#x3053;&#x306B;Laravel&#x306E;&#x30A8;&#x30E9;&#x30FC;&#x30ED;&#x30B0;&#x3082;&#x4E00;&#x7DD2;&#x306B;&#x51FA;&#x529B;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="heroku&#x306E;postgresql&#x306B;pgadmin&#x304B;&#x3089;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x65B9;&#x6CD5;">Heroku&#x306E;PostgreSQL&#x306B;pgAdmin&#x304B;&#x3089;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x65B9;&#x6CD5;</h2>
+<p>&#x63A5;&#x7D9A;&#x306B;&#x4F7F;&#x3046;pgAdmin&#x306F;1-7&#x306E;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x3067;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;pgAdmin&#x304C;&#x4F7F;&#x7528;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>pgAdmin&#x306B;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x305F;&#x3089;&#x3001;Heroku&#x306E;PostgreSQL&#x306E;DB&#x30B5;&#x30FC;&#x30D0;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>Quick Links&#x306E;&#x300C;Add New Server&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x304B;&#x3001;&#x5DE6;&#x5074;&#x306E;Server&#x3092;&#x9078;&#x629E;&#x3057;&#x3066;&#x304B;&#x3089;&#x4E0A;&#x90E8;&#x306E;&#x30BF;&#x30D6;&#x306B;&#x3042;&#x308B;&#x300C;Object&#xFF1E;Create&#xFF1E;Server&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x30DD;&#x30C3;&#x30D7;&#x30A2;&#x30C3;&#x30D7;&#x3057;&#x305F;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x8FFD;&#x52A0;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306B;&#x300C;heroku config&#x300D;&#x3067;&#x5165;&#x624B;&#x3057;&#x305F;DB&#x60C5;&#x5831;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ heroku config
+DATABASE_URL: postgres://[&#x30E6;&#x30FC;&#x30B6;&#x540D;]:[&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;]@[&#x30DB;&#x30B9;&#x30C8;&#x540D;]:[&#x30DD;&#x30FC;&#x30C8;]/[&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x540D;]
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x30D5;&#x30A9;&#x30FC;&#x30E0;</th>
+<th>&#x5165;&#x529B;&#x5185;&#x5BB9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General&#xFF1E;Name&#x3000;</td>
+<td>&#x597D;&#x304D;&#x306A;&#x540D;&#x524D;</td>
+</tr>
+<tr>
+<td>Connection&#xFF1E;Host name/address</td>
+<td>[&#x30DB;&#x30B9;&#x30C8;&#x540D;]</td>
+</tr>
+<tr>
+<td>Connection&#xFF1E;Port</td>
+<td>[&#x30DD;&#x30FC;&#x30C8;]</td>
+</tr>
+<tr>
+<td>Connection&#xFF1E;Maintenance database</td>
+<td>[&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x540D;]</td>
+</tr>
+<tr>
+<td>Connection&#xFF1E;Username</td>
+<td>[&#x30E6;&#x30FC;&#x30B6;&#x540D;]</td>
+</tr>
+<tr>
+<td>Connection&#xFF1E;Password</td>
+<td>[&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;]</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5165;&#x529B;&#x304C;&#x7D42;&#x308F;&#x3063;&#x305F;&#x3089;&#x300C;Save&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x3046;&#x307E;&#x304F;&#x3044;&#x3051;&#x3070;&#x3001;&#x5DE6;&#x5074;&#x306E;Server&#x306E;&#x914D;&#x4E0B;&#x306B;&#x300C;General&#xFF1E;Name&#x300D;&#x3067;&#x8A2D;&#x5B9A;&#x3057;&#x305F;&#x540D;&#x524D;&#x306E;Heroku&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30B5;&#x30FC;&#x30D0;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="09-db-design.html" class="navigation navigation-prev " aria-label="Previous page: 9. データーベース設計書とは何か">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="11-task.html" class="navigation navigation-next " aria-label="Next page: 11. 最終課題">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"10. Herokuで世界に公開してみよう","level":"1.3.10","depth":2,"next":{"title":"11. 最終課題","level":"1.3.11","depth":2,"path":"step2/11-task.md","ref":"step2/11-task.md","articles":[]},"previous":{"title":"9. データーベース設計書とは何か","level":"1.3.9","depth":2,"path":"step2/09-db-design.md","ref":"step2/09-db-design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/10-heroku.md","mtime":"2018-12-27T06:39:16.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T06:39:49.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

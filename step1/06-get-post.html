@@ -1,0 +1,606 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>6. PHPでGET/POSTをやってみる · チームラボオンラインスキルアップ課題</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="teamLab inc">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07-db.html" />
+    
+    
+    <link rel="prev" href="05-php.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    オンラインスキルアップ課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    STEP1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01-internet.html">
+            
+                <a href="01-internet.html">
+            
+                    
+                    1. インターネットについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02-http.html">
+            
+                <a href="02-http.html">
+            
+                    
+                    2. WEBサーバについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03-html-css.html">
+            
+                <a href="03-html-css.html">
+            
+                    
+                    3. HTMLとCSSについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04a-docker.html">
+            
+                <a href="04a-docker.html">
+            
+                    
+                    4-a. 【Windows】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="04b-docker.html">
+            
+                <a href="04b-docker.html">
+            
+                    
+                    4-b. 【Mac】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="05-php.html">
+            
+                <a href="05-php.html">
+            
+                    
+                    5. PHPの説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="06-get-post.html">
+            
+                <a href="06-get-post.html">
+            
+                    
+                    6. PHPでGET/POSTをやってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="07-db.html">
+            
+                <a href="07-db.html">
+            
+                    
+                    7. データベースについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="08-sql.html">
+            
+                <a href="08-sql.html">
+            
+                    
+                    8. SQLを書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="09-php-sql.html">
+            
+                <a href="09-php-sql.html">
+            
+                    
+                    9. PHPでデータベースを操作してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="10-git.html">
+            
+                <a href="10-git.html">
+            
+                    
+                    10. GitとGitHubについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    STEP2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../step2/01-framework.html">
+            
+                <a href="../step2/01-framework.html">
+            
+                    
+                    1. フレームワークについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../step2/02-environment.html">
+            
+                <a href="../step2/02-environment.html">
+            
+                    
+                    2. Laravelで初期ページを表示してみよう(環境構築)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../step2/03-laravel-demo.html">
+            
+                <a href="../step2/03-laravel-demo.html">
+            
+                    
+                    3. Laravelを触ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../step2/04-laravel-form.html">
+            
+                <a href="../step2/04-laravel-form.html">
+            
+                    
+                    4. 入力フォームを作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../step2/05-laravel-bbs.html">
+            
+                <a href="../step2/05-laravel-bbs.html">
+            
+                    
+                    5. LaravelとPostgreSQLで掲示板を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../step2/06-laravel-login.html">
+            
+                <a href="../step2/06-laravel-login.html">
+            
+                    
+                    6. Laravelで掲示板にログイン機能を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../step2/07-upload.html">
+            
+                <a href="../step2/07-upload.html">
+            
+                    
+                    7. 画像アップロードしよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../step2/08-specification.html">
+            
+                <a href="../step2/08-specification.html">
+            
+                    
+                    8. 画面仕様書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../step2/09-db-design.html">
+            
+                <a href="../step2/09-db-design.html">
+            
+                    
+                    9. データーベース設計書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../step2/10-heroku.html">
+            
+                <a href="../step2/10-heroku.html">
+            
+                    
+                    10. Herokuで世界に公開してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../step2/11-task.html">
+            
+                <a href="../step2/11-task.html">
+            
+                    
+                    11. 最終課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../step2/insta_document.html">
+            
+                <a href="../step2/insta_document.html">
+            
+                    
+                    インスタグラムもどき画面仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >6. PHPでGET/POSTをやってみる</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="step1-6php&#x3067;getpost&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;">STEP1-6.PHP&#x3067;GET,POST&#x3092;&#x53D7;&#x3051;&#x53D6;&#x308B;</h1>
+<p><a href="02-http.html">2.HTTP&#x306E;&#x3057;&#x304F;&#x307F;</a>&#x306B;&#x304A;&#x3044;&#x3066;&#x3001;GET&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x5F97;&#x3068;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;POST&#x3068;&#x540C;&#x69D8;&#x306E;&#x5F62;&#x5F0F;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;URL&#x306E;&#x6700;&#x5F8C;&#x306B;&#x4ED8;&#x52A0;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x308A;&#x9001;&#x4FE1;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;Windows10&#x306E;homeEdition&#x306E;&#x65B9;&#x306F; <a href="">http://&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;:9000/index.php?comment=ohayooooo</a> &#x3068;&#x3044;&#x3046;URL&#x3067;&#x3001;&#x305D;&#x308C;&#x4EE5;&#x5916;&#x306E;&#x65B9;&#x306F; <a href="http://&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;:9000/index.php?comment=ohayooooo" target="_blank">http://localhost:9000/index.php?comment=ohayooooo</a> &#x3068;&#x3044;&#x3046;URL&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x9001;&#x4FE1;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x5834;&#x5408;&#x3001;URL&#x304C;&#x4F38;&#x3073;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;URL&#x306E;&#x9577;&#x3055;&#x5236;&#x9650;&#x306B;&#x5F15;&#x3063;&#x304B;&#x304B;&#x308B;&#x5834;&#x5408;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x6C17;&#x3092;&#x3064;&#x3051;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>POST&#x3067;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x3092;PHP&#x304B;&#x3089;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+index.php&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>POST&#x306E;&#x30B5;&#x30F3;&#x30D7;&#x30EB;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="php"><span class="hljs-meta">&lt;?php</span>
+      <span class="hljs-comment">//comment&#x304C;POST&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306A;&#x3089;</span>
+      <span class="hljs-keyword">if</span>(<span class="hljs-keyword">isset</span>($_POST[<span class="hljs-string">&quot;comment&quot;</span>])){
+        <span class="hljs-comment">//&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x3057;&#x3066;&#x304B;&#x3089;&#x8868;&#x793A;</span>
+        $comment = htmlspecialchars($_POST[<span class="hljs-string">&quot;comment&quot;</span>]);
+        <span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;&#x3042;&#x306A;&#x305F;&#x306E;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x306F;&#x300C; ${comment} &#x300D;&#x3067;&#x3059;&#x3002;&quot;</span>);
+      } <span class="hljs-keyword">else</span> {
+    <span class="hljs-meta">?&gt;</span></span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;index.php&quot;</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;comment&quot;</span> /&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;&#x9001;&#x4FE1;&quot;</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+    <span class="php"><span class="hljs-meta">&lt;?php</span>
+      }
+    <span class="hljs-meta">?&gt;</span></span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>GET&#x3067;&#x9001;&#x53D7;&#x4FE1;&#x3092;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;$_POST&#x306E;&#x90E8;&#x5206;&#x3092;$_GET&#x306B;&#x3001;method=&quot;POST&quot;&#x3092;method=&quot;GET&quot;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;<br>GET,POST&#x3067;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x306F;&#x305D;&#x308C;&#x305E;&#x308C;$_GET,$_POST&#x3068;&#x3044;&#x3046;&#x9023;&#x60F3;&#x914D;&#x5217;&#x306B;&#x683C;&#x7D0D;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;isset&#x3067;&#x4E2D;&#x8EAB;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3001;&#x5B58;&#x5728;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x8868;&#x793A;&#x3001;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x8868;&#x793A;&#x306E;&#x969B;&#x306B;&#x306F;htmlspecialchars&#x95A2;&#x6570;&#x3067;&#x5FC5;&#x305A;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x30A8;&#x30B9;&#x30B1;&#x30FC;&#x30D7;&#x3068;&#x306F;&#x3001;&#x7279;&#x6B8A;&#x306A;&#x610F;&#x5473;&#x304C;&#x3042;&#x308A;&#x8868;&#x793A;&#x3067;&#x304D;&#x306A;&#x3044;&#x6587;&#x5B57;&#x3092;&#x4ED6;&#x306E;&#x6587;&#x5B57;&#x5217;&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3059;&#x3002;HTML&#x306E;&#x5834;&#x5408;&#x3001;&lt;&gt;&#x306A;&#x3069;&#x306E;&#x6587;&#x5B57;&#x306F;&#x30BF;&#x30B0;&#x306B;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x308B;&#x305F;&#x3081;&#x3001;&#x305D;&#x308C;&#x3089;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x306B;&#x306F;<code>&amp;lt;</code> <code>&amp;gt;</code>&#x3068;&#x66F8;&#x304F;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4E00;&#x65B9;&#x3001;&#x9001;&#x4FE1;&#x90E8;&#x306F;form&#x30BF;&#x30B0;&#x3092;&#x7528;&#x3044;&#x3066;HTML&#x3067;&#x66F8;&#x304B;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;method&#x3067;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x3001;action&#x3067;&#x9001;&#x4FE1;&#x5148;URL&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;form&#x30BF;&#x30B0;&#x5185;&#x306E;input,select,textarea&#x30BF;&#x30B0;&#x306E;&#x5185;&#x5BB9;&#x304C;&#x9001;&#x4FE1;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x9001;&#x4FE1;&#x3059;&#x308B;&#x969B;&#x306E;&#x8B58;&#x5225;&#x540D;&#x306F;name&#x3067;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p><strong>[&#x8AB2;&#x984C;]&#x9001;&#x4FE1;&#x3059;&#x308B;&#x5185;&#x5BB9;&#x3092;&#x5909;&#x66F4;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;</strong><br>&#x63B2;&#x793A;&#x677F;&#x306B;&#x5FC5;&#x8981;&#x306A;&#x60C5;&#x5831;&#x3068;&#x3057;&#x3066;&#x306F;&#x5C11;&#x306A;&#x304F;&#x3068;&#x3082;&#x540D;&#x524D;&#x3068;&#x672C;&#x6587;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;&#x540D;&#x524D;&#x3082;&#x9001;&#x4FE1;&#x3057;&#x3001;&#x53D7;&#x3051;&#x53D6;&#x308B;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x4F59;&#x529B;&#x306E;&#x3042;&#x308B;&#x4EBA;&#x306F;&#x30BF;&#x30A4;&#x30C8;&#x30EB;&#x30FB;&#x6587;&#x5B57;&#x8272;&#x30FB;&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x306A;&#x3069;&#x3082;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05-php.html" class="navigation navigation-prev " aria-label="Previous page: 5. PHPの説明">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07-db.html" class="navigation navigation-next " aria-label="Next page: 7. データベースについて">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"6. PHPでGET/POSTをやってみる","level":"1.2.7","depth":2,"next":{"title":"7. データベースについて","level":"1.2.8","depth":2,"path":"step1/07-db.md","ref":"step1/07-db.md","articles":[]},"previous":{"title":"5. PHPの説明","level":"1.2.6","depth":2,"path":"step1/05-php.md","ref":"step1/05-php.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step1/06-get-post.md","mtime":"2018-12-27T06:39:16.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T06:39:49.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

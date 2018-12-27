@@ -1,0 +1,637 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>4-a. 【Windows】Dockerと開発環境の作り方 · チームラボオンラインスキルアップ課題</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="teamLab inc">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04b-docker.html" />
+    
+    
+    <link rel="prev" href="03-html-css.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    オンラインスキルアップ課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    STEP1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01-internet.html">
+            
+                <a href="01-internet.html">
+            
+                    
+                    1. インターネットについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02-http.html">
+            
+                <a href="02-http.html">
+            
+                    
+                    2. WEBサーバについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03-html-css.html">
+            
+                <a href="03-html-css.html">
+            
+                    
+                    3. HTMLとCSSについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="04a-docker.html">
+            
+                <a href="04a-docker.html">
+            
+                    
+                    4-a. 【Windows】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="04b-docker.html">
+            
+                <a href="04b-docker.html">
+            
+                    
+                    4-b. 【Mac】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="05-php.html">
+            
+                <a href="05-php.html">
+            
+                    
+                    5. PHPの説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="06-get-post.html">
+            
+                <a href="06-get-post.html">
+            
+                    
+                    6. PHPでGET/POSTをやってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="07-db.html">
+            
+                <a href="07-db.html">
+            
+                    
+                    7. データベースについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="08-sql.html">
+            
+                <a href="08-sql.html">
+            
+                    
+                    8. SQLを書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="09-php-sql.html">
+            
+                <a href="09-php-sql.html">
+            
+                    
+                    9. PHPでデータベースを操作してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="10-git.html">
+            
+                <a href="10-git.html">
+            
+                    
+                    10. GitとGitHubについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    STEP2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../step2/01-framework.html">
+            
+                <a href="../step2/01-framework.html">
+            
+                    
+                    1. フレームワークについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../step2/02-environment.html">
+            
+                <a href="../step2/02-environment.html">
+            
+                    
+                    2. Laravelで初期ページを表示してみよう(環境構築)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../step2/03-laravel-demo.html">
+            
+                <a href="../step2/03-laravel-demo.html">
+            
+                    
+                    3. Laravelを触ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../step2/04-laravel-form.html">
+            
+                <a href="../step2/04-laravel-form.html">
+            
+                    
+                    4. 入力フォームを作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../step2/05-laravel-bbs.html">
+            
+                <a href="../step2/05-laravel-bbs.html">
+            
+                    
+                    5. LaravelとPostgreSQLで掲示板を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../step2/06-laravel-login.html">
+            
+                <a href="../step2/06-laravel-login.html">
+            
+                    
+                    6. Laravelで掲示板にログイン機能を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../step2/07-upload.html">
+            
+                <a href="../step2/07-upload.html">
+            
+                    
+                    7. 画像アップロードしよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../step2/08-specification.html">
+            
+                <a href="../step2/08-specification.html">
+            
+                    
+                    8. 画面仕様書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../step2/09-db-design.html">
+            
+                <a href="../step2/09-db-design.html">
+            
+                    
+                    9. データーベース設計書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../step2/10-heroku.html">
+            
+                <a href="../step2/10-heroku.html">
+            
+                    
+                    10. Herokuで世界に公開してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../step2/11-task.html">
+            
+                <a href="../step2/11-task.html">
+            
+                    
+                    11. 最終課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../step2/insta_document.html">
+            
+                <a href="../step2/insta_document.html">
+            
+                    
+                    インスタグラムもどき画面仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >4-a. 【Windows】Dockerと開発環境の作り方</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="step1-4&#x3010;windows&#x3011;docker&#x3068;&#x958B;&#x767A;&#x74B0;&#x5883;&#x306E;&#x4F5C;&#x308A;&#x65B9;">STEP1-4.&#x3010;Windows&#x3011;Docker&#x3068;&#x958B;&#x767A;&#x74B0;&#x5883;&#x306E;&#x4F5C;&#x308A;&#x65B9;</h1>
+<p>&#x672C;&#x8AB2;&#x984C;&#x3067;&#x306F;&#x5B9F;&#x6A5F;&#x306B;&#x76F4;&#x63A5;&#x958B;&#x767A;&#x74B0;&#x5883;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x305B;&#x305A;&#x306B;&#x3001;&#x300C;Docker&#x300D;&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x578B;&#x4EEE;&#x60F3;&#x5316;&#x6280;&#x8853;&#x3092;&#x7528;&#x3044;&#x3066;&#x958B;&#x767A;&#x74B0;&#x5883;&#x3092;&#x69CB;&#x7BC9;&#x3057;&#x307E;&#x3059;&#x3002;<br>Docker&#x3092;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;&#x5F93;&#x6765;&#x578B;&#x306E;&#x4EEE;&#x60F3;&#x5316;&#x6280;&#x8853;&#x306E;&#x3088;&#x3046;&#x306B;&#x30CF;&#x30FC;&#x30C9;&#x30A6;&#x30A7;&#x30A2;&#x306E;&#x6A5F;&#x80FD;&#x3092;&#x3059;&#x3079;&#x3066;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x3067;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x9AD8;&#x5EA6;&#x306A;&#x4ED5;&#x7D44;&#x307F;&#x304C;&#x4E0D;&#x8981;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;&#x305D;&#x306E;&#x305F;&#x3081;Docker&#x3092;&#x7528;&#x3044;&#x308B;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;&#x9AD8;&#x901F;&#x3067;&#x79FB;&#x690D;&#x6027;&#x306E;&#x9AD8;&#x3044;&#x74B0;&#x5883;&#x304C;&#x5BB9;&#x6613;&#x306B;&#x69CB;&#x7BC9;&#x53EF;&#x80FD;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>Docker&#x306B;&#x3064;&#x3044;&#x3066;&#x306E;&#x8A73;&#x7D30;&#x306A;&#x8AAC;&#x660E;&#x306F;&#x5272;&#x611B;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x307E;&#x305A;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x624B;&#x9806;&#x306B;&#x5F93;&#x3063;&#x3066;Docker&#x3067;&#x958B;&#x767A;&#x74B0;&#x5883;&#x3092;&#x69CB;&#x7BC9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="&#x3010;windows&#x3011;docker&#x306B;&#x3088;&#x308B;&#x74B0;&#x5883;&#x69CB;&#x7BC9;&#x624B;&#x9806;">&#x3010;Windows&#x3011;Docker&#x306B;&#x3088;&#x308B;&#x74B0;&#x5883;&#x69CB;&#x7BC9;&#x624B;&#x9806;</h2>
+<h4 id="docker&#x306E;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x30FB;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x624B;&#x9806;">Docker&#x306E;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x30FB;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x624B;&#x9806;</h4>
+<ul>
+<li><a href="https://docs.docker.com/toolbox/overview/#ready-to-get-started" target="_blank">&#x3053;&#x3061;&#x3089;</a>&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3001;&#x300C;Get Docker Toolbox for Windows&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x304B;&#x3089;Docker&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</li>
+<li>&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;Docker&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x753B;&#x9762;&#x3067;&#x306F;&#x3059;&#x3079;&#x3066;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306E;&#x9078;&#x629E;&#x80A2;&#x306E;&#x307E;&#x307E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3092;&#x9032;&#x3081;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</li>
+<li>&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;&#x3089;&#x300C;Docker Quickstart Terminal&#x300D;&#x30B7;&#x30E7;&#x30FC;&#x30C8;&#x30AB;&#x30C3;&#x30C8;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3001;Docker&#x7528;&#x306E;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</li>
+<li>&#x8D77;&#x52D5;&#x3057;&#x305F;&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x5185;&#x3067;&#x4E0B;&#x8A18;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;Docker&#x306E;&#x52D5;&#x4F5C;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;Docker&#x306E;&#x30D0;&#x30FC;&#x30B8;&#x30E7;&#x30F3;&#x60C5;&#x5831;&#x304C;&#x51FA;&#x529B;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;  <pre><code>$ docker -v
+Docker version 18.03.0-ce, build 0520e24302
+</code></pre></li>
+<li>&#x3053;&#x3061;&#x3089;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3082;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<pre><code>$ docker-compose -v
+docker-compose version 1.20.1, build 5d8c71b2
+</code></pre></li>
+</ul>
+<h4 id="docker&#x306B;&#x3088;&#x308B;&#x958B;&#x767A;&#x74B0;&#x5883;&#x306E;&#x69CB;&#x7BC9;&#x624B;&#x9806;&#xFF08;php&#x30FB;postgresql&#x30FB;nginx&#x30FB;pgadmin&#xFF09;">Docker&#x306B;&#x3088;&#x308B;&#x958B;&#x767A;&#x74B0;&#x5883;&#x306E;&#x69CB;&#x7BC9;&#x624B;&#x9806;&#xFF08;PHP&#x30FB;PostgreSQL&#x30FB;Nginx&#x30FB;pgAdmin&#xFF09;</h4>
+<p>Docker&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x69CB;&#x7BC9;&#x6E08;&#x307F;&#x306E;&#x958B;&#x767A;&#x74B0;&#x5883;&#x3092;&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x30DE;&#x30B7;&#x30F3;&#x306B;&#x5C0E;&#x5165;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li><a href="https://github.com/team-lab/skillup-php-step1" target="_blank">&#x3053;&#x3061;&#x3089;</a>&#x306E;&#x300C;Clone or download&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x62BC;&#x4E0B;&#x3057;&#x3001;&#x300C;Download Zip&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x62BC;&#x4E0B;&#x3067;&#x958B;&#x767A;&#x74B0;&#x5883;&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+<li>&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4EFB;&#x610F;&#x306E;&#x5834;&#x6240;&#x306B;&#x89E3;&#x51CD;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;(Windows&#x306E;&#x5834;&#x5408;&#x3001;&#x6A29;&#x9650;&#x30A8;&#x30E9;&#x30FC;&#x3067;docker&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304C;&#x8D77;&#x52D5;&#x3057;&#x306A;&#x3044;&#x3053;&#x3068;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;&#x56DE;&#x7B54;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x306F;&#x3001;Windows&#x306B;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x3066;&#x3044;&#x308B;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x968E;&#x5C64;&#x4E0B;&#x300C;C:\Users\yuuu1\&#x3088;&#x308A;&#x4E0B;&#x300D;&#x306B;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;)&#x3002;</li>
+<li><p>&#x30BF;&#x30FC;&#x30DF;&#x30CA;&#x30EB;&#x3092;&#x958B;&#x304D;&#x89E3;&#x51CD;&#x3057;&#x305F;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x30FC;&#x306B;&#x79FB;&#x52D5;&#x3057;&#x307E;&#x3059;(&#x4EE5;&#x4E0B;&#x306F;C:\Users\yuuu1\Downloads\&#x3067;&#x89E3;&#x51CD;&#x3057;&#x305F;&#x4F8B;)&#x3002;</p>
+<pre><code>// &#x89E3;&#x51CD;&#x3057;&#x305F;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x30FC;&#x306B;&#x79FB;&#x52D5;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;
+$ cd ~/Downloads/skillup-php-step1-master
+</code></pre></li>
+<li><p>&#x79FB;&#x52D5;&#x3057;&#x305F;&#x3089;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x4F5C;&#x6210;&#x30FB;&#x958B;&#x59CB;&#x3057;&#x307E;&#x3059;</p>
+<pre><code>$ docker-compose up -d
+// &#x6700;&#x7D42;&#x7684;&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
+Creating skillup-php-step1-master_php_1   ... done
+Creating skillup-php-step1-master_nginx_1      ... done
+Creating skillup-php-step1_pgsql_1   ... done
+Creating skillup-php-step1_pgadmin_1 ... done
+</code></pre></li>
+<li>&#x300C;docker ps&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E00;&#x89A7;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x300C;docker-compose up -d&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x6210;&#x529F;&#x3057;&#x3066;&#x3044;&#x305F;&#x3089;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E00;&#x89A7;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x3002;<pre><code>$ docker ps
+// &#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
+CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                           NAMES
+5a51c057e9d3        nginx                     &quot;nginx -g &apos;daemon of&#x2026;&quot;   9 minutes ago       Up 9 minutes        0.0.0.0:9000-&gt;80/tcp            skillup-php-step1_nginx_1
+3e5b91bd2d2d        skillup-php-step1_php     &quot;docker-php-entrypoi&#x2026;&quot;   9 minutes ago       Up 9 minutes        9000/tcp                        skillup-php-step1_php_1
+b1a75d41e914        dpage/pgadmin4            &quot;/entrypoint.sh&quot;         9 minutes ago       Up 9 minutes        443/tcp, 0.0.0.0:5050-&gt;80/tcp   skillup-php-step1_pgadmin_1
+e961862278a7        skillup-php-step1_pgsql   &quot;docker-entrypoint.s&#x2026;&quot;   9 minutes ago       Up 5 minutes        0.0.0.0:5432-&gt;5432/tcp          skillup-php-step1_pgsql_1
+</code></pre></li>
+<li>&#x3053;&#x306E;&#x6642;&#x70B9;&#x3067;&#x958B;&#x767A;&#x74B0;&#x5883;&#x304C;&#x6B63;&#x5E38;&#x306B;&#x7ACB;&#x3061;&#x4E0A;&#x304C;&#x3063;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x306A;&#x306E;&#x3067;&#x5B9F;&#x969B;&#x306B;&#x52D5;&#x4F5C;&#x3067;&#x304D;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3001;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;<pre><code>$ docker-machine ip
+192.168.99.100&#x3000;&#x2190;&#x3000;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;
+</code></pre></li>
+<li><p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x3092;&#x958B;&#x3044;&#x3066;&#x300C;<a href="">http://&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;:9000/index.html</a>&#x300D;&#xFF08;&#x2191;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x300C;<a href="http://192.168.99.100:9000/index.html" target="_blank">http://192.168.99.100:9000/index.html</a>&#x300D;&#xFF09;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306F;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;&#x3092; 192.168.99.10&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;<br><img src="../images/1_4_2.png" width="300"><br>&#x6B21;&#x306B;<a href="">http://&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;:9000/check_db.php</a>&#x300D;&#xFF08;&#x2191;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x300C;<a href="http://192.168.99.100:9000/check_db.php" target="_blank">http://192.168.99.100:9000/check_db.php</a>&#x300D;&#xFF09;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;DB&#x304C;&#x9023;&#x643A;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br><img src="../images/1_4_3.png" width="300"><br>&#x6B21;&#x306B;&#x300C;<a href="http://192.168.99.100:5050" target="_blank">http://192.168.99.100:5050</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x300C;pgAdmin&#x300D;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<br><img src="../images/1_4_4.png" width="300">  </p>
+</li>
+<li><p>&#x6B63;&#x5E38;&#x306B;&#x52D5;&#x4F5C;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x305F;&#x3089;&#x3001;&#x300C;docker-compose down&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x524A;&#x9664;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code>$ docker-compose down
+// &#x4EE5;&#x4E0B;&#x306E;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
+Stopping skillup-php-step1_nginx_1   ... done
+Stopping skillup-php-step1_php_1     ... done
+Stopping skillup-php-step1_pgadmin_1 ... done
+Stopping skillup-php-step1_pgsql_1   ... done
+Removing skillup-php-step1_nginx_1   ... done
+Removing skillup-php-step1_php_1     ... done
+Removing skillup-php-step1_pgadmin_1 ... done
+Removing skillup-php-step1_pgsql_1   ... done
+Removing network skillup-php-step1_default
+</code></pre></li>
+<li><p>&#x300C;docker ps&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x4E00;&#x89A7;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x5148;&#x307B;&#x3069;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ docker ps
+// &#x4EE5;&#x4E0B;&#x306E;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
+CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                            NAMES
+</code></pre></li>
+<li><p>&#x300C;<a href="http://192.168.99.100:9000" target="_blank">http://192.168.99.100:9000</a>&#x300D;&#x300C;<a href="http://192.168.99.100:50501" target="_blank">http://192.168.99.100:5050</a>&#x300D;&#x306B;&#x3082;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03-html-css.html" class="navigation navigation-prev " aria-label="Previous page: 3. HTMLとCSSについて">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04b-docker.html" class="navigation navigation-next " aria-label="Next page: 4-b. 【Mac】Dockerと開発環境の作り方">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"4-a. 【Windows】Dockerと開発環境の作り方","level":"1.2.4","depth":2,"next":{"title":"4-b. 【Mac】Dockerと開発環境の作り方","level":"1.2.5","depth":2,"path":"step1/04b-docker.md","ref":"step1/04b-docker.md","articles":[]},"previous":{"title":"3. HTMLとCSSについて","level":"1.2.3","depth":2,"path":"step1/03-html-css.md","ref":"step1/03-html-css.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step1/04a-docker.md","mtime":"2018-12-27T06:39:16.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T06:39:49.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

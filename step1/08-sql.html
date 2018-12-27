@@ -1,0 +1,679 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>8. SQLを書いてみる · チームラボオンラインスキルアップ課題</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="teamLab inc">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="09-php-sql.html" />
+    
+    
+    <link rel="prev" href="07-db.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    オンラインスキルアップ課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    STEP1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="01-internet.html">
+            
+                <a href="01-internet.html">
+            
+                    
+                    1. インターネットについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="02-http.html">
+            
+                <a href="02-http.html">
+            
+                    
+                    2. WEBサーバについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="03-html-css.html">
+            
+                <a href="03-html-css.html">
+            
+                    
+                    3. HTMLとCSSについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="04a-docker.html">
+            
+                <a href="04a-docker.html">
+            
+                    
+                    4-a. 【Windows】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="04b-docker.html">
+            
+                <a href="04b-docker.html">
+            
+                    
+                    4-b. 【Mac】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="05-php.html">
+            
+                <a href="05-php.html">
+            
+                    
+                    5. PHPの説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="06-get-post.html">
+            
+                <a href="06-get-post.html">
+            
+                    
+                    6. PHPでGET/POSTをやってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="07-db.html">
+            
+                <a href="07-db.html">
+            
+                    
+                    7. データベースについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.9" data-path="08-sql.html">
+            
+                <a href="08-sql.html">
+            
+                    
+                    8. SQLを書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="09-php-sql.html">
+            
+                <a href="09-php-sql.html">
+            
+                    
+                    9. PHPでデータベースを操作してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="10-git.html">
+            
+                <a href="10-git.html">
+            
+                    
+                    10. GitとGitHubについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    STEP2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../step2/01-framework.html">
+            
+                <a href="../step2/01-framework.html">
+            
+                    
+                    1. フレームワークについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../step2/02-environment.html">
+            
+                <a href="../step2/02-environment.html">
+            
+                    
+                    2. Laravelで初期ページを表示してみよう(環境構築)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../step2/03-laravel-demo.html">
+            
+                <a href="../step2/03-laravel-demo.html">
+            
+                    
+                    3. Laravelを触ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../step2/04-laravel-form.html">
+            
+                <a href="../step2/04-laravel-form.html">
+            
+                    
+                    4. 入力フォームを作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../step2/05-laravel-bbs.html">
+            
+                <a href="../step2/05-laravel-bbs.html">
+            
+                    
+                    5. LaravelとPostgreSQLで掲示板を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../step2/06-laravel-login.html">
+            
+                <a href="../step2/06-laravel-login.html">
+            
+                    
+                    6. Laravelで掲示板にログイン機能を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../step2/07-upload.html">
+            
+                <a href="../step2/07-upload.html">
+            
+                    
+                    7. 画像アップロードしよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../step2/08-specification.html">
+            
+                <a href="../step2/08-specification.html">
+            
+                    
+                    8. 画面仕様書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../step2/09-db-design.html">
+            
+                <a href="../step2/09-db-design.html">
+            
+                    
+                    9. データーベース設計書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../step2/10-heroku.html">
+            
+                <a href="../step2/10-heroku.html">
+            
+                    
+                    10. Herokuで世界に公開してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../step2/11-task.html">
+            
+                <a href="../step2/11-task.html">
+            
+                    
+                    11. 最終課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../step2/insta_document.html">
+            
+                <a href="../step2/insta_document.html">
+            
+                    
+                    インスタグラムもどき画面仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >8. SQLを書いてみる</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="step1-8sql&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;">STEP1-8.SQL&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;</h1>
+<h2 id="pgadmin&#x304B;&#x3089;sql&#x3092;&#x66F8;&#x304D;&#x8FBC;&#x3080;">pgAdmin&#x304B;&#x3089;SQL&#x3092;&#x66F8;&#x304D;&#x8FBC;&#x3080;</h2>
+<p>7&#x3067;&#x306F;&#x3001;&#x8996;&#x899A;&#x7684;&#x306B;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x3044;<a href="http://e-words.jp/w/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%A7%E3%83%BC%E3%82%B9.html" target="_blank">UI</a>&#x3092;&#x5099;&#x3048;&#x305F;pgAdmin&#x7528;&#x3044;&#x3066;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x64CD;&#x4F5C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x305F;&#x3002;<br>&#x5B9F;&#x969B;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x64CD;&#x4F5C;&#x306F;&#x30AF;&#x30A8;&#x30EA;(&#x51E6;&#x7406;&#x8981;&#x6C42;&#x3092;SQL&#x3068;&#x3044;&#x3046;&#x8A00;&#x8A9E;&#x306B;&#x3088;&#x3063;&#x3066;&#x6587;&#x5B57;&#x5217;&#x3067;&#x8868;&#x3057;&#x305F;&#x3082;&#x306E;)&#x3092;&#x7528;&#x3044;&#x3066;&#x884C;&#x3044;&#x307E;&#x3059;&#x3002;<br>pgAdmin&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x3068;&#x69D8;&#x3005;&#x306A;&#x64CD;&#x4F5C;&#x3092;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x4E0A;&#x3067;&#x7C21;&#x5358;&#x306B;&#x884C;&#x3046;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x304C;&#x3001;&#x81EA;&#x5206;&#x306E;Web&#x30B5;&#x30A4;&#x30C8;&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x306B;&#x306F;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30E0;&#x304B;&#x3089;SQL&#x306B;&#x3088;&#x308B;&#x30AF;&#x30A8;&#x30EA;&#x3092;&#x767A;&#x884C;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x305D;&#x3053;&#x3067;&#x3001;&#x4ECA;&#x5EA6;&#x306F;SQL&#x306B;&#x3088;&#x3063;&#x3066;&#x30C7;&#x30FC;&#x30BF;&#x30FC;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x64CD;&#x4F5C;&#x3092;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>pgAdmin&#x3067;&#x306F;&#x3001;SQL&#x304B;&#x3089;DB&#x3092;&#x64CD;&#x4F5C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;&#x306A;&#x306E;&#x3067;&#x3084;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>pgAdmin&#x306E;&#x30DA;&#x30FC;&#x30B8;&#x3092;&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x304B;&#x3089;&#x958B;&#x304D;&#x3001;&#x5DE6;&#x5074;&#x306E;&#x30E1;&#x30CB;&#x30E5;&#x30FC;&#x304B;&#x3089;7&#x3067;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x300C;test_comments&#x300D;&#x3092;&#x9078;&#x629E;&#x3057;&#x305F;&#x3089;&#x6E96;&#x5099;&#x306F;&#x5B8C;&#x4E86;&#x3067;&#x3059;&#x3002;</p>
+<p><img src="../images/1_8_1.png" width="300">  </p>
+<h2 id="insert&#x6587;">INSERT&#x6587;</h2>
+<p>&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0;&#x306B;&#x306F;INSERT&#x6587;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x300C;Scripts&#xFF1E;INSERT Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x304B;&#x4E0A;&#x306E;&#x30BF;&#x30D6;&#x304B;&#x3089;&#x300C;Object&#xFF1E;Scripts&#xFF1E;INSERT Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
+<p><img src="../images/1_8_2.png" alt="1_8_2"></p>
+<p>&#x6B21;&#x306B;&#x3001;&#x958B;&#x3044;&#x305F;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x5165;&#x529B;&#x3057;&#x3066;&#x3001;&#x30AB;&#x30DF;&#x30CA;&#x30EA;&#x30DE;&#x30FC;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p><img src="../images/1_8_3.png" alt="1_8_3"></p>
+<p>INSERT&#x304C;&#x6210;&#x529F;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x30B9;&#x30AF;&#x30EA;&#x30FC;&#x30F3;&#x30B7;&#x30E7;&#x30C3;&#x30C8;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306E;&#x4E0B;&#x306B;&#x300C;Query returned successfully&#x300D;&#x3068;&#x51FA;&#x529B;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<p>SQL&#x6587;&#x3092;&#x5C11;&#x3057;&#x89E3;&#x8AAC;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">public</span>.test_comments(<span class="hljs-keyword">name</span>, <span class="hljs-built_in">text</span>)
+    <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;&#x72D0;&#x8033;&#x306E;&#x304A;&#x3058;&#x3055;&#x3093;&apos;</span>, <span class="hljs-string">&apos;&#x4E16;&#x77E5;&#x8F9B;&#x3044;&#x306E;&#x3058;&#x3083;&#x301C;&apos;</span>);
+</code></pre>
+<p>&#x3053;&#x306E;SQL&#x6587;&#x306F;&#x300C;test_comments&#x300D;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x3001;&#x300C;name&#x300D;&#x304C;&apos;&#x72D0;&#x8033;&#x306E;&#x304A;&#x3058;&#x3055;&#x3093;&apos;&#x3001;&#x300C;text&#x300D;&#x306B;&apos;&#x4E16;&#x77E5;&#x8F9B;&#x3044;&#x306E;&#x3058;&#x3083;&#x301C;&apos;&#x3068;&#x3044;&#x3046;&#x5024;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x610F;&#x5473;&#x306E;&#x30AF;&#x30A8;&#x30EA;&#xFF08;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;&#x30FB;&#x51E6;&#x7406;&#xFF09;&#x306E;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x5B9A;&#x7FA9;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x3044;&#x305F;&#x300C;id&#x300D;&#x300C;created_at&#x300D;&#x300C;updated_at&#x300D;&#x30AB;&#x30E9;&#x30E0;&#x306E;&#x5024;&#x304C;&#x7701;&#x7565;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x306B;&#x6C17;&#x304C;&#x3064;&#x304F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;&#x3053;&#x308C;&#x306F;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#x6642;&#xFF08;<a href="../07-db.md">07.&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x3064;&#x3044;&#x3066;</a>&#xFF09;&#x306B;AI&#x3084;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;&#x3092;&#x8A2D;&#x5B9A;&#x3057;&#x3066;&#x3042;&#x308B;&#x305F;&#x3081;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x3061;&#x306A;&#x307F;&#x306B;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x306F;&#x30AB;&#x30F3;&#x30DE;&#x3067;&#x533A;&#x5207;&#x308B;&#x3053;&#x3068;&#x3067;&#x8907;&#x6570;&#x540C;&#x6642;&#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x3044;&#x304F;&#x3064;&#x304B;&#x5024;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> <span class="hljs-keyword">public</span>.test_comments(<span class="hljs-keyword">name</span>, <span class="hljs-built_in">text</span>)
+    <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;&#x732B;&#x307F;&#x305F;&#x3044;&#x306A;&#x5730;&#x7E1B;&#x970A;&apos;</span>, <span class="hljs-string">&apos;&#x3055;&#x3063;&#x304D;&#x306E;&#x306F;&#x79D8;&#x5BC6;&#x306B;&#x3057;&#x3066;&#x304F;&#x308C;&#x306B;&#x3083;&#x3093;&apos;</span>),
+        (<span class="hljs-string">&apos;&#x30EC;&#x30B9;&#x306E;&#x7DB2;&apos;</span>, <span class="hljs-string">&apos;&#x753B;&#x50CF;&#x5224;&#x5225;&#x306A;&#x3089;&#x4EFB;&#x305B;&#x306A;&#x3055;&#x3044;&apos;</span>),
+        (<span class="hljs-string">&apos;&#x7DD1;&#x306E;&#x9AEA;&#x306E;&#x5929;&#x4F7F;&apos;</span>, <span class="hljs-string">&apos;&#x3042; &#x3089;&#x3063;&#x3064;&#x3041;&#x3063;&#x3064;&#x3041; &#x3084; &#x308A;&#x3073;&#x3060;&#x3073;&#x308A;&#x3093;&apos;</span>),
+        (<span class="hljs-string">&apos;&#x72D0;&#x8033;&#x306E;&#x304A;&#x3058;&#x3055;&#x3093;&apos;</span>, <span class="hljs-string">&apos;&#x3084;&#x3063;&#x3066;&#x307F;&#x306A;&#x3051;&#x308C;&#x3070;&#x3001;&#x59CB;&#x307E;&#x3089;&#x306A;&#x3044;&#xFF01;&apos;</span>),
+        (<span class="hljs-string">&apos;&#x732B;&#x307F;&#x305F;&#x3044;&#x306A;&#x5730;&#x7E1B;&#x970A;&apos;</span>, <span class="hljs-string">&apos;&#x5996;&#x602A;&#x306E;&#x305B;&#x3044;&#x306A;&#x306E;&#x306D;&apos;</span>);
+</code></pre>
+<p>1&#x4EF6;&#x306E;&#x5834;&#x5408;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x3001;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306B;&#x4E0A;&#x8A18;SQL&#x6587;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x3001;&#x30AB;&#x30DF;&#x30CA;&#x30EA;&#x30DE;&#x30FC;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;INSERT&#x304C;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="select&#x6587;">SELECT&#x6587;</h2>
+<p>&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x3068;&#x304D;&#x306F;SELECT&#x6587;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x300C;Scripts&#xFF1E;SELECT Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x304B;&#x4E0A;&#x306E;&#x30BF;&#x30D6;&#x304B;&#x3089;&#x300C;Object&#xFF1E;Scripts&#xFF1E;SELECT Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>INSERT&#x6587;&#x3092;&#x4F5C;&#x3063;&#x305F;&#x6642;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x304C;&#x958B;&#x304F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x3067;&#x958B;&#x304F;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306B;&#x66F8;&#x304D;&#x8FBC;&#x307E;&#x308C;&#x3066;&#x3044;&#x308B;SQL&#x6587;&#x304C;&#x300C;test_comments&#x300D;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5168;&#x4EF6;&#x53D6;&#x5F97;&#x3059;&#x308B;SQL&#x6587;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;&#x305D;&#x306E;&#x307E;&#x307E;&#x30AB;&#x30DF;&#x30CA;&#x30EA;&#x30DE;&#x30FC;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p><img src="../images/1_8_4.png" alt="1_8_4"></p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">id</span>, <span class="hljs-keyword">name</span>, <span class="hljs-built_in">text</span>, created_at, updated_at
+    <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments;
+</code></pre>
+<p>&#x3053;&#x306E;SQL&#x6587;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x300C;test_comments&#x300D;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x767B;&#x9332;&#x3055;&#x308C;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x5168;&#x3066;&#x3092;&#x53D6;&#x5F97;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x7279;&#x5B9A;&#x306E;&#x30AB;&#x30E9;&#x30E0;&#xFF08;&#x5217;&#xFF09;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3060;&#x3051;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x305F;&#x3044;&#x6642;&#x306F;&#x3001;&#x300C;SELECT&#x300D;&#x306E;&#x5F8C;&#x306B;&#x30AB;&#x30E9;&#x30E0;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x7D5E;&#x308A;&#x8FBC;&#x3081;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;&#x300C;name&#x300D;&#x3068;&#x300C;text&#x300D;&#x3060;&#x3051;&#x306B;&#x7D5E;&#x308A;&#x8FBC;&#x3080;&#x5834;&#x5408;&#x306F;&#x3001;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>, <span class="hljs-built_in">text</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments;
+</code></pre>
+<p>&#x3053;&#x306E;SQL&#x6587;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3001;&#x300C;name&#x300D;&#x3068;&#x300C;text&#x300D;&#x3060;&#x3051;&#x306E;&#x5024;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="../images/1_8_5.png" alt="1_8_5"></p>
+<h3 id="select&#x6587;&#x306E;&#x5F8C;&#x308D;&#x306B;&#x3064;&#x3051;&#x308B;&#x53E5;">SELECT&#x6587;&#x306E;&#x5F8C;&#x308D;&#x306B;&#x3064;&#x3051;&#x308B;&#x53E5;</h3>
+<p>SELECT&#x6587;&#x306E;&#x5F8C;&#x308D;&#x306B;&#x306F;&#x3001;&#x53E5;&#x3068;&#x3044;&#x3046;&#x3082;&#x306E;&#x3092;&#x4ED8;&#x3051;&#x3066;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x6B86;&#x3069;&#x3067;&#x3059;&#x3002;
+&#x53E5;&#x3092;&#x4F7F;&#x3046;&#x3068;&#x3001;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#xFF08;&#x884C;&#xFF09;&#x3092;&#x7D5E;&#x3063;&#x305F;&#x308A;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x9806;&#x756A;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x308A;&#x3001;SELECT&#x6587;&#x306E;&#x4E2D;&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8A08;&#x7B97;&#x3057;&#x3066;&#x51FA;&#x3057;&#x305F;&#x308A;&#x3001;&#x8272;&#x3005;&#x306A;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;&#x307E;&#x305F;&#x53E5;&#x306F;&#x8907;&#x6570;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x3066;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x57FA;&#x672C;&#x7684;&#x306A;&#x53E5;&#x3068;&#x4F7F;&#x7528;&#x4F8B;&#x3092;&#x898B;&#x3066;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h4 id="where&#x53E5;">WHERE&#x53E5;</h4>
+<p>WHERE&#x53E5;&#x306F;&#x3001;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#xFF08;&#x884C;&#xFF09;&#x3092;&#x7D5E;&#x308B;&#x6761;&#x4EF6;&#x3092;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x4F8B;&#x3048;&#x3070;&#x300C;name&#x300D;&#x3067;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x7D5E;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments <span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">&apos;&#x72D0;&#x8033;&#x306E;&#x304A;&#x3058;&#x3055;&#x3093;&apos;</span>;
+</code></pre>
+<p><img src="../images/1_8_6.png" alt="1_8_6"></p>
+<p>WHERE&#x4EE5;&#x4E0B;&#x306B;<code>name = &apos;&#x72D0;&#x8033;&#x306E;&#x304A;&#x3058;&#x3055;&#x3093;&apos;</code>&#x3068;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x300C;name&#x300D;&#x304C;&#x300C;&#x72D0;&#x8033;&#x306E;&#x304A;&#x3058;&#x3055;&#x3093;&#x300D;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3060;&#x3051;&#x304C;&#x62BD;&#x51FA;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x306E;&#x3067;&#x3059;&#x3002;
+&#x56E0;&#x307F;&#x306B;&#x3001;&#x3053;&#x306E;SQL&#x6587;&#x3067;&#x3001;SELECT&#x306E;&#x5F8C;&#x308D;&#x306B;&#x66F8;&#x304D;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x300C;<code>*</code>&#x300D;&#x306F;&#x300C;&#x5168;&#x3066;&#x306E;&#x30AB;&#x30E9;&#x30E0;&#x300D;&#x3092;&#x610F;&#x5473;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<h4 id="order-by&#x53E5;">ORDER BY&#x53E5;</h4>
+<p>ORDER BY&#x53E5;&#x306F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x9806;&#x756A;&#x3092;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x4F5C;&#x6210;&#x65E5;&#x6642;&#x304C;&#x9045;&#x3044;&#x9806;&#x306B;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> created_at <span class="hljs-keyword">ASC</span>;
+</code></pre>
+<p><img src="../images/1_8_7.png" alt="1_8_7"></p>
+<p><code>created_at ASC</code>&#x3068;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x300C;created_at&#x300D;&#x30AB;&#x30E9;&#x30E0;&#x306E;&#x5024;&#x3092;&#x53E4;&#x3044;&#x9806;&#x756A;&#x306B;&#x4E26;&#x3073;&#x66FF;&#x3048;&#x3066;&#x304F;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x56E0;&#x307F;&#x306B;&#x3001;&#x300C;ASC&#x300D;&#x306F;&#x53E4;&#x3044;&#x9806;&#xFF08;&#x6607;&#x9806;&#xFF09;&#x306B;&#x4E26;&#x3073;&#x66FF;&#x3048;&#x307E;&#x3059;&#x304C;&#x3001;&#x300C;DESC&#x300D;&#x3060;&#x3068;&#x65B0;&#x3057;&#x3044;&#x9806;&#xFF08;&#x964D;&#x9806;&#xFF09;&#x306B;&#x4E26;&#x3073;&#x66FF;&#x3048;&#x3066;&#x304F;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+<h4 id="limit-offset&#x53E5;">LIMIT OFFSET&#x53E5;</h4>
+<p>LIMIT OFFSET &#x53E5;&#x306F;&#x3001;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x4F4D;&#x7F6E;&#x3068;&#x6570;&#x3092;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x4F8B;&#x3048;&#x3070;&#x3001;&#xFF12;&#x756A;&#x76EE;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x304B;&#x3089;&#xFF13;&#x4EF6;&#xFF08;&#xFF14;&#x756A;&#x76EE;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#xFF09;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments <span class="hljs-keyword">LIMIT</span> <span class="hljs-number">3</span> <span class="hljs-keyword">OFFSET</span> <span class="hljs-number">2</span>;
+</code></pre>
+<p><img src="../images/1_8_8.png" alt="1_8_8"></p>
+<p><code>LIMIT 3 OFFSET 2</code>&#x306E;&#x90E8;&#x5206;&#x3067;&#x3001;&#xFF12;&#x756A;&#x76EE;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#xFF08;&#x6700;&#x521D;&#x306E;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306F;0&#x756A;&#x76EE;&#x3068;&#x6570;&#x3048;&#x307E;&#x3059;&#xFF09;&#x304B;&#x3089;&#xFF13;&#x4EF6;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x305F;&#x3060;&#x3057;&#x3001;SQL&#x306E;&#x69CB;&#x6587;&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3054;&#x3068;&#x306B;&#x5FAE;&#x5999;&#x306B;&#x7570;&#x306A;&#x308A;&#x3001;LIMIT OFFSET&#x53E5;&#x306F;PostgreSQL&#x72EC;&#x81EA;&#x306E;&#x69CB;&#x6587;&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;PostgreSQL&#x4EE5;&#x5916;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3092;&#x4F7F;&#x3046;&#x6642;&#x306F;&#x6CE8;&#x610F;&#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x3002;</p>
+<h4 id="group-by&#x53E5;&#x3001;count&#x95A2;&#x6570;">GROUP BY&#x53E5;&#x3001;COUNT&#x95A2;&#x6570;</h4>
+<p>GROUP BY&#x53E5;&#x306F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x5316;&#x3057;&#x3001;&#x96C6;&#x8A08;&#x3057;&#x305F;&#x7D50;&#x679C;&#x3092;&#x8FD4;&#x3059;&#x3088;&#x3046;&#x306B;&#x6307;&#x5B9A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+COUNT&#x95A2;&#x6570;&#x306F;&#x53E5;&#x3067;&#x306F;&#x306A;&#x3044;&#x3067;&#x3059;&#x304C;&#x3001;&#x548C;&#x306E;&#x8A08;&#x7B97;&#x7D50;&#x679C;&#x306E;&#x30AB;&#x30E9;&#x30E0;&#xFF08;&#x5217;&#xFF09;&#x3092;&#x8FFD;&#x52A0;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x308C;&#x3067;&#x306F;&#x3001;&#x300C;name&#x300D;&#x306B;&#x5165;&#x3063;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x3067;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x5206;&#x3051;&#x3092;&#x3057;&#x3066;&#x3001;&#x305D;&#x306E;&#x300C;name&#x300D;&#x3092;&#x6301;&#x3064;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x4F55;&#x500B;&#x305A;&#x3064;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3092;&#x691C;&#x7D22;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">name</span>, <span class="hljs-keyword">COUNT</span>(*) <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments <span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">name</span>;
+</code></pre>
+<p><img src="../images/1_8_9.png" alt="1_8_9"></p>
+<p><code>COUNT(*)</code>&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x6570;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+<code>GROUP BY name</code>&#x3067;&#x300C;name&#x300D;&#x306E;&#x6587;&#x5B57;&#x5217;&#x3067;&#x307E;&#x3068;&#x3081;&#x308B;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x3001;&#x53E5;&#x3084;&#x95A2;&#x6570;&#x306F;&#x307E;&#x3060;&#x307E;&#x3060;&#x3042;&#x308A;&#x3001;&#x7D44;&#x307F;&#x5408;&#x308F;&#x305B;&#x308B;&#x3053;&#x3068;&#x3067;&#x8272;&#x3005;&#x306A;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x62BD;&#x51FA;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x306E;&#x3067;&#x3001;&#x8272;&#x3005;&#x8A66;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<h2 id="delete&#x6587;">DELETE&#x6587;</h2>
+<p>&#x4ECA;&#x5EA6;&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x524A;&#x9664;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x524A;&#x9664;&#x306B;&#x306F;DELETE&#x6587;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x300C;Scripts&#xFF1E;DELETE Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x304B;&#x4E0A;&#x306E;&#x30BF;&#x30D6;&#x304B;&#x3089;&#x300C;Object&#xFF1E;Scripts&#xFF1E;DELETE Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>INSERT&#x6587;&#x3084;SELECT&#x6587;&#x3092;&#x4F5C;&#x3063;&#x305F;&#x6642;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x304C;&#x958B;&#x304F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x300C;test_comments&#x300D;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x304B;&#x3089;&#x300C;text&#x300D;&#x304C;&#x300C;&#x5996;&#x602A;&#x306E;&#x305B;&#x3044;&#x306A;&#x306E;&#x306D;&#x300D;&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3060;&#x3051;&#x3092;&#x524A;&#x9664;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments <span class="hljs-keyword">WHERE</span> <span class="hljs-built_in">text</span> = <span class="hljs-string">&apos;&#x5996;&#x602A;&#x306E;&#x305B;&#x3044;&#x306A;&#x306E;&#x306D;&apos;</span>;
+</code></pre>
+<p>INSERT&#x6587;&#x3084;SELECT&#x6587;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x6642;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x3001;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306B;&#x4E0A;&#x8A18;SQL&#x6587;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x3001;&#x30AB;&#x30DF;&#x30CA;&#x30EA;&#x30DE;&#x30FC;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;DELETE&#x6587;&#x304C;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="../images/1_8_10.png" alt="1_8_10"></p>
+<p>&#x3053;&#x306E;DELETE&#x6587;&#x3092;&#x898B;&#x308B;&#x3068;&#x3001;SELECT&#x6587;&#x3068;&#x3088;&#x304F;&#x4F3C;&#x3066;&#x304A;&#x308A;&#x3001;<code>DELETE</code>&#x306E;&#x90E8;&#x5206;&#x3092;<code>SELECT *</code>&#x306B;&#x3057;&#x305F;&#x3089;&#x3001;&#x300C;text&#x300D;&#x30AB;&#x30E9;&#x30E0;&#x306E;&#x6587;&#x5B57;&#x5217;&#x304C;&#x300C;&#x5996;&#x602A;&#x306E;&#x305B;&#x3044;&#x306A;&#x306E;&#x306D;&#x300D;&#x3068;&#x3044;&#x3046;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x691C;&#x7D22;&#x3059;&#x308B;SQL&#x6587;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;
+FROM&#x4EE5;&#x964D;&#x306E;&#x6587;&#x3067;&#x524A;&#x9664;&#x5BFE;&#x8C61;&#x3068;&#x306A;&#x308B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x6761;&#x4EF6;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3001;&#x305D;&#x306E;&#x6761;&#x4EF6;&#x3067;&#x62BD;&#x51FA;&#x3055;&#x308C;&#x308B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;&#x6587;&#x3068;&#x8003;&#x3048;&#x308B;&#x3068;&#x3053;&#x3053;&#x3067;&#x306F;&#x7406;&#x89E3;&#x3057;&#x3084;&#x3059;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="update&#x6587;">UPDATE&#x6587;</h2>
+<p>&#x6700;&#x5F8C;&#x306B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x66F4;&#x65B0;&#x3092;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x66F4;&#x65B0;&#x306B;&#x306F;UPDATE&#x6587;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x53F3;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x3066;&#x300C;Scripts&#xFF1E;UPDATE Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x304B;&#x4E0A;&#x306E;&#x30BF;&#x30D6;&#x304B;&#x3089;&#x300C;Object&#xFF1E;Scripts&#xFF1E;UPDATE Script&#x300D;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>INSERT&#x6587;&#x3084;SELECT&#x6587;&#x3001;DELETE&#x6587;&#x3092;&#x4F5C;&#x3063;&#x305F;&#x6642;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x304C;&#x958B;&#x304F;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>UPDATE&#x6587;&#x3082;&#x66F4;&#x65B0;&#x5BFE;&#x8C61;&#x3092;&#x7D5E;&#x308B;&#x3084;&#x308A;&#x65B9;&#x306F;SELECT&#x6587;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x308C;&#x3067;&#x306F;&#x3001;&#x300C;text&#x300D;&#x304C;&#x300C;&#x753B;&#x50CF;&#x5224;&#x5225;&#x306A;&#x3089;&#x4EFB;&#x305B;&#x306A;&#x3055;&#x3044;&#x300D;&#x3068;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x300C;name&#x300D;&#x306E;&#x5024;&#x3092;&#x5909;&#x3048;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">UPDATE</span> <span class="hljs-keyword">public</span>.test_comments
+    <span class="hljs-keyword">SET</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">&apos;&#x632F;&#x3063;&#x305F;&#x7DB2;&apos;</span> <span class="hljs-keyword">WHERE</span> <span class="hljs-built_in">text</span> = <span class="hljs-string">&apos;&#x753B;&#x50CF;&#x5224;&#x5225;&#x306A;&#x3089;&#x4EFB;&#x305B;&#x306A;&#x3055;&#x3044;&apos;</span>;
+</code></pre>
+<p>&#x3053;&#x308C;&#x307E;&#x3067;&#x306E;SQL&#x6587;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x6642;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x3001;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306B;&#x4E0A;&#x8A18;SQL&#x6587;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x3001;&#x30AB;&#x30DF;&#x30CA;&#x30EA;&#x30DE;&#x30FC;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;UPDATE&#x6587;&#x304C;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="../images/1_8_11.png" alt="1_8_11"></p>
+<p>&#x5148;&#x307B;&#x3069;&#x306E;DELETE&#x6587;&#x3068;&#x540C;&#x3058;&#x3088;&#x3046;&#x306B;&#x3001;WHERE&#x4EE5;&#x4E0B;&#x306E;<code>WHERE text = &apos;&#x753B;&#x50CF;&#x5224;&#x5225;&#x306A;&#x3089;&#x4EFB;&#x305B;&#x306A;&#x3055;&#x3044;&apos;</code>&#x3067;&#x66F4;&#x65B0;&#x5BFE;&#x8C61;&#x3068;&#x306A;&#x308B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x691C;&#x7D22;&#x6587;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x3057;&#x3066;<code>SET name = &apos;&#x632F;&#x3063;&#x305F;&#x7DB2;&apos;</code>&#x3067;&#x300C;name&#x300D;&#x306E;&#x5024;&#x3092;&#x3069;&#x3093;&#x306A;&#x5024;&#x306B;&#x5909;&#x66F4;&#x3059;&#x308B;&#x304B;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x5909;&#x66F4;&#x304C;&#x53CD;&#x6620;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3001;SELECT&#x6587;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>SELECT Script&#x30BF;&#x30D6;&#x3092;&#x958B;&#x3044;&#x3066;&#x3001;&#x4EE5;&#x4E0B;&#x306E;SQL&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x3001;&#x30AB;&#x30DF;&#x30CA;&#x30EA;&#x30DE;&#x30FC;&#x30AF;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">public</span>.test_comments <span class="hljs-keyword">WHERE</span> <span class="hljs-built_in">text</span> = <span class="hljs-string">&apos;&#x753B;&#x50CF;&#x5224;&#x5225;&#x306A;&#x3089;&#x4EFB;&#x305B;&#x306A;&#x3055;&#x3044;&apos;</span>;
+</code></pre>
+<p>&#x3061;&#x3083;&#x3093;&#x3068;&#x5909;&#x66F4;&#x304C;&#x3067;&#x304D;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x7D50;&#x679C;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p><img src="../images/1_8_12.png" alt="1_8_12"></p>
+<p>&#x3053;&#x308C;&#x3067;&#x3001;&#x4E3B;&#x8981;&#x306A;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;SQL&#x6587;&#x306B;&#x3088;&#x308B;&#x64CD;&#x4F5C;&#x306E;&#x8AAC;&#x660E;&#x306F;&#x7D42;&#x308F;&#x308A;&#x3067;&#x3059;&#x3002;<br>SQL&#x6587;&#x3082;&#x305D;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3067;&#x3001;&#x8272;&#x3005;&#x306A;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3068;&#x3068;&#x3082;&#x306B;&#x3001;&#x5927;&#x304D;&#x304F;&#x30D1;&#x30D5;&#x30A9;&#x30FC;&#x30DE;&#x30F3;&#x30B9;&#x304C;&#x5909;&#x308F;&#x308B;&#x306E;&#x3067;&#x3001;&#x8272;&#x3005;&#x306A;SQL&#x6587;&#x3092;&#x8A66;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
+<hr>
+<p><strong>[&#x8AB2;&#x984C;]SQL&#x3092;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;</strong><br>&#x307E;&#x305A;&#x306F;INSERT&#x6587;&#x3067;&#x3055;&#x3089;&#x306B;10&#x500B;&#x304F;&#x3089;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x6B21;&#x306B;SELECT&#x6587;&#x3084;UPDATE&#x6587;&#x306A;&#x3069;&#x3092;&#x8272;&#x3005;&#x8A66;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x63B2;&#x793A;&#x677F;&#x3068;&#x3057;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;&#x969B;&#x306F;&#x3069;&#x306E;&#x3088;&#x3046;&#x306A;&#x30AF;&#x30A8;&#x30EA;&#x304C;&#x5FC5;&#x8981;&#x306B;&#x306A;&#x308B;&#x304B;&#x3082;&#x8003;&#x3048;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="07-db.html" class="navigation navigation-prev " aria-label="Previous page: 7. データベースについて">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="09-php-sql.html" class="navigation navigation-next " aria-label="Next page: 9. PHPでデータベースを操作してみる">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"8. SQLを書いてみる","level":"1.2.9","depth":2,"next":{"title":"9. PHPでデータベースを操作してみる","level":"1.2.10","depth":2,"path":"step1/09-php-sql.md","ref":"step1/09-php-sql.md","articles":[]},"previous":{"title":"7. データベースについて","level":"1.2.8","depth":2,"path":"step1/07-db.md","ref":"step1/07-db.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step1/08-sql.md","mtime":"2018-12-27T06:39:16.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T06:39:49.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

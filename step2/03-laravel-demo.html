@@ -1,0 +1,644 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3. Laravelを触ってみよう · チームラボオンラインスキルアップ課題</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="teamLab inc">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-laravel-form.html" />
+    
+    
+    <link rel="prev" href="02-environment.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    オンラインスキルアップ課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    STEP1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../step1/01-internet.html">
+            
+                <a href="../step1/01-internet.html">
+            
+                    
+                    1. インターネットについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../step1/02-http.html">
+            
+                <a href="../step1/02-http.html">
+            
+                    
+                    2. WEBサーバについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../step1/03-html-css.html">
+            
+                <a href="../step1/03-html-css.html">
+            
+                    
+                    3. HTMLとCSSについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../step1/04a-docker.html">
+            
+                <a href="../step1/04a-docker.html">
+            
+                    
+                    4-a. 【Windows】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../step1/04b-docker.html">
+            
+                <a href="../step1/04b-docker.html">
+            
+                    
+                    4-b. 【Mac】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../step1/05-php.html">
+            
+                <a href="../step1/05-php.html">
+            
+                    
+                    5. PHPの説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../step1/06-get-post.html">
+            
+                <a href="../step1/06-get-post.html">
+            
+                    
+                    6. PHPでGET/POSTをやってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../step1/07-db.html">
+            
+                <a href="../step1/07-db.html">
+            
+                    
+                    7. データベースについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../step1/08-sql.html">
+            
+                <a href="../step1/08-sql.html">
+            
+                    
+                    8. SQLを書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../step1/09-php-sql.html">
+            
+                <a href="../step1/09-php-sql.html">
+            
+                    
+                    9. PHPでデータベースを操作してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../step1/10-git.html">
+            
+                <a href="../step1/10-git.html">
+            
+                    
+                    10. GitとGitHubについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    STEP2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01-framework.html">
+            
+                <a href="01-framework.html">
+            
+                    
+                    1. フレームワークについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02-environment.html">
+            
+                <a href="02-environment.html">
+            
+                    
+                    2. Laravelで初期ページを表示してみよう(環境構築)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="03-laravel-demo.html">
+            
+                <a href="03-laravel-demo.html">
+            
+                    
+                    3. Laravelを触ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="04-laravel-form.html">
+            
+                <a href="04-laravel-form.html">
+            
+                    
+                    4. 入力フォームを作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="05-laravel-bbs.html">
+            
+                <a href="05-laravel-bbs.html">
+            
+                    
+                    5. LaravelとPostgreSQLで掲示板を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="06-laravel-login.html">
+            
+                <a href="06-laravel-login.html">
+            
+                    
+                    6. Laravelで掲示板にログイン機能を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="07-upload.html">
+            
+                <a href="07-upload.html">
+            
+                    
+                    7. 画像アップロードしよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="08-specification.html">
+            
+                <a href="08-specification.html">
+            
+                    
+                    8. 画面仕様書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="09-db-design.html">
+            
+                <a href="09-db-design.html">
+            
+                    
+                    9. データーベース設計書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="10-heroku.html">
+            
+                <a href="10-heroku.html">
+            
+                    
+                    10. Herokuで世界に公開してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="11-task.html">
+            
+                <a href="11-task.html">
+            
+                    
+                    11. 最終課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="insta_document.html">
+            
+                <a href="insta_document.html">
+            
+                    
+                    インスタグラムもどき画面仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3. Laravelを触ってみよう</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="step2-3laravel&#x3092;&#x89E6;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;">STEP2-3.Laravel&#x3092;&#x89E6;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;</h1>
+<p>&#x3053;&#x306E;&#x7BC0;&#x3067;&#x306F;&#x524D;&#x7BC0;&#x3067;&#x74B0;&#x5883;&#x69CB;&#x7BC9;&#x3057;&#x305F;&#x3001; Laravel&#x306E;&#x57FA;&#x672C;&#x7684;&#x306A;&#x4F7F;&#x3044;&#x65B9;&#x3068;&#x6A5F;&#x80FD;&#x306B;&#x3064;&#x3044;&#x3066;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x307E;&#x305F;&#x3001;<a href="https://team-lab.github.io/skillup-php/step2/01-framework.html" target="_blank">STEP2-1</a>&#x3067;&#x8AAC;&#x660E;&#x3057;&#x305F;&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x30EF;&#x30FC;&#x30AF;&#x3068;MVC&#x306E;&#x6982;&#x5FF5;&#x306B;&#x3064;&#x3044;&#x3066;&#x3082;&#x3001;&#x5B9F;&#x969B;&#x306B;Laravel&#x3092;&#x89E6;&#x308A;&#x306A;&#x304C;&#x3089;&#x7406;&#x89E3;&#x3092;&#x6DF1;&#x3081;&#x3066;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="1-&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;">1. &#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;</h2>
+<p>&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x4EE5;&#x4E0B;&#x306E;URL&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x304C;&#x3042;&#x3063;&#x305F;&#x3068;&#x60F3;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>http://localhost/user
+</code></pre><p>&#x3053;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x306B;&#x3088;&#x3063;&#x3066;laravel&#x306F;URL&#x306E;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x4EE5;&#x4E0B;&#x306B;&#x7D10;&#x3065;&#x304F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;&#x3053;&#x306E;&#x4F8B;&#x3067;&#x306F;URL&#x306E;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x90E8;&#x5206;&#x300C;localhost&#x300D;&#x4EE5;&#x4E0B;&#x306E;&#x300C;/user&#x300D;&#x306B;&#x7D10;&#x4ED8;&#x3044;&#x305F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;  </p>
+<p>MVC&#x306B;&#x304A;&#x3044;&#x3066;&#x3001;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x304C;&#x62C5;&#x3046;&#x5F79;&#x5272;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;  </p>
+<ul>
+<li>Model&#x306B;DB&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x542B;&#x3081;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x308F;&#x305B;&#x308B;&#x3002;  </li>
+<li>View&#x306B;&#x5B9F;&#x969B;&#x306E;&#x753B;&#x9762;&#x51FA;&#x529B;&#x3092;&#x884C;&#x308F;&#x305B;&#x308B;&#x3002;</li>
+</ul>
+<p>&#x3067;&#x306F;&#x5B9F;&#x969B;&#x306B;user&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x300C;/user&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x304C;&#x3042;&#x3063;&#x305F;&#x969B;&#x306B;user&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306B;&#x8A18;&#x8FF0;&#x3055;&#x308C;&#x305F;&#x51E6;&#x7406;&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<p>&#x300C;/app/http/controller/UserController.php&#x300D;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x4EE5;&#x4E0B;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-/app/http/controller/UserController.php">&lt;?php
+namespace App\Http\Controllers;
+class UserController extends Controller
+{
+    public function index()
+    {
+        // &#x305F;&#x3060;&#x306E;&#x5909;&#x6570;&#x5B9A;&#x7FA9;&#x3067;&#x3059;&#x304C;&#x3001;&#x3053;&#x3053;&#x3067;Model&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x308F;&#x305B;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;&#xFF08;&#x5F8C;&#x8FF0;&#xFF09;&#x3002;
+        $name = &apos;yamada taro&apos;;
+
+        // &#x3053;&#x3053;&#x3067;user&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x300C;message&#x300D;&#x3092;&#x6E21;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;
+        return view(&apos;user&apos;, [&apos;name&apos; =&gt; $name]);
+    }
+}
+</code></pre>
+<p>&#x3053;&#x3053;&#x3067;&#x306F;UserController&#x3068;&#x3044;&#x3046;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;[&apos;message&apos; =&gt; $message]&#x3067;user&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6E21;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="2-&#x30D3;&#x30E5;&#x30FC;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;&#x753B;&#x9762;&#x306E;&#x4F5C;&#x6210;">2. &#x30D3;&#x30E5;&#x30FC;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;(&#x753B;&#x9762;&#x306E;&#x4F5C;&#x6210;)</h2>
+<p>&#x73FE;&#x6642;&#x70B9;&#x3067;&#x306F;UserController&#x304B;&#x3089;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x306F;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x306E;&#x3067;&#x7528;&#x610F;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
+<p>/resources/views/&#x5185;&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x5185;&#x5BB9;&#x3092;user.blade.php&#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x3067;&#x4FDD;&#x5B58;&#x3057;&#x3001;<br>&#x3053;&#x3061;&#x3089;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5B9F;&#x969B;&#x306E;&#x8868;&#x793A;&#x5185;&#x5BB9;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;  </p>
+<pre><code class="lang-/resources/views/user.blade.php">&lt;!-- UserController&#x304B;&#x3089;&#x6E21;&#x3055;&#x308C;&#x305F;message&#x3092;&#x8868;&#x793A;&#x3059;&#x308B; --&gt;
+&lt;h1&gt;Hello!! {{$name}}&lt;/h1&gt;
+</code></pre>
+<h2 id="3-&#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x884C;&#x3044;&#x3001;url&#x3068;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x3066;&#x307F;&#x308B;">3. &#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x884C;&#x3044;&#x3001;URL&#x3068;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x3066;&#x307F;&#x308B;</h2>
+<p>&#x73FE;&#x6642;&#x70B9;&#x3067;&#x306F; <a href="http://localhost/user" target="_blank">http://localhost/user</a> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3082;UserController&#x306E;&#x51E6;&#x7406;&#x306F;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;<br>Laravel&#x3067;&#x306F;/routes/web.php&#x306B;&#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;URL&#x3068;&#x547C;&#x51FA;&#x3055;&#x308C;&#x308B;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3067;&#x306F;&#x5B9F;&#x969B;&#x306B;URL&#x306E;&#x300C;/user&#x300D;&#x90E8;&#x5206;&#x3068;&#x3001;&#x5148;&#x307B;&#x3069;&#x4F5C;&#x6210;&#x3057;&#x305F;UserController&#x3092;&#x7D10;&#x3065;&#x3051;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>/routes/web.php&#x306B;&#x4EE5;&#x4E0B;&#x3092;&#x8FFD;&#x8A18;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-/routes/web.php">Route::get(&apos;/user&apos;, &apos;UserController@index&apos;);
+</code></pre>
+<p>&#x3053;&#x308C;&#x3067;URL&#x306E;&#x300C;/user&#x300D;&#x90E8;&#x5206;&#x3068;&#x3001;&#x5148;&#x307B;&#x3069;&#x4F5C;&#x6210;&#x3057;&#x305F;UserController&#x306E;index&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x7D10;&#x3065;&#x3051;&#x3089;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<p>&#x305D;&#x308C;&#x3067;&#x306F;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;<a href="http://localhost/user" target="_blank">http://localhost/user</a> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x306B;&#x300C;Hello!! yamada taro&#x300D;&#x3068;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<p><img src="../images/2_3_1.png" width="300"></p>
+<h2 id="4-&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x307F;&#x308B;db&#x30A2;&#x30AF;&#x30BB;&#x30B9;">4. &#x30E2;&#x30C7;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x307F;&#x308B;(DB&#x30A2;&#x30AF;&#x30BB;&#x30B9;)</h2>
+<p>&#x6B21;&#x306B;&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;<br>&#x74B0;&#x5883;&#x69CB;&#x7BC9;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;&#x6642;&#x70B9;&#x3067;User&#x30E2;&#x30C7;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x4ECA;&#x56DE;&#x306F;&#x3053;&#x3061;&#x3089;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x3044;&#x3046;&#x6982;&#x5FF5;&#x3092;&#x7406;&#x89E3;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x672C;&#x7BC0;&#x3067;&#x306F;&#x53D6;&#x308A;&#x6271;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;</p>
+<p>&#x4ECA;&#x56DE;&#x4F7F;&#x7528;&#x3059;&#x308B;User&#x30E2;&#x30C7;&#x30EB;&#x306F;&#x300C;/app/User.php&#x300D;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3067;&#x306F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x304B;&#x3089;&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3001;&#x5B9F;&#x969B;&#x306B;DB&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x308F;&#x305B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+/app/http/controller/UserController.php&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
+<pre><code class="lang-/app/http/controller/UserController.php">&lt;?php
+namespace App\Http\Controllers;
+use App\User;
+class UserController extends Controller
+{
+    public function index()
+    {
+        // &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0; email&#x306E;&#x5024;&#x306F;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x306A;&#x6587;&#x5B57;&#x5217;&#x3092;&#x4F7F;&#x7528;&#x3002;&#x300C;.&#x300D;&#x3067;&#x6587;&#x5B57;&#x5217;&#x306E;&#x9023;&#x7D50;
+        $email = substr(str_shuffle(&apos;abcdefghijklmnopqrstuvwxyz&apos;), 0, 8) . &apos;@yyyy.com&apos;;
+        User::insert([&apos;name&apos; =&gt; &apos;yamada taro&apos;, &apos;email&apos; =&gt; $email, &apos;password&apos; =&gt; &apos;xxxxxxxx&apos;]);
+        // &#x5168;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x308A;&#x51FA;&#x3057;
+        $users = User::all();
+        return view(&apos;user&apos;, [&apos;users&apos; =&gt; $users]);    
+    }
+}
+</code></pre>
+<p>&#x300C;User::insert([&apos;name&apos; =&gt; ......&#x300D; : DB&#x3078;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0;<br>&#x300C;$users = User::all();&#x300D; : DB&#x304B;&#x3089;&#x306E;&#x5168;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x53D6;&#x5F97;<br>&#x304C;&#x5B9F;&#x969B;&#x306B;&#x30E2;&#x30C7;&#x30EB;&#x304C;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x7B87;&#x6240;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x307E;&#x305F;&#x3001;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>@foreach ($users as $user)
+    &lt;h1&gt;Your name is {{$user-&gt;name}}. Your mail address is {{$user-&gt;email}}&lt;/h1&gt;
+@endforeach
+</code></pre><p><a href="http://localhost/user" target="_blank">http://localhost/user</a>&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x753B;&#x50CF;&#x306E;&#x3088;&#x3046;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3001;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x3054;&#x3068;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x6587;&#x8A00;&#x304C;&#x5897;&#x3048;&#x3066;&#x3044;&#x304F;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<p><img src="../images/2_3_2.png" width="500"></p>
+<p><a href="https://laravel.com" target="_blank">Laravel&#x516C;&#x5F0F;HP</a>&#x306B;&#x306F;Laravel&#x306E;&#x5165;&#x9580;&#x3084;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x306E;&#x3067;&#x5206;&#x304B;&#x3089;&#x306A;&#x3044;&#x3053;&#x3068;&#x304C;&#x3042;&#x3063;&#x305F;&#x3089;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<hr>
+<p><strong>[&#x8AB2;&#x984C;]&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FB;&#x30D3;&#x30E5;&#x30FC;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3001;&#x4EFB;&#x610F;&#x306E;URL&#x306B;&#x7D10;&#x3065;&#x3051;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;</strong><br>&#x4F55;&#x304B;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FB;&#x30D3;&#x30E5;&#x30FC;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3001;URL&#x3068;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x3067;&#x7D10;&#x3065;&#x3051;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002; 
+&#x300C;URL&#x3078;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x2192;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3067;&#x306E;&#x51E6;&#x7406;&#x2192;&#x30D3;&#x30E5;&#x30FC;&#x306E;&#x8868;&#x793A;&#x300D;&#x306E;&#x4E00;&#x9023;&#x306E;&#x6D41;&#x308C;&#x3092;&#x7406;&#x89E3;&#x3057;&#x3001;&#x5B9F;&#x88C5;&#x3067;&#x304D;&#x308C;&#x3070;&#x3053;&#x306E;&#x7BC0;&#x3067;&#x306E;&#x5B66;&#x7FD2;&#x5185;&#x5BB9;&#x306F;&#x30D0;&#x30C3;&#x30C1;&#x30EA;&#x3067;&#x3059;&#xFF01;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-environment.html" class="navigation navigation-prev " aria-label="Previous page: 2. Laravelで初期ページを表示してみよう(環境構築)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-laravel-form.html" class="navigation navigation-next " aria-label="Next page: 4. 入力フォームを作ってみよう">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3. Laravelを触ってみよう","level":"1.3.3","depth":2,"next":{"title":"4. 入力フォームを作ってみよう","level":"1.3.4","depth":2,"path":"step2/04-laravel-form.md","ref":"step2/04-laravel-form.md","articles":[]},"previous":{"title":"2. Laravelで初期ページを表示してみよう(環境構築)","level":"1.3.2","depth":2,"path":"step2/02-environment.md","ref":"step2/02-environment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/03-laravel-demo.md","mtime":"2018-12-27T06:39:16.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T06:39:49.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

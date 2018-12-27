@@ -1,0 +1,782 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5. LaravelとPostgreSQLで掲示板を作ってみよう · チームラボオンラインスキルアップ課題</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="teamLab inc">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06-laravel-login.html" />
+    
+    
+    <link rel="prev" href="04-laravel-form.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索すると入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    オンラインスキルアップ課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    STEP1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../step1/01-internet.html">
+            
+                <a href="../step1/01-internet.html">
+            
+                    
+                    1. インターネットについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../step1/02-http.html">
+            
+                <a href="../step1/02-http.html">
+            
+                    
+                    2. WEBサーバについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../step1/03-html-css.html">
+            
+                <a href="../step1/03-html-css.html">
+            
+                    
+                    3. HTMLとCSSについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../step1/04a-docker.html">
+            
+                <a href="../step1/04a-docker.html">
+            
+                    
+                    4-a. 【Windows】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../step1/04b-docker.html">
+            
+                <a href="../step1/04b-docker.html">
+            
+                    
+                    4-b. 【Mac】Dockerと開発環境の作り方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../step1/05-php.html">
+            
+                <a href="../step1/05-php.html">
+            
+                    
+                    5. PHPの説明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../step1/06-get-post.html">
+            
+                <a href="../step1/06-get-post.html">
+            
+                    
+                    6. PHPでGET/POSTをやってみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../step1/07-db.html">
+            
+                <a href="../step1/07-db.html">
+            
+                    
+                    7. データベースについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../step1/08-sql.html">
+            
+                <a href="../step1/08-sql.html">
+            
+                    
+                    8. SQLを書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../step1/09-php-sql.html">
+            
+                <a href="../step1/09-php-sql.html">
+            
+                    
+                    9. PHPでデータベースを操作してみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../step1/10-git.html">
+            
+                <a href="../step1/10-git.html">
+            
+                    
+                    10. GitとGitHubについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    STEP2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="01-framework.html">
+            
+                <a href="01-framework.html">
+            
+                    
+                    1. フレームワークについて
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="02-environment.html">
+            
+                <a href="02-environment.html">
+            
+                    
+                    2. Laravelで初期ページを表示してみよう(環境構築)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="03-laravel-demo.html">
+            
+                <a href="03-laravel-demo.html">
+            
+                    
+                    3. Laravelを触ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="04-laravel-form.html">
+            
+                <a href="04-laravel-form.html">
+            
+                    
+                    4. 入力フォームを作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="05-laravel-bbs.html">
+            
+                <a href="05-laravel-bbs.html">
+            
+                    
+                    5. LaravelとPostgreSQLで掲示板を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="06-laravel-login.html">
+            
+                <a href="06-laravel-login.html">
+            
+                    
+                    6. Laravelで掲示板にログイン機能を作ってみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="07-upload.html">
+            
+                <a href="07-upload.html">
+            
+                    
+                    7. 画像アップロードしよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="08-specification.html">
+            
+                <a href="08-specification.html">
+            
+                    
+                    8. 画面仕様書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="09-db-design.html">
+            
+                <a href="09-db-design.html">
+            
+                    
+                    9. データーベース設計書とは何か
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="10-heroku.html">
+            
+                <a href="10-heroku.html">
+            
+                    
+                    10. Herokuで世界に公開してみよう
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="11-task.html">
+            
+                <a href="11-task.html">
+            
+                    
+                    11. 最終課題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="insta_document.html">
+            
+                <a href="insta_document.html">
+            
+                    
+                    インスタグラムもどき画面仕様書
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            GitBookで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5. LaravelとPostgreSQLで掲示板を作ってみよう</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="step2-5-laravel&#x3068;postgresql&#x3067;&#x63B2;&#x793A;&#x677F;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;">STEP2-5. Laravel&#x3068;PostgreSQL&#x3067;&#x63B2;&#x793A;&#x677F;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;</h1>
+<p>&#x524D;&#x7BC0;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x63B2;&#x793A;&#x677F;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x5165;&#x308C;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;<br>&#x3053;&#x306E;&#x7BC0;&#x3067;&#x306F;&#x3001;&#x524D;&#x7BC0;&#x306E;&#x5165;&#x529B;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x304B;&#x3089;POST&#x3092;&#x6295;&#x3052;&#x3066;&#x3001;DB&#x306B;&#x767B;&#x9332;&#x3057;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;&#x307E;&#x3067;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<h2 id="&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3064;&#x3044;&#x3066;">&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
+<p>&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x4F5C;&#x6210;&#x3084;&#x66F4;&#x65B0;&#x3001;&#x524A;&#x9664;&#x306F;<a href="../step1/07-db.html">STEP1-7.&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x3064;&#x3044;&#x3066;</a>&#x3067;&#x8AAC;&#x660E;&#x3057;&#x305F;&#x3088;&#x3046;&#x306B;SQL&#x6587;&#x3092;&#x76F4;&#x63A5;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;<br>&#x3057;&#x304B;&#x3057;&#x306A;&#x304C;&#x3089;&#x305D;&#x306E;&#x307E;&#x307E;&#x3067;&#x306F;&#x3001;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#x3084;&#x5909;&#x66F4;&#x3057;&#x305F;&#x8A18;&#x9332;&#x3092;&#x8FFD;&#x3046;&#x3053;&#x3068;&#x304C;&#x96E3;&#x3057;&#x304F;&#x306A;&#x308A;&#x3001;&#x5143;&#x306B;&#x623B;&#x3059;&#x5834;&#x5408;&#x306B;&#x3082;&#x82E6;&#x52B4;&#x3057;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;  </p>
+<p>&#x305D;&#x3053;&#x3067;&#x3001;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#x3084;&#x30AB;&#x30E9;&#x30E0;&#x306E;&#x5909;&#x66F4;&#x306A;&#x3069;&#x3092;&#x8A18;&#x9332;&#x3057;&#x3001;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x6A5F;&#x80FD;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>Laravel&#x3067;&#x3082;&#x7C21;&#x5358;&#x306B;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x306E;&#x3067;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x5909;&#x66F4;&#x3092;&#x884C;&#x3046;&#x969B;&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x30FC;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="bbs&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x5B9F;&#x884C;">bbs&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x5B9F;&#x884C;</h2>
+<p>&#x305D;&#x308C;&#x3067;&#x306F;&#x3001;&#x63B2;&#x793A;&#x677F;&#x306B;&#x5229;&#x7528;&#x3059;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306E;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x3092;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="1-&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3059;&#x308B;">1. &#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3059;&#x308B;</h3>
+<p>&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x3001;workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306B;&#x5165;&#x308A;&#x307E;&#x3059;&#x3002;  </p>
+<pre><code>$ docker-compose exec workspace bash
+</code></pre><p>&#x6B21;&#x306B;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x751F;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ php artisan make:migration create_bbs_table --create=bbs
+</code></pre><p>&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x751F;&#x6210;&#x306B;&#x6210;&#x529F;&#x3057;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;</p>
+<p><code>Created Migration: yyyy_mm_dd_xxxxxx_create_bbs_table</code></p>
+<p>&#x3068;&#x8A00;&#x3046;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x304C;&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3001;/var/www/database/migrations/&#x914D;&#x4E0B;&#x306B;&#x300C;yyyy_mm_dd_xxxxxx_create_bbs_table&#x300D;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;<br>&#x306A;&#x304A;&#x3001;<a href="02-environment.html">STEP2-2.&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x3064;&#x3044;&#x3066;</a>&#x306E;&#x300C;docker-compose.yml&#x300D;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;Volume&#x8A2D;&#x5B9A;&#x306E;&#x901A;&#x308A;&#x3067;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x3001;&#x300C;src/database/migrations&#x300D;&#x968E;&#x5C64;&#x306B;&#x3082;&#x540C;&#x3058;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3001;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;<br><img src="../images/2_5_2.png" alt="2_5_2">  </p>
+<h3 id="2-&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x5FC5;&#x8981;&#x306A;&#x30AB;&#x30E9;&#x30E0;&#x60C5;&#x5831;&#x3092;&#x8FFD;&#x8A18;&#x3059;&#x308B;">2. &#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x5FC5;&#x8981;&#x306A;&#x30AB;&#x30E9;&#x30E0;&#x60C5;&#x5831;&#x3092;&#x8FFD;&#x8A18;&#x3059;&#x308B;</h3>
+<p>&#x3053;&#x306E;&#x307E;&#x307E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30BF;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;&#x6642;&#x9593;&#x3068;ID&#x306E;&#x307F;&#x3057;&#x304B;&#x8A18;&#x9332;&#x3067;&#x304D;&#x306A;&#x3044;bbs&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x305D;&#x3053;&#x3067;&#x3001;&#x300C;/var/www/database/migrations/yyyy_mm_dd_xxxxxx_create_bbs_table&#x300D;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5FC5;&#x8981;&#x306A;&#x30AB;&#x30E9;&#x30E0;&#x60C5;&#x5831;&#x3092;&#x8FFD;&#x8A18;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Support</span>\<span class="hljs-title">Facades</span>\<span class="hljs-title">Schema</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Schema</span>\<span class="hljs-title">Blueprint</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Migrations</span>\<span class="hljs-title">Migration</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CreateBbsTable</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Migration</span>
+</span>{
+    <span class="hljs-comment">/**
+     * Run the migrations.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">up</span><span class="hljs-params">()</span>
+    </span>{
+        Schema::create(<span class="hljs-string">&apos;bbs&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Blueprint $table)</span> </span>{
+            $table-&gt;increments(<span class="hljs-string">&apos;id&apos;</span>);
+            $table-&gt;string(<span class="hljs-string">&apos;name&apos;</span>); <span class="hljs-comment">// &#x8FFD;&#x8A18;&#x9805;&#x76EE;</span>
+            $table-&gt;string(<span class="hljs-string">&apos;comment&apos;</span>); <span class="hljs-comment">// &#x8FFD;&#x8A18;&#x9805;&#x76EE;</span>
+            $table-&gt;timestamps();
+        });
+    }
+
+    <span class="hljs-comment">/**
+     * Reverse the migrations.
+     *
+     * <span class="hljs-doctag">@return</span> void
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">down</span><span class="hljs-params">()</span>
+    </span>{
+        Schema::dropIfExists(<span class="hljs-string">&apos;bbs&apos;</span>);
+    }
+}
+</code></pre>
+<p>&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x306E;&#x306F;2&#x884C;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;<br>&#x524D;&#x7BC0;&#x3067;&#x4F5C;&#x3063;&#x305F;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306E;&#x300C;name&#x300D;&#x304C;&#x5165;&#x308B;&#x60F3;&#x5B9A;&#x306E;String&#x578B;&#x306E;&#x30AB;&#x30E9;&#x30E0;</p>
+<pre><code class="lang-php"> $table-&gt;string(<span class="hljs-string">&apos;name&apos;</span>);
+</code></pre>
+<p>&#x524D;&#x7BC0;&#x3067;&#x4F5C;&#x3063;&#x305F;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x306E;&#x300C;comment&#x300D;&#x304C;&#x5165;&#x308B;&#x60F3;&#x5B9A;&#x306E;String&#x578B;&#x306E;&#x30AB;&#x30E9;&#x30E0;</p>
+<pre><code class="lang-php"> $table-&gt;string(<span class="hljs-string">&apos;comment&apos;</span>);
+</code></pre>
+<p>&#x8FFD;&#x8A18;&#x3067;&#x304D;&#x307E;&#x3057;&#x305F;&#x306D;&#x3002;&#x3053;&#x308C;&#x3067;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F;&#x5B8C;&#x6210;&#x3067;&#x3059;&#xFF01;<br>&#x5B89;&#x5168;&#x306B;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#x304C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;</p>
+<h3 id="3-&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;">3. &#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;</h3>
+<p>&#x305D;&#x308C;&#x3067;&#x306F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30BF;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5185;&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>$ php artisan migrate
+</code></pre><p>&#x3046;&#x307E;&#x304F;&#x3044;&#x3051;&#x3070;&#x3001;&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3001;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x307E;&#x3059;&#xFF01;</p>
+<pre><code>Migrating: yyyy_mm_dd_xxxxxx_create_bbs_table
+Migrated:  yyyy_mm_dd_xxxxxx_create_bbs_table
+</code></pre><p>&#x3053;&#x308C;&#x3067;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x64CD;&#x4F5C;&#x3092;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x306F;workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3067;&#x3059;&#x304C;&#x3001;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x308A;&#x3059;&#x308B;&#x5B9F;&#x969B;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308B;&#x306E;&#x306F;&#x3001;postgres&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;PostgreSQL&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3082;&#x899A;&#x3048;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h2 id="bbs&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;bbs&#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F5C;&#x6210;">Bbs&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;Bbs&#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4F5C;&#x6210;</h2>
+<p>&#x6B21;&#x306B;&#x3001;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#xFF08;&#x30E2;&#x30C7;&#x30EB;&#xFF09;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x3053;&#x308C;&#x3082;Laravel&#x306E;&#x6A5F;&#x80FD;&#x3067;&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3067;&#x304D;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x306E;&#x3067;&#x7C21;&#x5358;&#x3067;&#x3059;&#x3002;
+&#x65E9;&#x901F;&#x3084;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
+<h3 id="1-&#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;">1. &#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x81EA;&#x52D5;&#x751F;&#x6210;</h3>
+<p>workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5185;&#x3067;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code>php artisan make:model bbs
+</code></pre><p>&#x3046;&#x307E;&#x304F;&#x3044;&#x3051;&#x3070;&#x3001;&#x30D7;&#x30ED;&#x30F3;&#x30D7;&#x30C8;&#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3001;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x306E;&#x300C;src/app/&#x300D;&#x306E;&#x4E0B;&#x306B;Bbs.php&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<pre><code>Model created successfully.
+</code></pre><h3 id="2-&#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x7DE8;&#x96C6;">2. &#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x7DE8;&#x96C6;</h3>
+<p>&#x81EA;&#x52D5;&#x751F;&#x6210;&#x3055;&#x308C;&#x305F;&#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5C11;&#x3057;&#x3060;&#x3051;&#x7DE8;&#x96C6;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FC;&#x5074;&#x3067;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3001;&#x30AB;&#x30E9;&#x30E0;&#x306F;&#x300C;name&#x300D;&#x300C;comment&#x300D;&#x306E;2&#x3064;&#x3060;&#x3051;&#x306A;&#x306E;&#x3067;&#x3001;&#x3053;&#x308C;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>;
+
+
+<span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Database</span>\<span class="hljs-title">Eloquent</span>\<span class="hljs-title">Model</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bbs</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span>
+</span>{
+   <span class="hljs-keyword">protected</span> $fillable = [<span class="hljs-string">&apos;name&apos;</span>,<span class="hljs-string">&apos;comment&apos;</span>]; <span class="hljs-comment">// &#x8FFD;&#x8A18;&#x3057;&#x305F;&#x3068;&#x3053;&#x308D;</span>
+}
+</code></pre>
+<p>&#x3053;&#x308C;&#x3067;&#x3001;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FC;&#x304B;&#x3089;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x300C;bbs&#x300D;&#x306B;&#x63A5;&#x7D9A;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#xFF01;</p>
+<h2 id="&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FC;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x7DE8;&#x96C6;">&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FC;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x7DE8;&#x96C6;</h2>
+<p>&#x3055;&#x3041;&#x3001;&#x3082;&#x3046;&#x5C11;&#x3057;&#x3067;&#x3059;&#x3002;&#x9811;&#x5F35;&#x308A;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;<br>&#x4ECA;&#x5EA6;&#x306F;&#x3001;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30FC;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x300C;BbsController.php&#x300D;&#x3092;&#x5C11;&#x3057;&#x7DE8;&#x96C6;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-php">
+<span class="hljs-meta">&lt;?php</span>
+
+   <span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+
+   <span class="hljs-keyword">use</span> <span class="hljs-title">Illuminate</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Request</span>;
+   <span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Model</span>\<span class="hljs-title">Bbs</span>; <span class="hljs-comment">// &#x3055;&#x3063;&#x304D;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5F15;&#x7528;</span>
+
+
+   <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BbsController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+   </span>{
+       <span class="hljs-comment">// Index&#x30DA;&#x30FC;&#x30B8;&#x306E;&#x8868;&#x793A;</span>
+       <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span> </span>{
+
+           $bbs = Bbs::all(); <span class="hljs-comment">// &#x5168;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x308A;&#x51FA;&#x3057;</span>
+           <span class="hljs-keyword">return</span> view(<span class="hljs-string">&apos;bbs.index&apos;</span>, [<span class="hljs-string">&quot;bbs&quot;</span> =&gt; $bbs]); <span class="hljs-comment">// bbs.index&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6E21;&#x3059;</span>
+       }
+
+       <span class="hljs-comment">// &#x6295;&#x7A3F;&#x3055;&#x308C;&#x305F;&#x5185;&#x5BB9;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x30DA;&#x30FC;&#x30B8;</span>
+       <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span><span class="hljs-params">(Request $request)</span> </span>{
+
+           <span class="hljs-comment">// &#x30D0;&#x30EA;&#x30C7;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30C1;&#x30A7;&#x30C3;&#x30AF;</span>
+           $request-&gt;validate([
+               <span class="hljs-string">&apos;name&apos;</span> =&gt; <span class="hljs-string">&apos;required|max:10&apos;</span>,
+               <span class="hljs-string">&apos;comment&apos;</span> =&gt; <span class="hljs-string">&apos;required|min:5|max:140&apos;</span>,
+           ]);
+
+           <span class="hljs-comment">// &#x6295;&#x7A3F;&#x5185;&#x5BB9;&#x306E;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x3066;&#x5909;&#x6570;&#x306B;&#x5165;&#x308C;&#x308B;</span>
+           $name = $request-&gt;input(<span class="hljs-string">&apos;name&apos;</span>);
+           $comment = $request-&gt;input(<span class="hljs-string">&apos;comment&apos;</span>);
+
+           Bbs::insert([<span class="hljs-string">&quot;name&quot;</span> =&gt; $name, <span class="hljs-string">&quot;comment&quot;</span> =&gt; $comment]); <span class="hljs-comment">// &#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;bbs&#x306B;&#x6295;&#x7A3F;&#x5185;&#x5BB9;&#x3092;&#x5165;&#x308C;&#x308B;</span>
+
+           $bbs = Bbs::all(); <span class="hljs-comment">// &#x5168;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x308A;&#x51FA;&#x3057;</span>
+           <span class="hljs-keyword">return</span> view(<span class="hljs-string">&apos;bbs.index&apos;</span>, [<span class="hljs-string">&quot;bbs&quot;</span> =&gt; $bbs]); <span class="hljs-comment">// bbs.index&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6E21;&#x3059;</span>
+       }
+   }
+</code></pre>
+<p>&#x5909;&#x66F4;&#x30FB;&#x8FFD;&#x8A18;&#x3057;&#x305F;&#x7B87;&#x6240;&#x306F;&#x3001;&#x5927;&#x304D;&#x304F;&#x306F;&#xFF13;&#x7B87;&#x6240;&#x3067;&#x3059;&#x3002;</p>
+<ol>
+<li>&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x300C;bbs&#x300D;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30C7;&#x30EB;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5F15;&#x7528;&#x3059;&#x308B;&#x8A18;&#x8FF0;&#x3002;</li>
+</ol>
+<pre><code class="lang-php"><span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">Model</span>\<span class="hljs-title">Bbs</span>;
+</code></pre>
+<ol>
+<li>&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x300C;bbs&#x300D;&#x306B;&#x5B58;&#x5728;&#x3059;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x5168;&#x3066;&#x53D6;&#x5F97;&#x3057;&#x3066;&#x3001;bbs.index&#x306B;&#x5F15;&#x304D;&#x6E21;&#x3059;&#x8A18;&#x8FF0;&#x3002;</li>
+</ol>
+<pre><code class="lang-php">$bbs = Bbs::all();
+<span class="hljs-keyword">return</span> view(<span class="hljs-string">&apos;bbs.index&apos;</span>, [<span class="hljs-string">&quot;bbs&quot;</span> =&gt; $bbs]);
+</code></pre>
+<ol>
+<li>&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x300C;bbs&#x300D;&#x306B;&#x6295;&#x7A3F;&#x5185;&#x5BB9;&#x3092;&#x30A4;&#x30F3;&#x30B5;&#x30FC;&#x30C8;&#xFF08;&#x767B;&#x9332;&#xFF09;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x8A18;&#x8FF0;&#x3002;</li>
+</ol>
+<pre><code class="lang-php">Bbs::insert([<span class="hljs-string">&quot;name&quot;</span> =&gt; $name, <span class="hljs-string">&quot;comment&quot;</span> =&gt; $comment]);
+</code></pre>
+<p>&#x3053;&#x306E;&#x7BC0;&#x306E;&#x63B2;&#x793A;&#x677F;&#x3067;&#x306F;&#x3001;&#x6295;&#x7A3F;&#x306E;&#x524A;&#x9664;&#x3084;&#x91CD;&#x8907;&#x9632;&#x6B62;&#x3001;&#x66F4;&#x65B0;&#x6A5F;&#x80FD;&#x306A;&#x3069;&#x306F;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x3053;&#x308C;&#x3060;&#x3051;&#x306E;&#x8FFD;&#x8A18;&#x3067;&#x5927;&#x4E08;&#x592B;&#x3067;&#x3059;&#x3002;<br>&#x3053;&#x3053;&#x307E;&#x3067;&#x304D;&#x305F;&#x3089;&#x3001;&#x307B;&#x307C;&#x3067;&#x304D;&#x305F;&#x3082;&#x540C;&#x7136;&#x3067;&#x3059;&#x3002;</p>
+<h2 id="&#x30D3;&#x30E5;&#x30FC;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x7DE8;&#x96C6;">&#x30D3;&#x30E5;&#x30FC;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x7DE8;&#x96C6;</h2>
+<p>&#x6700;&#x5F8C;&#x306B;&#x30D3;&#x30E5;&#x30FC;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x300C;index.blade.php&#x300D;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE HTML&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&#x63B2;&#x793A;&#x677F;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>&#x63B2;&#x793A;&#x677F;<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- &#x30A8;&#x30E9;&#x30FC;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x30A8;&#x30EA;&#x30A2; --&gt;</span>
+@if ($errors-&gt;any())
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#x30A8;&#x30E9;&#x30FC;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        @foreach ($errors-&gt;all() as $error)
+            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>{{ $error }}<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        @endforeach
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+@endif
+
+<span class="hljs-comment">&lt;!-- &#x6295;&#x7A3F;&#x8868;&#x793A;&#x30A8;&#x30EA;&#x30A2;&#xFF08;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x306E;&#x306F;&#x3053;&#x3053;&#xFF01;&#xFF09; --&gt;</span>
+@isset($bbs)
+@foreach ($bbs as $d)
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>{{ $d-&gt;name }}&#x3055;&#x3093;&#x306E;&#x6295;&#x7A3F;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    {{ $d-&gt;comment }}
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
+@endforeach
+@endisset
+
+<span class="hljs-comment">&lt;!-- &#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x30A8;&#x30EA;&#x30A2; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>&#x30D5;&#x30A9;&#x30FC;&#x30E0;<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;/bbs&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;POST&quot;</span>&gt;</span>
+    &#x540D;&#x524D;:<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    &#x30B3;&#x30E1;&#x30F3;&#x30C8;:<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;comment&quot;</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">&quot;4&quot;</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">&quot;40&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>
+    {{ csrf_field() }}
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn btn-success&quot;</span>&gt;</span> &#x9001;&#x4FE1; <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x306E;&#x306F;&#x3001;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- &#x6295;&#x7A3F;&#x8868;&#x793A;&#x30A8;&#x30EA;&#x30A2;&#xFF08;&#x7DE8;&#x96C6;&#x3059;&#x308B;&#x306E;&#x306F;&#x3053;&#x3053;&#xFF01;&#xFF09; --&gt;</span>
+</code></pre>
+<p>&#x306E;&#x4E0B;7&#x884C;&#x306E;&#x90E8;&#x5206;&#x3060;&#x3051;&#x3067;&#x3059;&#xFF01;</p>
+<p>&#x307E;&#x305A;&#x3001;&#x6E21;&#x3057;&#x3066;&#x3044;&#x308B;&#x5909;&#x6570;&#x304C;&#x3001;&#x524D;&#x7BC0;&#x3067;&#x306F;2&#x3064;&#xFF08;&#x300C;$name&#x300D;&#x300C;$comment&#x300D;&#xFF09;&#x3067;&#x3057;&#x305F;&#x304C;&#x3001;&#x4ECA;&#x7BC0;&#x3067;&#x306F;&#x300C;$bbs&#x300D;&#x306E;1&#x3064;&#x306E;&#x307F;&#x306B;&#x306A;&#x308A;&#x307E;&#x3057;&#x305F;&#x3002;<br>&#x306A;&#x306E;&#x3067;&#x3001;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x300C;@isset&#x300D;&#x306E;()&#x5185;&#x306B;&#x8A18;&#x8FF0;&#x306F;$bbs&#x306B;&#x5909;&#x308F;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x306B;&#x300C;@foreach ($bbs as $d)&#x300D;&#x3068;&#x3044;&#x3046;&#x90E8;&#x5206;&#x3092;&#x8FFD;&#x8A18;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x306F;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x300C;bbs&#x300D;&#x306B;&#x306F;&#x3001;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x5165;&#x529B;&#x304C;&#x66F4;&#x65B0;&#x3055;&#x308C;&#x308B;&#x305F;&#x3073;&#x306B;&#x30EC;&#x30B3;&#x30FC;&#x30C9;(name&#x3068;comment&#x304C;&#x5165;&#x3063;&#x305F;&#x884C;)&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x308B;&#x306E;&#x3067;&#x3001;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x305F;&#x8A18;&#x9332;&#x5168;&#x4EF6;&#x304C;$bbs&#x306B;&#x306F;&#x5165;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x3092;&#x63B2;&#x793A;&#x677F;&#x306B;&#x8868;&#x793A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x51E6;&#x7406;&#x3092;&#x3059;&#x308B;&#x3068;&#x8A00;&#x3046;&#x547D;&#x4EE4;&#x6587;&#x3092;&#x66F8;&#x3044;&#x3066;&#x3044;&#x308B;&#x306E;&#x3067;&#x3059;&#x3002;<br>&#x5177;&#x4F53;&#x7684;&#x306B;&#x306F;&#x3001;$bbs&#x3068;&#x3044;&#x3046;&#x5909;&#x6570;&#x304B;&#x3089;&#x3001;1&#x884C;&#x3064;&#x3065;($d)&#x53D6;&#x308A;&#x51FA;&#x3057;&#x3066;&#x3001;&#x5C11;&#x3057;&#x4E0B;&#x306B;&#x3042;&#x308B;&#x300C;@endforeach&#x300D;&#x307E;&#x3067;&#x306E;&#x9593;&#x306E;&#x51E6;&#x7406;&#x3092;&#x7E70;&#x308A;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x306E;&#x7E70;&#x308A;&#x8FD4;&#x3055;&#x308C;&#x308B;&#x4E2D;&#x8EAB;&#x3001;&#x306E;HTML&#x6587;&#x7AE0;&#x306B;&#x4F3C;&#x305F;&#x90E8;&#x5206;&#x3067;&#x306F;&#x3001;<br>&#x524D;&#x7BC0;&#x3067;&#x306F;&#x300C;$name&#x300D;&#x3060;&#x3063;&#x305F;&#x90E8;&#x5206;&#x304C;&#x300C;$d-&gt;name &#x300D;&#x306B;&#x3001;&#x524D;&#x7BC0;&#x3067;&#x306F;&#x300C;$comment&#x300D;&#x3060;&#x3063;&#x305F;&#x90E8;&#x5206;&#x304C;&#x300C;$d-&gt;comment &#x300D;&#x306B;&#x5909;&#x308F;&#x3063;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x304C;&#x308F;&#x304B;&#x308B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x306F;&#x300C;$d&#x300D;&#x306E;&#x4E2D;&#x306B;&#x3042;&#x308B;&#x300C;name&#x300D;&#x3068;&#x300C;comment&#x300D;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x610F;&#x5473;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x3053;&#x308C;&#x3067;&#x3001;&#x63B2;&#x793A;&#x677F;&#x3092;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x30C6;&#x30FC;&#x30D6;&#x30EB;&#x300C;bbs&#x300D;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x69CB;&#x7BC9;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x305F;&#x306F;&#x305A;&#x3067;&#x3059;&#xFF01;</p>
+<h2 id="&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x304B;&#x3089;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;">&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x304B;&#x3089;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x3088;&#x3046;</h2>
+<p>&#x305D;&#x308C;&#x3067;&#x306F;&#x3001;<code>http://localhost/bbs</code>&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#xFF01;</p>
+<p><img src="../images/2_4_1.png" alt="2_4_1"></p>
+<p>&#x524D;&#x7BC0;&#x306E;&#x753B;&#x9762;&#x3068;&#x540C;&#x3058;&#x753B;&#x9762;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x306B;&#x3001;&#x540D;&#x524D;&#x3068;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x5165;&#x529B;&#x3057;&#x3066;&#x300C;&#x9001;&#x4FE1;&#x300D;&#x30DC;&#x30BF;&#x30F3;&#x3092;&#x62BC;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+<img src="../images/2_5_1.png" alt="2_5_1"></p>
+<p>&#x524D;&#x7BC0;&#x3068;&#x306F;&#x7570;&#x306A;&#x308A;&#x3001;&#x4F55;&#x5EA6;&#x3082;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x3044;&#x304F;&#x3068;&#x305D;&#x306E;&#x5206;&#x3060;&#x3051;&#x6295;&#x7A3F;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x3066;&#x3044;&#x304F;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<p>&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x305F;&#x3067;&#x3057;&#x3087;&#x3046;&#x304B;&#xFF1F;
+&#x3053;&#x308C;&#x3067;&#x63B2;&#x793A;&#x677F;&#x306E;&#x57FA;&#x790E;&#x4E2D;&#x306E;&#x57FA;&#x790E;&#x306F;&#x3067;&#x304D;&#x305F;&#x304B;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+<p>&#x6B21;&#x7BC0;&#x306F;&#x3001;&#x3044;&#x3088;&#x3044;&#x3088;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x6A5F;&#x80FD;&#x3092;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x3044;&#x304F;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04-laravel-form.html" class="navigation navigation-prev " aria-label="Previous page: 4. 入力フォームを作ってみよう">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06-laravel-login.html" class="navigation navigation-next " aria-label="Next page: 6. Laravelで掲示板にログイン機能を作ってみよう">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5. LaravelとPostgreSQLで掲示板を作ってみよう","level":"1.3.5","depth":2,"next":{"title":"6. Laravelで掲示板にログイン機能を作ってみよう","level":"1.3.6","depth":2,"path":"step2/06-laravel-login.md","ref":"step2/06-laravel-login.md","articles":[]},"previous":{"title":"4. 入力フォームを作ってみよう","level":"1.3.4","depth":2,"path":"step2/04-laravel-form.md","ref":"step2/04-laravel-form.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/05-laravel-bbs.md","mtime":"2018-12-27T06:39:16.999Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-12-27T06:39:49.610Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
