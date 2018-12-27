@@ -1,0 +1,12 @@
+# ignore self
+.bookignore
+
+# ignore npm files
+yarn.lock
+package.json
+
+# For git
+.git
+.github
+.gitignore
+

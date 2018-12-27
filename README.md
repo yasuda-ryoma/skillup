@@ -1,3 +1,20 @@
-[wiki](https://github.com/team-lab/skillup/wiki)の更新は終了。
+# チームラボオンラインスキルアップ課題
 
-今後は[gh-pagesブランチ](https://github.com/team-lab/skillup/tree/gh-pages)で
+このサイトはチームラボ オンラインスキルアップ課題で使用する資料をまとめたサイトです。<br>
+この資料の想定対象読者は、授業などである程度プログラミングに触れたことはあるが、Webサイトの作り方は分からないという方です。<br>
+内容は以下の通りとなっています。
+
+## STEP1 掲示板を作ろう
+
+* Web上でのデータの流れ、データの送受信・保存の原理・方法、Webページ表示のための言語について学ぶ
+* 最終課題：簡易掲示板の作成
+
+## STEP2 Instagramもどきを作ろう
+
+* セッションによるログイン機能、フレームワークによる中規模サイトの作成方法、データベースの設計方法について学ぶ
+* 最終課題：Instagramもどきサイトの作成
+
+また、想定OSはMac/Windowsとなっています。<br>
+その他のOSの方はダウンロードリンクやフォルダ構成などが一部異なります。<br>
+ブラウザは[GoogleChrome](https://www.google.com/intl/ja/chrome/browser/)を推奨します。<br>
+これはSTEP2課題の中でGoogleChromeでの正常動作を要件としているためです。

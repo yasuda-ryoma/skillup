@@ -1,0 +1,12 @@
+{
+	"gitbook": "3.x.x",
+
+	"language": "ja",
+	"title": "チームラボオンラインスキルアップ課題",
+	"description": "チームラボのオンラインスキルアップ課題の資料ページ",
+	"author": "teamLab inc",
+	"plugins" : ["custom-favicon", "hide-published-with"],
+	"pluginsConfig" : {
+		"favicon": "images/logo.png"
+	}
+}

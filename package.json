@@ -1,0 +1,12 @@
+{
+  "name": "online-skillup-php",
+  "scripts": {
+    "serve": "gitbook install ; gitbook serve",
+    "build": "gitbook install ; gitbook build",
+    "deploy": "gh-pages -d _book --dotfiles true"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0",
+    "gitbook-cli": "^2.3.2"
+  }
+}
