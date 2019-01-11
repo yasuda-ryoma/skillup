@@ -2,7 +2,7 @@
 
 [2.HTTPのしくみ](./02-http.md)において、GETはデータの取得と説明しましたが、POSTと同様の形式のデータをURLの最後に付加することにより送信することもできます。
 
-例えば、Windows10のhomeEditionの方は [http://「Docker環境のIPアドレス」:9000/index.php?comment=ohayooooo]() というURLで、それ以外の方は [http://localhost:9000/index.php?comment=ohayooooo](http://「Docker環境のIPアドレス」:9000/index.php?comment=ohayooooo) というURLでデータを送信することができます。
+例えば、Windows10のhomeEditionの方は [http://「Docker環境のIPアドレス」:9000/index.php?comment=ohayooooo]() というURLで、それ以外の方は [http://localhost:9000/index.php?comment=ohayooooo](http://「Docker環境のIPアドレス」:9000/index.php?comment=ohayooooo) というURLでデータを送信することができます。
 
 この場合、URLが伸びることになりURLの長さ制限に引っかかる場合があるので気をつけましょう。
 
