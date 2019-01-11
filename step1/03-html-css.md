@@ -1,4 +1,4 @@
-# STEP1-3.HTML,CSSを書いてみる
+# STEP1-3.HTMLとCSSについて
 
 ### HTML
 
