@@ -15,7 +15,7 @@
   * [10. GitとGitHubについて](step1/10-git.md)
 * STEP2
   * [1. フレームワークについて](step2/01-framework.md)
-  * [2. Laravelで初期ページを表示してみよう(環境構築)](step2/02-environment.md)
+  * [2. Laravelを導入してみよう](step2/02-environment.md)
   * [3. Laravelを触ってみよう](step2/03-laravel-demo.md)
   * [4. 入力フォームを作ってみよう](step2/04-laravel-form.md)
   * [5. 掲示板を作ってみよう](step2/05-laravel-bbs.md)

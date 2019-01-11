@@ -1,4 +1,4 @@
-# STEP2-2.Laravelの開発環境をDockerで作成する
+# STEP2-2.Laravelを導入してみよう
 
 STEP1同様に、STEP2の開発環境もDockerを使って整えることができます。
 LaravelのDockerを使った開発環境をLaradockを使って構築してみましょう。  
@@ -61,9 +61,7 @@ $ docker-compose exec workspace bash
 Windowsであれば「[http://192.168.99.100](http://192.168.99.100)」にアクセス  
 Macであれば「[http://localhost](http://localhost)」にアクセス  
 「Laravel」のデフォルト画面が表示されるはずです。  
-<img src="../images/2_2_1.png" width="300">
-
-
+![](../images/2_2_1.png)
 
 ## DBも使ってみよう
 DBはPostgreSQLを利用します。  
