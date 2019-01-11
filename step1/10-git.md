@@ -20,7 +20,7 @@ https://qiita.com/toshi-click/items/dcf3dd48fdc74c91b409
 Windowsの方はコマンドプロンプトを開くとき、右クリックメニューから管理者権限で実行しましょう。
 
 ```
-git --version
+$ git --version
 ```
 
 gitのバージョンが確認できればOKです！
@@ -32,15 +32,15 @@ Gitの初期設定をします。
 念のため自分のソースコードのバックアップをとった上、ターミナル/コマンドプロンプトを開き、次のコマンドを実行してみましょう。
 
 ```
-# 作成したソースコードがあるフォルダに移動（/appでなくその上の階層）
-cd <フォルダ>
+// 作成したソースコードがあるフォルダに移動（/appでなくその上の階層）
+$ cd <フォルダ>
 
-# Gitの初期化を行う
-git init
+// Gitの初期化を行う
+$ git init
 
-# ユーザの設定(こちらは後ほど登録するGitHubのアカウント名にしておくと良いでしょう)
-git config --local user.name <GitHubユーザ名>
-git config --local user.email <メールアドレス>
+// ユーザの設定(こちらは後ほど登録するGitHubのアカウント名にしておくと良いでしょう)
+$ git config --local user.name <GitHubユーザ名>
+$ git config --local user.email <メールアドレス>
 ```
 
 ### Gitの仕組みを簡単に学ぶ
@@ -64,20 +64,20 @@ Gitはコミットという単位で、ソースコードの変更を管理し�
 下記のコマンドで、コミットするファイルを選択します。
 
 ```
-git add <ファイル名>
+$ git add <ファイル名>
 ```
 
 ファイルごと選択せずに全てのファイルを選択する場合は、 `--all` オプションを使います。
 今回は最初のコミットなので全てのファイルを選択で問題ないかと思います。
 
 ```
-git add --all
+$ git add --all
 ```
 
 次にコミットします。
 
 ```
-git commit -m "<コミットメッセージ>"
+$ git commit -m "<コミットメッセージ>"
 ```
 
 というコマンドで、先ほど選択したファイルをコミットします。  
@@ -86,7 +86,7 @@ git commit -m "<コミットメッセージ>"
 今回は最初のコミットですので、「最初のコミット」とでもつけておきます。
 
 ```
-git commit -m "最初のコミット"
+$ git commit -m "最初のコミット"
 ```
 
 これで、コミットは完了です。  
@@ -98,7 +98,7 @@ git commit -m "最初のコミット"
 下記のコマンドを実行して、先ほどのコミットを確認してみましょう。
 
 ```
-git log
+$ git log
 ```
 
 - コミットハッシュ
@@ -149,11 +149,11 @@ GitHub上で、リポジトリを作成します。レポジトリというの�
 この作業は1回行えば、次回からはしなくて良い作業となります。
 
 ```
-# 作成したソースコードがあるフォルダに移動（/appでなくその上の階層）
-cd <フォルダ>
+// 作成したソースコードがあるフォルダに移動（/appでなくその上の階層）
+$ cd <フォルダ>
 
-# レポジトリに紐付け
-git remote add origin https://github.com/<GitHubユーザ名>/onlineskillup_step1.git
+// レポジトリに紐付け
+$ git remote add origin https://github.com/<GitHubユーザ名>/onlineskillup_step1.git
 ```
 
 
@@ -162,8 +162,8 @@ git remote add origin https://github.com/<GitHubユーザ名>/onlineskillup_step
 上で作成したレポジトリにソースコードをあげます。この行為を「プッシュ」と言います。
 
 ```
-# 変更をプッシュする(パスワードが聞かれたら、GitHubの登録時のパスワードを入力)
-git push -u origin master
+// 変更をプッシュする(パスワードが聞かれたら、GitHubの登録時のパスワードを入力)
+$ git push -u origin master
 ```
 
 ブラウザでレポジトリに移動し、ファイルがあがっていることを確認してください。  
