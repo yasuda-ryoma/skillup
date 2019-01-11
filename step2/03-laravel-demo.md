@@ -17,8 +17,8 @@ MVCにおいて、コントローラが担う役割は以下の通りです。
 
 では実際にuserコントローラを作成し、「/user」にアクセスがあった際にuserコントローラに記述された処理が実行されるようにしましょう。
 
-「/app/http/controller/UserController.php」を作成し、以下を記述してください。
-```/app/http/controller/UserController.php
+「/app/http/controllers/UserController.php」を作成し、以下を記述してください。
+```/app/http/controllers/UserController.php
 <?php
 namespace App\Http\Controllers;
 class UserController extends Controller
@@ -28,13 +28,13 @@ class UserController extends Controller
         // ただの変数定義ですが、ここでModelにデータの処理を行わせたりします（後述）。
         $name = 'yamada taro';
 
-        // ここでuserビュー「user.blade.php」を呼び出し、データ「message」を渡している。
+        // ここでuserビュー「user.blade.php」を呼び出し、データ「name」を渡している。
         return view('user', ['name' => $name]);
     }
 }
 ```
 
-ここではUserControllerというコントローラを定義しています。['message' => $message]でuserビュー「user.blade.php」にデータを渡しています。
+ここではUserControllerというコントローラを定義しています。['name' => $name]でuserビュー「user.blade.php」にデータを渡しています。
 
 ## 2. ビューを作成してみる(画面の作成)
 
@@ -45,7 +45,7 @@ class UserController extends Controller
 
 
 ```/resources/views/user.blade.php
-<!-- UserControllerから渡されたmessageを表示する -->
+<!-- UserControllerから渡されたnameを表示する -->
 <h1>Hello!! {{$name}}</h1>
 ```
 
@@ -76,8 +76,8 @@ Route::get('/user', 'UserController@index');
 今回使用するUserモデルは「/app/User.php」に定義してあります。
 
 ではコントローラからモデルを呼び出し、実際にDBを使用したデータの処理を行わせてみましょう。
-/app/http/controller/UserController.phpを以下のように編集してください。
-```/app/http/controller/UserController.php
+/app/http/controllers/UserController.phpを以下のように編集してください。
+```/app/http/controllers/UserController.php
 <?php
 namespace App\Http\Controllers;
 use App\User;
