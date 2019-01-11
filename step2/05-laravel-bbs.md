@@ -1,3 +1,4 @@
+
 # STEP2-5. LaravelとPostgreSQLで掲示板を作ってみよう
 
 前節で作成した掲示板のデータをデータベースに入れてみましょう！  
@@ -125,10 +126,10 @@ Migrated:  yyyy_mm_dd_xxxxxx_create_bbs_table
 
 workspaceコンテナ内で以下のようにコマンドを実行します。
 ```
-php artisan make:model bbs
+php artisan make:model Model/Bbs
 ```
 
-うまくいけば、プロンプトには以下のように表示され、ホスト側の「src/app/」の下にBbs.phpファイルが生成されるはずです。
+うまくいけば、プロンプトには以下のように表示され、ホスト側の「src/app/Model/」の下にBbs.phpファイルが生成されるはずです。
 
 ```
 Model created successfully.
@@ -142,7 +143,7 @@ Model created successfully.
 
 ```php
 <?php
-namespace App;
+namespace App\Model;
 
 
 use Illuminate\Database\Eloquent\Model;
