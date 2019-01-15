@@ -5,8 +5,14 @@
 	"title": "チームラボオンラインスキルアップ課題",
 	"description": "チームラボのオンラインスキルアップ課題の資料ページ",
 	"author": "teamLab inc",
-	"plugins" : ["custom-favicon", "hide-published-with"],
+	"plugins" : ["custom-favicon", "hide-published-with", "scripts"],
 	"pluginsConfig" : {
+		"scripts": {
+			"files": [
+				"./scripts/cheet.min.js",
+				"./scripts/myscript.js"
+			]
+		},
 		"favicon": "images/logo.png"
 	}
 }
