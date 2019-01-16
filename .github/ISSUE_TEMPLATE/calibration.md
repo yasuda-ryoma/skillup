@@ -1,5 +1,5 @@
 ---
-name: 📝 calibration
+name: 📝 Calibration
 about: 執筆の際の誤字や手順間違えなど
 
 ---
