@@ -13,13 +13,6 @@ IDの認証には外部のサービスが提供している認証基盤を利用
 + 実装 - 認証・認可
 + 実装 - ログイン機能の実装
 
-## laravel 雛形を作成
-
-laradock の利用準備ができている前提で雛形の作成から進めます。
-laradock workspace コンテナから下記コマンドを実行して雛形を作成します。
-
-`composer create-project laravel/laravel test-login`
-
 ## socialite のインストール
 
 [公式](https://readouble.com/laravel/5.5/ja/socialite.html)の言われるがままに作成した雛形のプロジェクトへインストールを行います
@@ -48,7 +41,7 @@ laradock workspace コンテナから下記コマンドを実行して雛形を�
 
 ### 1-1. 実装（設定値）
 
-`test-login/.env` を修正
+`.env` を修正
 
 ```
 APP_NAME=Laravel
@@ -95,7 +88,7 @@ GITHUB_CLIENT_ID={`アプリ登録` で取得した値を利用してくださ�
 GITHUB_CLIENT_SECRET={`アプリ登録` で取得した値を利用してください} # 追加！
 ```
 
-`test-login/config/services.php` を修正
+`config/services.php` を修正
 
 ```php
 <?php
@@ -151,37 +144,18 @@ return [
 
 ### 1-2. 実装（ルーティング）
 
-`test-login/routes/web.php` を修正
+`routes/web.php` を修正（下記4行を追加）
 
 ```php
-<?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('github', 'Github\GithubController@top');// 追加！
-Route::post('github/issue', 'Github\GithubController@createIssue');// 追加！
-
-Route::get('login/github', 'Auth\LoginController@redirectToProvider');// 追加！
-
-Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');// 追加！
+Route::get('github', 'Github\GithubController@top');
+Route::post('github/issue', 'Github\GithubController@createIssue');
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 ```
 
 ### 1-3. 実装（コントローラ）
 
-`test-login/app/Http/Controllers/Auth/LoginController.php` を修正
+`app/Http/Controllers/Auth/LoginController.php` を修正
 
 ```php
 <?php
@@ -318,7 +292,7 @@ class GithubController extends Controller
 
 ### 1-4. 実装（ビュー）
 
-`test-login/resources/views/done.blade.php` を追加
+`resources/views/done.blade.php` を追加
 
 ```Blade
 <!doctype html>
@@ -336,7 +310,7 @@ class GithubController extends Controller
 </html>
 ```
 
-`test-login/resources/views/github.blade.php` を追加
+`resources/views/github.blade.php` を追加
 
 ```Blade
 <!doctype html>
@@ -415,7 +389,7 @@ artisan を利用したマイグレーションを利用します
 
 ファイルは下記のパスに生成されます。
 
-`test-login/database/migrations/2018_12_03_101836_create-table.php`
+`database/migrations/2018_12_03_101836_create-table.php`
 
 そして、内容を下記のように修正します。
 
@@ -460,7 +434,7 @@ class CreateTable extends Migration
 artisan コマンドでマイグレーションを行います
 workspace コンテナ側でプロジェクト直下の `.env` ファイルの db に関する設定を変更します
 
-`test-login/.env`
+`.env`
 
 ```
 DB_CONNECTION=pgsql
@@ -508,15 +482,15 @@ Indexes:
 
 ### 1-2. 実装（ルーティング）
 
-`test-login/routes/web.php` に下記1行を追加しました
+`routes/web.php` に下記1行を追加しました
 
-```
+```php
 Route::post('user', 'User\UserController@updateUser');
 ```
 
 ### 1-3. 実装（コントローラ）
 
-`test-login/app/Http/Controllers/User/UserController.php` を追加
+`app/Http/Controllers/User/UserController.php` を追加
 
 ```php
 <?php
@@ -541,7 +515,7 @@ class UserController extends Controller
 }
 ```
 
-`test-login/app/Http/Controllers/Auth/LoginController.php` を修正
+`app/Http/Controllers/Auth/LoginController.php` を修正
 
 handleProviderCallback 関数を下記のように修正
 
@@ -568,7 +542,7 @@ use Illuminate\Support\Facades\DB;
 ```
 
 
-`test-login/app/Http/Controllers/Github/GithubController.php` を修正
+`app/Http/Controllers/Github/GithubController.php` を修正
 
 top 関数を修正
 ```php
@@ -610,7 +584,7 @@ use Illuminate\Support\Facades\DB;
 
 ### 1-4. 実装（ビュー）
 
-`test-login/resources/views/github.blade.php` を修正
+`resources/views/github.blade.php` を修正
 
 ```Blade
 <!doctype html>
@@ -656,7 +630,7 @@ use Illuminate\Support\Facades\DB;
 </html>
 ```
 
-`test-login/resources/views/welcome.blade.php` を修正
+`resources/views/welcome.blade.php` を修正
 
 ```Blade
 <!doctype html>
