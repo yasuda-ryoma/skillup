@@ -1,6 +1,6 @@
 # Summary
 
-* [オンラインスキルアップ課題](README.md)
+* [オンラインスキルアップ課題](INDEX.md)
 * STEP1
   * [1. インターネットのしくみ](step1/01-internet.md)
   * [2. WEBサーバについて](step1/02-http.md)
