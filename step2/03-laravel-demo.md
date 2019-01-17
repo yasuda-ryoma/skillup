@@ -73,6 +73,13 @@ Route::get('/user', 'UserController@index');
 環境構築が完了した時点でUserモデルが存在しているため、今回はこちらを使用します。  
 モデルの作成についてはマイグレーションという概念を理解する必要があるため、本節では取り扱いません。
 
+まずはデータベースを作成しましょう。
+「projectname/src/」ディレクトリに入り、以下のコマンドを実行しましょう。
+```
+$ docker-compose exec workspace bash
+$ php artisan migrate
+```
+
 今回使用するUserモデルは「/app/User.php」に定義してあります。
 
 ではコントローラからモデルを呼び出し、実際にDBを使用したデータの処理を行わせてみましょう。
