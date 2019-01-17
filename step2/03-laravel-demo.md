@@ -3,7 +3,6 @@
 この節では前節で環境構築した、 Laravelの基本的な使い方と機能について説明します。  
 また、[STEP2-1](https://team-lab.github.io/skillup-php/step2/01-framework.html)で説明したフレームワークとMVCの概念についても、実際にLaravelを触りながら理解を深めていきましょう。
 
-
 ## 1. コントローラを作成してみる
 例として、以下のURLにアクセスがあったと想定します。
 
@@ -72,6 +71,13 @@ Route::get('/user', 'UserController@index');
 次にモデルを使用し、データベースにアクセスしてみます。  
 環境構築が完了した時点でUserモデルが存在しているため、今回はこちらを使用します。  
 モデルの作成についてはマイグレーションという概念を理解する必要があるため、本節では取り扱いません。
+
+まずはデータベースを作成しましょう。
+「projectname/src/」ディレクトリに入り、以下のコマンドを実行しましょう。
+```
+$ docker-compose exec workspace bash
+$ php artisan migrate
+```
 
 今回使用するUserモデルは「/app/User.php」に定義してあります。
 
