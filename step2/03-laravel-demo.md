@@ -3,6 +3,7 @@
 この節では前節で環境構築した、 Laravelの基本的な使い方と機能について説明します。  
 また、[STEP2-1](https://team-lab.github.io/skillup-php/step2/01-framework.html)で説明したフレームワークとMVCの概念についても、実際にLaravelを触りながら理解を深めていきましょう。
 
+
 ## 1. コントローラを作成してみる
 例として、以下のURLにアクセスがあったと想定します。
 
