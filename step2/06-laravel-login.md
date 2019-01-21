@@ -509,7 +509,7 @@ class UserController extends Controller
         $token = $request->session()->get('github_token', null);
         $user = Socialite::driver('github')->userFromToken($token);
 
-        DB::update('update user set name = ?, comment = ? where github_id = ?', [$request->input('name'), $request->input('comment'), $user->user['login']]);
+        DB::update('update public.user set name = ?, comment = ? where github_id = ?', [$request->input('name'), $request->input('comment'), $user->user['login']]);
         return redirect('/github');
     }    
 }
@@ -527,7 +527,7 @@ handleProviderCallback 関数を下記のように修正
         $now = date("Y/m/d H:i:s");
         $app_user = DB::select('select * from public.user where github_id = ?', [$github_user->user['login']]);
         if (empty($app_user)) {
-            DB::insert('insert into user (github_id, created_at, updated_at) values (?, ?, ?)', [$github_user->user['login'], $now, $now]);
+            DB::insert('insert into public.user (github_id, created_at, updated_at) values (?, ?, ?)', [$github_user->user['login'], $now, $now]);
         }
         $request->session()->put('github_token', $github_user->token);
         
