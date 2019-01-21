@@ -60,6 +60,7 @@ $ docker-compose exec workspace bash
 初期画面を確認してみましょう。  
 Windowsであれば「[http://192.168.99.100](http://192.168.99.100)」にアクセス  
 Macであれば「[http://localhost](http://localhost)」にアクセス  
+→うまくいかないようでしたら「[http://127.0.0.1](http://127.0.0.1)」にアクセスしてみてください  
 「Laravel」のデフォルト画面が表示されるはずです。  
 ![](../images/2_2_1.png)
 
