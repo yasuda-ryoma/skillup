@@ -74,7 +74,7 @@ Route::get('/user', 'UserController@index');
 モデルの作成についてはマイグレーションという概念を理解する必要があるため、本節では取り扱いません。
 
 まずはデータベースを作成しましょう。
-「projectname/src/」ディレクトリに入り、以下のコマンドを実行しましょう。
+「projectname/laradock/」ディレクトリに入り、以下のコマンドを実行しましょう。
 ```
 $ docker-compose exec workspace bash
 $ php artisan migrate
