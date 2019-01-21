@@ -172,7 +172,7 @@ $ echo web: vendor/bin/heroku-php-apache2 public/ > Procfile
 $ cd projectname
 $ git add .
 $ git commit -m 'コミットメッセージ'
-$ git subtree push --prefix app/ heroku master
+$ git subtree push --prefix src/ heroku master
 ```
 最後の行は、app/配下だけpushしているので少し書き方が複雑に見えるかもしれません。  
 コマンドラインにHerokuの実行ログのようなものが表示されて、エラーが出なければ、自作のWebサービスコードがHerokuアプリに反映されているはずです！  
@@ -259,7 +259,7 @@ Herokuアプリのサービスの変更を反映するときは、「Herokuに�
 $ cd projectname
 $ git add .
 $ git commit -m 'コミットメッセージ'
-$ git subtree push --prefix app/ heroku master
+$ git subtree push --prefix src/ heroku master
 ```
 
 また、データベースのテーブル定義の変更などがある場合は、上記を実行した後に次のようなコマンドを実行して、マイグレーションを反映させましょう。
