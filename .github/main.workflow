@@ -33,4 +33,5 @@ action "deploy" {
   env = {
     TZ = "/usr/share/zoneinfo/Asia/Tokyo"
   }
+  secrets = ["GITHUB_TOKEN"]
 }
