@@ -61,7 +61,7 @@ e961862278a7        skillup-php-step1_pgsql   "docker-entrypoint.s…"   9 minut
 * この時点で開発環境が正常に立ち上がっているはずなので実際に動作できるか確認してみましょう。  
 まずブラウザを開いて「[http://localhost:9000/index.html](http://localhost:9000/index.html)」にアクセスしてみましょう。以下のように表示されます。  
 <img src="../images/1_4_2.png" width="300">  
-次に「[http://localhost:9000/check_db.php]()」にアクセスし、アプリケーションとDBが連携できているか確認しましょう。  
+次に「[http://localhost:9000/check_db.php](http://localhost:9000/check_db.php)」にアクセスし、アプリケーションとDBが連携できているか確認しましょう。  
 <img src="../images/1_4_3.png" width="300">  
 次に「[http://localhost:5050](http://localhost:5050)」にアクセスしてみましょう。「pgAdmin」が表示されます。  
 <img src="../images/1_4_4.png" width="300">  
