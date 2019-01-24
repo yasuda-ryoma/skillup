@@ -461,6 +461,12 @@ Migrating: 2018_12_03_101836_create-table
 Migrated:  2018_12_03_101836_create-table
 ```
 
+先ほどの.envで設定したものを元にDBへログインします。
+
+`psql -h laradock_postgres_1 -U default -d default`
+
+各オプションの詳細について知りたい方は[こちら](https://www.dbonline.jp/postgresql/connect/index2.html)をみてください
+
 本当にテーブルが作成されていたか確認してみます。
 
 ```sql
