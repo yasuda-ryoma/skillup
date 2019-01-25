@@ -26,3 +26,4 @@
   * [10. Herokuで公開してみよう](step2/10-heroku.md)
   * [11. 最終課題](step2/11-task.md)
   * [インスタグラムもどき画面仕様書](step2/insta_document.md)
+  * [Herokuで画像が表示されない問題](step2/image_document.md)
