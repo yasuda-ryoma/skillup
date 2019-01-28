@@ -11,9 +11,15 @@ action "install" {
   }
 }
 
+action "ignore gh-pages branch" {
+  uses = "actions/bin/filter@707718ee26483624de00bd146e073d915139a3d8"
+  needs = ["install"]
+  args = "branch !gh-pages"
+}
+
 action "build" {
   uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
-  needs = ["install"]
+  needs = ["ignore gh-pages branch"]
   args = "run build"
   env = {
     TZ = "/usr/share/zoneinfo/Asia/Tokyo"
