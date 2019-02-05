@@ -22,7 +22,14 @@ HTMLはWebページを記述するための言語です。HTMLではタグを使
 
 これを開発環境のインストールディレトリのapp（skillup-php-step1-master/app/）の中にhello.htmlという名前で保存してみましょう。その際文字コードはUTF-8にしてください。メモ帳の場合、文字コードの選択は保存ボタンの左側にあります。
 
-Windows10のhomeEditionの方は[http://「Docker環境のIPアドレス」:9000/hello.html]()に、それ以外の方は[http://localhost:9000/hello.html](http://localhost:9000/hello.html)にアクセスしてみてください。ページが表示されるはずです。
+では、作ったファイルが実際どのように表示されるかみてみましょう。
+作ったファイルをchromeなどのブラウザにドラック&ドロップしてみてください。
+![](../images/1_3_3.png)
+
+以下のような画面が表示されるはずです。
+![](../images/1_3_4.png)
+ファイルの文字を変更して保存してから表示させると画面の文字も変わっていると思います。htmlファイルはこのようにブラウザで表示することができます。
+<!-- Windows10のhomeEditionの方は[http://「Docker環境のIPアドレス」:9000/hello.html]()に、それ以外の方は[http://localhost:9000/hello.html](http://localhost:9000/hello.html)にアクセスしてみてください。ページが表示されるはずです。 -->
 
 各タグの概要は以下になります。
 
