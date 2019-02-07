@@ -251,9 +251,7 @@ class GithubController extends Controller
 
         $client = new \GuzzleHttp\Client();
         $res = $client->request('GET', 'https://api.github.com/user/repos', [
-            'headers' => [
-                'Authorization' => 'token ' . $token
-            ]
+            'auth' => [$user->user['login'], $token]
         ]);
     
         return view('github', [
@@ -273,9 +271,7 @@ class GithubController extends Controller
 
         $client = new \GuzzleHttp\Client();
         $res = $client->request('POST', 'https://api.github.com/repos/' . $user->user['login'] . '/' . $request->input('repo') . '/issues', [
-            'headers' => [
-                'Authorization' => 'token ' . $token
-            ],
+            'auth' => [$user->user['login'], $token],
             'json' => [
                 'title' => $request->input('title'),
                 'body' => $request->input('body')
