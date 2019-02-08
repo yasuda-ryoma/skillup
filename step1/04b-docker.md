@@ -38,7 +38,8 @@ Dockerを使用して構築済みの開発環境をローカルマシンに導�
 $ cd ~/Downloads/skillup-php-step1-master
 ```
 * 移動したら以下のコマンドでコンテナを作成・開始します
-```
+
+```html:~/Downloads/skillup-php-step1-master
 $ docker-compose up -d
 // 最終的に以下の表示になれば成功
 Creating skillup-php-step1-master_php_1   ... done
@@ -48,7 +49,8 @@ Creating skillup-php-step1_pgadmin_1 ... done
 ```
 
 * 「docker ps」コマンドを入力し作成されたコンテナの一覧を確認します。「docker-compose up -d」コマンドが成功していたら以下のようにコンテナの一覧が表示される。
-```
+
+```html:~/Downloads/skillup-php-step1-master
 $ docker ps
 // 以下の表示になれば成功
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                           NAMES
@@ -67,7 +69,8 @@ e961862278a7        skillup-php-step1_pgsql   "docker-entrypoint.s…"   9 minut
 <img src="../images/1_4_4.png" width="300">  
 
 * 正常に動作が確認できたら、「docker-compose down」コマンドで立ち上げたコンテナを削除してみましょう。
-```
+
+```html:~/Downloads/skillup-php-step1-master
 $ docker-compose down
 // 以下の表示になれば成功
 Stopping skillup-php-step1_nginx_1   ... done
@@ -82,7 +85,8 @@ Removing network skillup-php-step1_default
 ```
 
 * 「docker ps」コマンドを入力し一覧を確認します。先ほど作成したコンテナが表示されなくなっています。
-```
+
+```html:~/Downloads/skillup-php-step1-master
 $ docker ps
 // 以下の表示になれば成功
 CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                            NAMES
