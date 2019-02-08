@@ -43,7 +43,7 @@ IDの認証には外部のサービスが提供している認証基盤を利用
 
 `.env` を修正
 
-```
+```sh:projectname/src/.env
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:jzP79v5XJFc2spSWU6iQsvDioZpCNUNK4g6YtieCk/Y=
@@ -90,7 +90,7 @@ GITHUB_CLIENT_SECRET={`アプリ登録` で取得した値を利用してくだ�
 
 `config/services.php` を修正
 
-```php
+```php:projectname/src/config/services.php
 <?php
 
 return [
@@ -146,7 +146,7 @@ return [
 
 `routes/web.php` を修正（下記4行を追加）
 
-```php
+```php:projectname/src/routes/web.php
 Route::get('github', 'Github\GithubController@top');
 Route::post('github/issue', 'Github\GithubController@createIssue');
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
@@ -157,7 +157,7 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 
 `app/Http/Controllers/Auth/LoginController.php` を修正
 
-```php
+```php:projectname/src/app/Http/Controllers/Auth/LoginController.php
 <?php
 
 namespace App\Http\Controllers\Auth;
@@ -228,7 +228,7 @@ class LoginController extends Controller
 
 `example-auth/app/Http/Controllers/Github/GithubController.php` を追加
 
-```php
+```php:projectname/src/app/Http/Controllers/Github/GithubController.php
 <?php
 
 namespace App\Http\Controllers\Github;
@@ -290,7 +290,7 @@ class GithubController extends Controller
 
 `resources/views/done.blade.php` を追加
 
-```Blade
+```Blade:projectname/src/resources/views/done.blade.php
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -308,7 +308,7 @@ class GithubController extends Controller
 
 `resources/views/github.blade.php` を追加
 
-```Blade
+```Blade:projectname/src/resources/views/github.blade.php
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -389,7 +389,7 @@ artisan を利用したマイグレーションを利用します
 
 そして、内容を下記のように修正します。
 
-```php
+```php:projectname/src/database/migrations/2018_12_03_101836_create-table.php
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -432,7 +432,7 @@ workspace コンテナ側でプロジェクト直下の `.env` ファイルの d
 
 `.env`
 
-```
+```php:projectname/src/.env
 DB_CONNECTION=pgsql
 DB_HOST=laradock_postgres_1
 DB_PORT=5432
@@ -486,7 +486,7 @@ Indexes:
 
 `routes/web.php` に下記1行を追加しました
 
-```php
+```php:projectname/src/routes/web.php
 Route::post('user', 'User\UserController@updateUser');
 ```
 
@@ -494,7 +494,7 @@ Route::post('user', 'User\UserController@updateUser');
 
 `app/Http/Controllers/User/UserController.php` を追加
 
-```php
+```php:projectname/src/app/Http/Controllers/User/UserController.php
 <?php
 
 namespace App\Http\Controllers\User;
@@ -521,7 +521,7 @@ class UserController extends Controller
 
 handleProviderCallback 関数を下記のように修正
 
-```php
+```php:projectname/src/app/Http/Controllers/Auth/LoginController.php
 	public function handleProviderCallback(Request $request)
     {
         $github_user = Socialite::driver('github')->user();
@@ -547,7 +547,7 @@ use Illuminate\Support\Facades\DB;
 `app/Http/Controllers/Github/GithubController.php` を修正
 
 top 関数を修正
-```php
+```php:projectname/src/app/Http/Controllers/Github/GithubController.php
 	public function top(Request $request)
     {
         $token = $request->session()->get('github_token', null);
@@ -588,7 +588,7 @@ use Illuminate\Support\Facades\DB;
 
 `resources/views/github.blade.php` を修正
 
-```Blade
+```php:projectname/src/resources/views/github.blade.php
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -634,7 +634,7 @@ use Illuminate\Support\Facades\DB;
 
 `resources/views/welcome.blade.php` を修正
 
-```Blade
+```php:projectname/src/resources/views/welcome.blade.php
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
