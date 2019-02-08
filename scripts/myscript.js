@@ -21,3 +21,13 @@ cheat.add( [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], function() {
 	}
 });
 
+$('code').each(function(index,element){
+	var class_name = $(element).attr('class');
+	if (class_name) {
+		if (class_name.match(':')) {
+			var file_name = class_name.split(':')[1];
+			console.log(class_name);
+			$(this).before('<span style="background-color: gainsboro;font-size: small;position: relative;top: -20px;left: -10px;">'+file_name+'</span><br>');
+		}
+	}
+})
