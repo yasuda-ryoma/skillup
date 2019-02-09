@@ -56,7 +56,7 @@ http://localhost:4000
 ### Build
 
 ```
-$ npm run serve
+$ npm run build
 ```
 
 `_book`に成果物ができる
