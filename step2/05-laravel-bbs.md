@@ -22,12 +22,14 @@ Laravelでも簡単に使用することができるので、データベース�
 
 以下のコマンドを入力し、workspaceコンテナに入ります。  
 
-```:/projectname/laradock
+```sh
+file_path:/projectname/laradock
 $ docker-compose exec workspace bash
 ```
 次に、以下のコマンドを実行しマイグレーションファイルを生成します。
 
-```:/var/www#
+```sh
+file_path:/var/www#
 $ php artisan make:migration create_bbs_table --create=bbs
 ```
 マイグレーションファイルの生成に成功していれば、
@@ -43,7 +45,8 @@ $ php artisan make:migration create_bbs_table --create=bbs
 このままデータベースマイグレータを実行すると、時間とIDのみしか記録できないbbsテーブルが作成されることになってしまいます。  
 そこで、「/var/www/database/migrations/yyyy_mm_dd_xxxxxx_create_bbs_table」ファイルに必要なカラム情報を追記しましょう。
 
-```php:/var/www/database/migrations/yyyy_mm_dd_xxxxxx_create_bbs_table
+```php
+file_path:/var/www/database/migrations/yyyy_mm_dd_xxxxxx_create_bbs_table
 <?php
 
 use Illuminate\Support\Facades\Schema;
@@ -101,13 +104,15 @@ class CreateBbsTable extends Migration
 それでは、データベースマイグレータを実行しましょう。  
 workspaceコンテナ内で以下のようにコマンドを実行します。
 
-```:/var/www#
+```sh
+file_path:/var/www#
 $ php artisan migrate
 ```
 
 うまくいけば、プロンプトには以下のように表示され、テーブルが追加されます！
 
-```:/var/www#
+```sh
+file_path:/var/www#
 Migrating: yyyy_mm_dd_xxxxxx_create_bbs_table
 Migrated:  yyyy_mm_dd_xxxxxx_create_bbs_table
 ```
@@ -126,13 +131,15 @@ Migrated:  yyyy_mm_dd_xxxxxx_create_bbs_table
 
 workspaceコンテナ内で以下のようにコマンドを実行します。
 
-```:/var/www#
+```sh
+file_path:/var/www#
 php artisan make:model Model/Bbs
 ```
 
 うまくいけば、プロンプトには以下のように表示され、ホスト側の「src/app/Model/」の下にBbs.phpファイルが生成されるはずです。
 
-```:/var/www#
+```sh
+file_path:/var/www#
 Model created successfully.
 ```
 
@@ -163,7 +170,8 @@ class Bbs extends Model
 さぁ、もう少しです。頑張りましょう！  
 今度は、コントローラーファイル「BbsController.php」を少し編集します。
 
-```php:BbsController.php
+```php
+file_path:BbsController.php
 
 <?php
    
@@ -231,7 +239,8 @@ Bbs::insert(["name" => $name, "comment" => $comment]);
 
 最後にビューファイル「index.blade.php」を編集しましょう！
 
-```html:index.blade.php
+```html
+file_path:index.blade.php
 <!DOCTYPE HTML>
 <html>
 <head>

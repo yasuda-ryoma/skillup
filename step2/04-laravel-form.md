@@ -9,7 +9,8 @@
 まずは、入力フォームを作ってみましょう。  
 `/bbs` でアクセスできるように、`routes/web.php`の一番下に下記を追記します。
 
-```php:routes/web.php
+```php
+file_path:routes/web.php
 Route::get('/bbs', 'BbsController@index');
 ```
 `/bbs` にアクセスが来た場合にBbsControllerのindex関数を参照します。
@@ -19,7 +20,8 @@ Route::get('/bbs', 'BbsController@index');
 
 中身は以下のようにします。
 
-```php:app/Http/Controllers/BbsController.php
+```php
+file_path:app/Http/Controllers/BbsController.php
 <?php
 
 namespace App\Http\Controllers;
@@ -41,7 +43,8 @@ class BbsController extends Controller
 `resources/views/bbs`というディレクトリを作ってください。その中に`index.blade.php`というファイルを作ります。
 そのファイルの中身は以下です。
 
-```Blade:resources/views/bbs/index.blade.php
+```html
+file_path:resources/views/bbs/index.blade.php
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -97,7 +100,8 @@ http://localhost/bbs
 まずは受け口を作ります。
 `routes/web.php`の一番下に下記を追記してください。
 
-```php:routes/web.php
+```php
+file_path:routes/web.php
 Route::post('/bbs', 'BbsController@create');
 ```
 
@@ -105,7 +109,8 @@ Route::post('/bbs', 'BbsController@create');
 
 `app/Http/Controllers/BbsController.php`にcreate関数を作成します。
 
-```php:app/Http/Controllers/BbsController.php
+```php
+file_path:app/Http/Controllers/BbsController.php
 <?php
 
 namespace App\Http\Controllers;
@@ -210,7 +215,8 @@ index.blade.phpは`$name`や`$comment`がない場合も使われるので、
 リクエストが投げられた時に判定をするので、BbsControllerのcreate関数にバリデーションチェックを追加します。  
 Laravelにvalidateという関数が用意されており、これを利用すれば簡単に実装することができます。`app/Http/Controllers/BbsController.php`を下記のようにします。
 
-```php:app/Http/Controllers/BbsController.php
+```php
+file_path:app/Http/Controllers/BbsController.php
 <?php
 
 namespace App\Http\Controllers;
@@ -257,7 +263,8 @@ $request->validate([
 
 では、ビュー側にエラーメッセージを表示するようにしましょう。
 
-```Blade:resources/views/bbs/index.blade.php
+```html
+file_path:resources/views/bbs/index.blade.php
 <!DOCTYPE HTML>
 <html>
 <head>

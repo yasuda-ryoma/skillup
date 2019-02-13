@@ -16,7 +16,8 @@ $ git init
 
 作成したディレクトリにlaradockをcloneでDLしましょう。
 
-```:/projectname
+```sh
+file_path:/projectname
 $ git submodule add https://github.com/Laradock/laradock.git
 ```
 
@@ -37,13 +38,15 @@ $ cp env-example .env
 
 それでは、実際にworkspaceを立ち上げてみましょう。
 
-```:/projectname/laradock
+```sh
+file_path:/projectname/laradock
 $ docker-compose up -d workspace nginx
 ```
 
 コンテナの起動状況を確認してみます。
 
-```:/projectname/laradock
+```sh
+file_path:/projectname/laradock
 $ docker-compose ps
 Name                          Command              State                     Ports
 ---------------------------------------------------------------------------------------------------------------
@@ -56,7 +59,8 @@ laradock_workspace_1          /sbin/my_init                   Up       0.0.0.0:2
 
 さらに、workspaceコンテナの中にLaravelのアプリケーションを作ります。
 
-```:/projectname/laradock
+```sh
+file_path:/projectname/laradock
 $ docker-compose exec workspace bash
 # composer create-project laravel/laravel . --prefer-dist
 # exit
@@ -73,7 +77,8 @@ Macであれば「[http://localhost](http://localhost)」にアクセス
 DBはPostgreSQLを利用します。  
 step1と同様にWindows環境ではDBのデータ永続化をすると起動しない場合があるので、その場合はlaradock階層にある「docker-compose.yml」を以下のように書き換えてください。
 
-```diff:/projectname/laradock/docker-compose.yml
+```diff
+file_path:/projectname/laradock/docker-compose.yml
 ### PostgreSQL ###########################################
     postgres:
       build: ./postgres
@@ -95,13 +100,15 @@ step1と同様にWindows環境ではDBのデータ永続化をすると起動し
 
 PostgreSQLの起動には以下のようにします
 
-```:/projectname/laradock
+```sh
+file_path:/projectname/laradock
 $ docker-compose up -d postgres
 ```
 
 起動後にコンテナ起動状況を確認すると以下のようになるはずです。
 
-```:/projectname/laradock
+```sh
+file_path:/projectname/laradock
 $ docker-compose ps
 Name                          Command              State                    Ports
 --------------------------------------------------------------------------------------------------------------
@@ -115,7 +122,8 @@ laradock_workspace_1          /sbin/my_init                   Up      0.0.0.0:22
 laravelからのDB接続設定もしておきましょう。  
 src配下に生成されている「.env」ファイルを編集します。
 
-```diff:/projectname/src/.env
+```diff
+file_path:/projectname/src/.env
 - DB_CONNECTION=mysql
 - DB_HOST=127.0.0.1
 - DB_PORT=3306
@@ -142,13 +150,15 @@ workspaceコンテナは、今回使用するlaravelの実態があるコンテ�
 
 コンテナに入るコマンドは以下のようなコマンドになります。
 
-```:/projectname/laradock
+```sh
+file_path:/projectname/laradock
 $ docker-compose exec workspace bash
 ```
 
 コンテナから出るコマンドは次のようになります。
 
-```:/var/www# 
+```sh
+file_path:/var/www# 
 # exit
 ```
 

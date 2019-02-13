@@ -7,7 +7,8 @@ Laravelで画像をアップロードして表示する機能を作ってみま�
 
 `resources/views/home.blade.php` を作成
 
-```php:projectname/src/resources/views/home.blade.php
+```php
+file_path:projectname/src/resources/views/home.blade.php
 <!-- エラーメッセージ。なければ表示しない -->
 @if ($errors->any())
 <ul>
@@ -42,7 +43,8 @@ Laravelで画像をアップロードして表示する機能を作ってみま�
 
 `app/Http/Controllers/HomeController.php` を作成
 
-```php:projectname/src/app/Http/Controllers/HomeController.php
+```php
+file_path:projectname/src/app/Http/Controllers/HomeController.php
 <?php
 
 namespace App\Http\Controllers;
@@ -71,7 +73,8 @@ home.blade.php を呼び出すだけです。
 
 `routes/web.php` の最後の行に追加
 
-```php:projectname/src/routes/web.php
+```php
+file_path:projectname/src/routes/web.php
 Route::get('/', 'HomeController@index');
 ```
 
@@ -91,7 +94,8 @@ Uploadボタンに対応するコントローラの処理を追加してみま�
 
 `app/Http/Controllers/HomeController.php` に追加
 
-```php:projectname/src/app/Http/Controllers/HomeController.php
+```php
+file_path:projectname/src/app/Http/Controllers/HomeController.php
     /**
      * ファイルアップロード処理
      */
@@ -130,7 +134,8 @@ upload メソッドが追加されたのでRouteも追加しておきましょ�
 
 `routes/web.php` の最後の行に追加
 
-```php:projectname/src/routes/web.php
+```php
+file_path:projectname/src/routes/web.php
 Route::post('/upload', 'HomeController@upload');
 ```
 
