@@ -20,14 +20,18 @@ cheat.add( [38, 38, 40, 40, 37, 39, 37, 39, 66, 65], function() {
 		e.innerHTML = ""
 	}
 });
+
 function code_exchange(){
 	$('code').each(function(index,element){
-		var class_name = $(element).attr('class');
-		$(element).removeClass(class_name);
-		if (class_name) {
-			if (class_name.match(':')) {
-				var file_name = class_name.split(':')[1];
-				$(this).before('<span class="is_chenge" style="background-color: gainsboro;font-size: small;position: relative;top: -20px;left: -10px;">'+file_name+'</span><br>');
+		// console.log(element.innerHTML);
+		if (element.innerHTML.match('file_path:')) {
+			var file_path = element.innerHTML.match(/file_path:.+\n/)[0];
+			element.innerHTML = element.innerHTML.split(/file_path:.+\n/)[1];
+			if (file_path) {
+				if (file_path.match(':')) {
+					var file_name = file_path.split(':')[1];
+					$(this).before('<span class="is_chenge" style="background-color: gainsboro;font-size: small;position: relative;top: -20px;left: -10px;">'+file_name+'</span>');
+				}
 			}
 		}
 	})	
