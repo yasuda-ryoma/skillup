@@ -510,17 +510,18 @@
 </ul>
 <p>&#x3067;&#x306F;&#x5B9F;&#x969B;&#x306B;user&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x300C;/user&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x304C;&#x3042;&#x3063;&#x305F;&#x969B;&#x306B;user&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306B;&#x8A18;&#x8FF0;&#x3055;&#x308C;&#x305F;&#x51E6;&#x7406;&#x304C;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
 <p>&#x300C;/app/http/controllers/UserController.php&#x300D;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x4EE5;&#x4E0B;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<pre><code class="lang-/app/http/controllers/UserController.php">&lt;?php
-namespace App\Http\Controllers;
-class UserController extends Controller
-{
-    public function index()
-    {
-        // &#x305F;&#x3060;&#x306E;&#x5909;&#x6570;&#x5B9A;&#x7FA9;&#x3067;&#x3059;&#x304C;&#x3001;&#x3053;&#x3053;&#x3067;Model&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x308F;&#x305B;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;&#xFF08;&#x5F8C;&#x8FF0;&#xFF09;&#x3002;
-        $name = &apos;yamada taro&apos;;
+<pre><code class="lang-php">file_path:/app/http/controllers/UserController.php
+<span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// &#x305F;&#x3060;&#x306E;&#x5909;&#x6570;&#x5B9A;&#x7FA9;&#x3067;&#x3059;&#x304C;&#x3001;&#x3053;&#x3053;&#x3067;Model&#x306B;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x308F;&#x305B;&#x305F;&#x308A;&#x3057;&#x307E;&#x3059;&#xFF08;&#x5F8C;&#x8FF0;&#xFF09;&#x3002;</span>
+        $name = <span class="hljs-string">&apos;yamada taro&apos;</span>;
 
-        // &#x3053;&#x3053;&#x3067;user&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x300C;name&#x300D;&#x3092;&#x6E21;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;
-        return view(&apos;user&apos;, [&apos;name&apos; =&gt; $name]);
+        <span class="hljs-comment">// &#x3053;&#x3053;&#x3067;user&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x300C;name&#x300D;&#x3092;&#x6E21;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;</span>
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">&apos;user&apos;</span>, [<span class="hljs-string">&apos;name&apos;</span> =&gt; $name]);
     }
 }
 </code></pre>
@@ -528,13 +529,15 @@ class UserController extends Controller
 <h2 id="2-&#x30D3;&#x30E5;&#x30FC;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;&#x753B;&#x9762;&#x306E;&#x4F5C;&#x6210;">2. &#x30D3;&#x30E5;&#x30FC;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;(&#x753B;&#x9762;&#x306E;&#x4F5C;&#x6210;)</h2>
 <p>&#x73FE;&#x6642;&#x70B9;&#x3067;&#x306F;UserController&#x304B;&#x3089;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308B;&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x306F;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x306E;&#x3067;&#x7528;&#x610F;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;  </p>
 <p>/resources/views/&#x5185;&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x5185;&#x5BB9;&#x3092;user.blade.php&#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x3067;&#x4FDD;&#x5B58;&#x3057;&#x3001;<br>&#x3053;&#x3061;&#x3089;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x5B9F;&#x969B;&#x306E;&#x8868;&#x793A;&#x5185;&#x5BB9;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;  </p>
-<pre><code class="lang-/resources/views/user.blade.php">&lt;!-- UserController&#x304B;&#x3089;&#x6E21;&#x3055;&#x308C;&#x305F;name&#x3092;&#x8868;&#x793A;&#x3059;&#x308B; --&gt;
-&lt;h1&gt;Hello!! {{$name}}&lt;/h1&gt;
+<pre><code class="lang-html">file_path:/resources/views/user.blade.php
+<span class="hljs-comment">&lt;!-- UserController&#x304B;&#x3089;&#x6E21;&#x3055;&#x308C;&#x305F;name&#x3092;&#x8868;&#x793A;&#x3059;&#x308B; --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello!! {{$name}}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 </code></pre>
 <h2 id="3-&#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x884C;&#x3044;&#x3001;url&#x3068;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x3066;&#x307F;&#x308B;">3. &#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x884C;&#x3044;&#x3001;URL&#x3068;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x3066;&#x307F;&#x308B;</h2>
 <p>&#x73FE;&#x6642;&#x70B9;&#x3067;&#x306F; <a href="http://localhost/user" target="_blank">http://localhost/user</a> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x3082;UserController&#x306E;&#x51E6;&#x7406;&#x306F;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x307E;&#x305B;&#x3093;&#x3002;<br>Laravel&#x3067;&#x306F;/routes/web.php&#x306B;&#x30EB;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306E;&#x8A2D;&#x5B9A;&#x3092;&#x884C;&#x3046;&#x3053;&#x3068;&#x306B;&#x3088;&#x3063;&#x3066;URL&#x3068;&#x547C;&#x51FA;&#x3055;&#x308C;&#x308B;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x7D10;&#x4ED8;&#x3051;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x3067;&#x306F;&#x5B9F;&#x969B;&#x306B;URL&#x306E;&#x300C;/user&#x300D;&#x90E8;&#x5206;&#x3068;&#x3001;&#x5148;&#x307B;&#x3069;&#x4F5C;&#x6210;&#x3057;&#x305F;UserController&#x3092;&#x7D10;&#x3065;&#x3051;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>/routes/web.php&#x306B;&#x4EE5;&#x4E0B;&#x3092;&#x8FFD;&#x8A18;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<pre><code class="lang-/routes/web.php">Route::get(&apos;/user&apos;, &apos;UserController@index&apos;);
+<pre><code class="lang-php">file_path:/routes/web.php
+Route::get(<span class="hljs-string">&apos;/user&apos;</span>, <span class="hljs-string">&apos;UserController@index&apos;</span>);
 </code></pre>
 <p>&#x3053;&#x308C;&#x3067;URL&#x306E;&#x300C;/user&#x300D;&#x90E8;&#x5206;&#x3068;&#x3001;&#x5148;&#x307B;&#x3069;&#x4F5C;&#x6210;&#x3057;&#x305F;UserController&#x306E;index&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x7D10;&#x3065;&#x3051;&#x3089;&#x308C;&#x307E;&#x3057;&#x305F;&#x3002;</p>
 <p>&#x305D;&#x308C;&#x3067;&#x306F;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;<a href="http://localhost/user" target="_blank">http://localhost/user</a> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;<br>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x306B;&#x300C;Hello!! yamada taro&#x300D;&#x3068;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
@@ -543,33 +546,38 @@ class UserController extends Controller
 <p>&#x6B21;&#x306B;&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3001;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;<br>&#x74B0;&#x5883;&#x69CB;&#x7BC9;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;&#x6642;&#x70B9;&#x3067;User&#x30E2;&#x30C7;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x4ECA;&#x56DE;&#x306F;&#x3053;&#x3061;&#x3089;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x4F5C;&#x6210;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x30DE;&#x30A4;&#x30B0;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;&#x3044;&#x3046;&#x6982;&#x5FF5;&#x3092;&#x7406;&#x89E3;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x672C;&#x7BC0;&#x3067;&#x306F;&#x53D6;&#x308A;&#x6271;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;</p>
 <p>&#x307E;&#x305A;&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x30D9;&#x30FC;&#x30B9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
 &#x300C;projectname/laradock/&#x300D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x5165;&#x308A;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
-<pre><code>$ docker-compose exec workspace bash
+<pre><code class="lang-php">file_path:projectname/laradock
+$ docker-compose exec workspace bash
 $ php artisan migrate
-</code></pre><p>&#x4ECA;&#x56DE;&#x4F7F;&#x7528;&#x3059;&#x308B;User&#x30E2;&#x30C7;&#x30EB;&#x306F;&#x300C;/app/User.php&#x300D;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+</code></pre>
+<p>&#x4ECA;&#x56DE;&#x4F7F;&#x7528;&#x3059;&#x308B;User&#x30E2;&#x30C7;&#x30EB;&#x306F;&#x300C;/app/User.php&#x300D;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x3067;&#x306F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x304B;&#x3089;&#x30E2;&#x30C7;&#x30EB;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3057;&#x3001;&#x5B9F;&#x969B;&#x306B;DB&#x3092;&#x4F7F;&#x7528;&#x3057;&#x305F;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x308F;&#x305B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
 /app/http/controllers/UserController.php&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x7DE8;&#x96C6;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<pre><code class="lang-/app/http/controllers/UserController.php">&lt;?php
-namespace App\Http\Controllers;
-use App\User;
-class UserController extends Controller
-{
-    public function index()
-    {
-        // &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0; email&#x306E;&#x5024;&#x306F;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x306A;&#x6587;&#x5B57;&#x5217;&#x3092;&#x4F7F;&#x7528;&#x3002;&#x300C;.&#x300D;&#x3067;&#x6587;&#x5B57;&#x5217;&#x306E;&#x9023;&#x7D50;
-        $email = substr(str_shuffle(&apos;abcdefghijklmnopqrstuvwxyz&apos;), 0, 8) . &apos;@yyyy.com&apos;;
-        User::insert([&apos;name&apos; =&gt; &apos;yamada taro&apos;, &apos;email&apos; =&gt; $email, &apos;password&apos; =&gt; &apos;xxxxxxxx&apos;]);
-        // &#x5168;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x308A;&#x51FA;&#x3057;
+<pre><code class="lang-php">file_path:/app/http/controllers/UserController.php
+<span class="hljs-meta">&lt;?php</span>
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
+<span class="hljs-keyword">use</span> <span class="hljs-title">App</span>\<span class="hljs-title">User</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span>
+</span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">index</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-comment">// &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0; email&#x306E;&#x5024;&#x306F;&#x30E9;&#x30F3;&#x30C0;&#x30E0;&#x306A;&#x6587;&#x5B57;&#x5217;&#x3092;&#x4F7F;&#x7528;&#x3002;&#x300C;.&#x300D;&#x3067;&#x6587;&#x5B57;&#x5217;&#x306E;&#x9023;&#x7D50;</span>
+        $email = substr(str_shuffle(<span class="hljs-string">&apos;abcdefghijklmnopqrstuvwxyz&apos;</span>), <span class="hljs-number">0</span>, <span class="hljs-number">8</span>) . <span class="hljs-string">&apos;@yyyy.com&apos;</span>;
+        User::insert([<span class="hljs-string">&apos;name&apos;</span> =&gt; <span class="hljs-string">&apos;yamada taro&apos;</span>, <span class="hljs-string">&apos;email&apos;</span> =&gt; $email, <span class="hljs-string">&apos;password&apos;</span> =&gt; <span class="hljs-string">&apos;xxxxxxxx&apos;</span>]);
+        <span class="hljs-comment">// &#x5168;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x308A;&#x51FA;&#x3057;</span>
         $users = User::all();
-        return view(&apos;user&apos;, [&apos;users&apos; =&gt; $users]);    
+        <span class="hljs-keyword">return</span> view(<span class="hljs-string">&apos;user&apos;</span>, [<span class="hljs-string">&apos;users&apos;</span> =&gt; $users]);    
     }
 }
 </code></pre>
 <p>&#x300C;User::insert([&apos;name&apos; =&gt; ......&#x300D; : DB&#x3078;&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8FFD;&#x52A0;<br>&#x300C;$users = User::all();&#x300D; : DB&#x304B;&#x3089;&#x306E;&#x5168;&#x30EC;&#x30B3;&#x30FC;&#x30C9;&#x53D6;&#x5F97;<br>&#x304C;&#x5B9F;&#x969B;&#x306B;&#x30E2;&#x30C7;&#x30EB;&#x304C;&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x51E6;&#x7406;&#x3092;&#x884C;&#x306A;&#x3063;&#x3066;&#x3044;&#x308B;&#x7B87;&#x6240;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x307E;&#x305F;&#x3001;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x30D3;&#x30E5;&#x30FC;&#x300C;user.blade.php&#x300D;&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x5909;&#x66F4;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code>@foreach ($users as $user)
+<pre><code class="lang-php">file_path:/resources/views/user.blade.php
+@<span class="hljs-keyword">foreach</span> ($users <span class="hljs-keyword">as</span> $user)
     &lt;h1&gt;Your name is {{$user-&gt;name}}. Your mail address is {{$user-&gt;email}}&lt;/h1&gt;
-@endforeach
-</code></pre><p><a href="http://localhost/user" target="_blank">http://localhost/user</a>&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x753B;&#x50CF;&#x306E;&#x3088;&#x3046;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3001;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x3054;&#x3068;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x6587;&#x8A00;&#x304C;&#x5897;&#x3048;&#x3066;&#x3044;&#x304F;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+@<span class="hljs-keyword">endforeach</span>
+</code></pre>
+<p><a href="http://localhost/user" target="_blank">http://localhost/user</a>&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x753B;&#x50CF;&#x306E;&#x3088;&#x3046;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x3001;&#x66F4;&#x65B0;&#x3059;&#x308B;&#x3054;&#x3068;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x6587;&#x8A00;&#x304C;&#x5897;&#x3048;&#x3066;&#x3044;&#x304F;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
 <p><img src="../images/2_3_2.png" width="500"></p>
 <p><a href="https://laravel.com" target="_blank">Laravel&#x516C;&#x5F0F;HP</a>&#x306B;&#x306F;Laravel&#x306E;&#x5165;&#x9580;&#x3084;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x306E;&#x3067;&#x5206;&#x304B;&#x3089;&#x306A;&#x3044;&#x3053;&#x3068;&#x304C;&#x3042;&#x3063;&#x305F;&#x3089;&#x898B;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
 <hr>
@@ -618,7 +626,7 @@ class UserController extends Controller
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3. Laravelを触ってみよう","level":"1.3.3","depth":2,"next":{"title":"4. 入力フォームを作ってみよう","level":"1.3.4","depth":2,"path":"step2/04-laravel-form.md","ref":"step2/04-laravel-form.md","articles":[]},"previous":{"title":"2. Laravelを導入してみよう","level":"1.3.2","depth":2,"path":"step2/02-environment.md","ref":"step2/02-environment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/03-laravel-demo.md","mtime":"2019-02-07T03:25:43.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-07T03:26:14.564Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3. Laravelを触ってみよう","level":"1.3.3","depth":2,"next":{"title":"4. 入力フォームを作ってみよう","level":"1.3.4","depth":2,"path":"step2/04-laravel-form.md","ref":"step2/04-laravel-form.md","articles":[]},"previous":{"title":"2. Laravelを導入してみよう","level":"1.3.2","depth":2,"path":"step2/02-environment.md","ref":"step2/02-environment.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/03-laravel-demo.md","mtime":"2019-02-14T02:11:47.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T02:12:17.993Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

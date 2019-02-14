@@ -501,7 +501,8 @@
 <p>Laravel&#x3067;&#x753B;&#x50CF;&#x3092;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;&#x6A5F;&#x80FD;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>&#x307E;&#x305A;&#x306F;View&#x3067;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x4F5C;&#x6210;">&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x4F5C;&#x6210;</h2>
 <p><code>resources/views/home.blade.php</code> &#x3092;&#x4F5C;&#x6210;</p>
-<pre><code class="lang-php">&lt;!-- &#x30A8;&#x30E9;&#x30FC;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3002;&#x306A;&#x3051;&#x308C;&#x3070;&#x8868;&#x793A;&#x3057;&#x306A;&#x3044; --&gt;
+<pre><code class="lang-php">file_path:projectname/src/resources/views/home.blade.php
+&lt;!-- &#x30A8;&#x30E9;&#x30FC;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3002;&#x306A;&#x3051;&#x308C;&#x3070;&#x8868;&#x793A;&#x3057;&#x306A;&#x3044; --&gt;
 @if ($errors-&gt;any())
 &lt;ul&gt;
     @foreach($errors-&gt;all() as $error)
@@ -531,7 +532,8 @@
 <h2 id="&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x4F5C;&#x6210;">&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x4F5C;&#x6210;</h2>
 <p>&#x6B21;&#x306F;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30D5;&#x30A9;&#x30FC;&#x30E0;&#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
 <p><code>app/Http/Controllers/HomeController.php</code> &#x3092;&#x4F5C;&#x6210;</p>
-<pre><code class="lang-php"><span class="hljs-meta">&lt;?php</span>
+<pre><code class="lang-php">file_path:projectname/src/app/Http/Controllers/HomeController.php
+<span class="hljs-meta">&lt;?php</span>
 
 <span class="hljs-keyword">namespace</span> <span class="hljs-title">App</span>\<span class="hljs-title">Http</span>\<span class="hljs-title">Controllers</span>;
 
@@ -554,7 +556,8 @@
 <p>home.blade.php &#x3092;&#x547C;&#x3073;&#x51FA;&#x3059;&#x3060;&#x3051;&#x3067;&#x3059;&#x3002;<br>&#x3053;&#x308C;&#x3060;&#x3051;&#x3067;&#x306F;&#x307E;&#x3060;&#x753B;&#x9762;&#x8868;&#x793A;&#x304C;&#x3067;&#x304D;&#x306A;&#x3044;&#x306E;&#x3067;&#x6B21;&#x306B;Route&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <h2 id="route&#x8FFD;&#x52A0;">Route&#x8FFD;&#x52A0;</h2>
 <p><code>routes/web.php</code> &#x306E;&#x6700;&#x5F8C;&#x306E;&#x884C;&#x306B;&#x8FFD;&#x52A0;</p>
-<pre><code class="lang-php">Route::get(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-string">&apos;HomeController@index&apos;</span>);
+<pre><code class="lang-php">file_path:projectname/src/routes/web.php
+Route::get(<span class="hljs-string">&apos;/&apos;</span>, <span class="hljs-string">&apos;HomeController@index&apos;</span>);
 </code></pre>
 <p>&#x3088;&#x3046;&#x3084;&#x304F;&#x753B;&#x9762;&#x8868;&#x793A;&#x306E;&#x6E96;&#x5099;&#x304C;&#x3067;&#x304D;&#x305F;&#x306E;&#x3067;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8D77;&#x52D5;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;</p>
 <pre><code>$ php artisan serve
@@ -563,7 +566,8 @@
 <h2 id="&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x5B9F;&#x88C5;">&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x5B9F;&#x88C5;</h2>
 <p>Upload&#x30DC;&#x30BF;&#x30F3;&#x306B;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x51E6;&#x7406;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
 <p><code>app/Http/Controllers/HomeController.php</code> &#x306B;&#x8FFD;&#x52A0;</p>
-<pre><code class="lang-php">    <span class="hljs-comment">/**
+<pre><code class="lang-php">file_path:projectname/src/app/Http/Controllers/HomeController.php
+    <span class="hljs-comment">/**
      * &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x51E6;&#x7406;
      */</span>
     <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">upload</span><span class="hljs-params">(Request $request)</span>
@@ -595,7 +599,8 @@
 <p>&#x30D0;&#x30EA;&#x30C7;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3067;&#x6B63;&#x3057;&#x3044;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x305F;&#x304B;&#x3092;&#x691C;&#x8A3C;&#x3057;&#x3001;<br>&#x554F;&#x984C;&#x304C;&#x306A;&#x3051;&#x308C;&#x3070; store() &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x4F7F;&#x3044; <code>storage/app/public/</code> &#x306B;&#x4FDD;&#x5B58;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x305D;&#x306E;&#x5F8C;&#x753B;&#x9762;&#x3067;&#x753B;&#x50CF;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x3001;&#x30D3;&#x30E5;&#x30FC;&#x3092;&#x8868;&#x793A;&#x3055;&#x305B;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <p>upload &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x304C;&#x8FFD;&#x52A0;&#x3055;&#x308C;&#x305F;&#x306E;&#x3067;Route&#x3082;&#x8FFD;&#x52A0;&#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
 <p><code>routes/web.php</code> &#x306E;&#x6700;&#x5F8C;&#x306E;&#x884C;&#x306B;&#x8FFD;&#x52A0;</p>
-<pre><code class="lang-php">Route::post(<span class="hljs-string">&apos;/upload&apos;</span>, <span class="hljs-string">&apos;HomeController@upload&apos;</span>);
+<pre><code class="lang-php">file_path:projectname/src/routes/web.php
+Route::post(<span class="hljs-string">&apos;/upload&apos;</span>, <span class="hljs-string">&apos;HomeController@upload&apos;</span>);
 </code></pre>
 <h2 id="&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;">&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;</h2>
 <p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x3067; <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> &#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x9078;&#x629E;&#x3057; Upload &#x30DC;&#x30BF;&#x30F3;&#x3092;&#x30AF;&#x30EA;&#x30C3;&#x30AF;&#x3057;&#x307E;&#x3059;&#x3002;<br>&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x4E0A;&#x306E; storage/app/public/ &#x306B;&#x306F;&#x554F;&#x984C;&#x306A;&#x304F;&#x753B;&#x50CF;&#x304C;&#x30A2;&#x30C3;&#x30D7;&#x30ED;&#x30FC;&#x30C9;&#x3055;&#x308C;&#x307E;&#x3057;&#x305F;&#x304C;&#x3001;<br>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x4E0A;&#x3067;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x753B;&#x50CF;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;&#x3068;&#x601D;&#x3044;&#x307E;&#x3059;&#x3002;</p>
@@ -649,7 +654,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"7. 画像アップロードしてみよう","level":"1.3.7","depth":2,"next":{"title":"8. 画面仕様書について","level":"1.3.8","depth":2,"path":"step2/08-specification.md","ref":"step2/08-specification.md","articles":[]},"previous":{"title":"6. ソーシャルログイン機能を作ってみよう","level":"1.3.6","depth":2,"path":"step2/06-laravel-login.md","ref":"step2/06-laravel-login.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/07-upload.md","mtime":"2019-02-07T03:25:43.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-07T03:26:14.564Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"7. 画像アップロードしてみよう","level":"1.3.7","depth":2,"next":{"title":"8. 画面仕様書について","level":"1.3.8","depth":2,"path":"step2/08-specification.md","ref":"step2/08-specification.md","articles":[]},"previous":{"title":"6. ソーシャルログイン機能を作ってみよう","level":"1.3.6","depth":2,"path":"step2/06-laravel-login.md","ref":"step2/06-laravel-login.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/07-upload.md","mtime":"2019-02-14T02:11:47.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T02:12:17.993Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

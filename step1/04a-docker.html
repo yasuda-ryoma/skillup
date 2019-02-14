@@ -523,28 +523,39 @@ docker-compose version 1.20.1, build 5d8c71b2
 $ cd ~/Downloads/skillup-php-step1-master
 </code></pre></li>
 <li><p>&#x79FB;&#x52D5;&#x3057;&#x305F;&#x3089;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x4F5C;&#x6210;&#x30FB;&#x958B;&#x59CB;&#x3057;&#x307E;&#x3059;</p>
-<pre><code>$ docker-compose up -d
+</li>
+</ul>
+<pre><code class="lang-html:~/Downloads/skillup-php-step1-master">$ docker-compose up -d
 // &#x6700;&#x7D42;&#x7684;&#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
 Creating skillup-php-step1-master_php_1   ... done
 Creating skillup-php-step1-master_nginx_1      ... done
 Creating skillup-php-step1_pgsql_1   ... done
 Creating skillup-php-step1_pgadmin_1 ... done
-</code></pre></li>
-<li>&#x300C;docker ps&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E00;&#x89A7;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x300C;docker-compose up -d&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x6210;&#x529F;&#x3057;&#x3066;&#x3044;&#x305F;&#x3089;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E00;&#x89A7;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x3002;<pre><code>$ docker ps
+</code></pre>
+<ul>
+<li>&#x300C;docker ps&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E00;&#x89A7;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x300C;docker-compose up -d&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x304C;&#x6210;&#x529F;&#x3057;&#x3066;&#x3044;&#x305F;&#x3089;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E00;&#x89A7;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x3002;</li>
+</ul>
+<pre><code class="lang-html:~/Downloads/skillup-php-step1-master">$ docker ps
 // &#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
 CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                           NAMES
 5a51c057e9d3        nginx                     &quot;nginx -g &apos;daemon of&#x2026;&quot;   9 minutes ago       Up 9 minutes        0.0.0.0:9000-&gt;80/tcp            skillup-php-step1_nginx_1
 3e5b91bd2d2d        skillup-php-step1_php     &quot;docker-php-entrypoi&#x2026;&quot;   9 minutes ago       Up 9 minutes        9000/tcp                        skillup-php-step1_php_1
 b1a75d41e914        dpage/pgadmin4            &quot;/entrypoint.sh&quot;         9 minutes ago       Up 9 minutes        443/tcp, 0.0.0.0:5050-&gt;80/tcp   skillup-php-step1_pgadmin_1
 e961862278a7        skillup-php-step1_pgsql   &quot;docker-entrypoint.s&#x2026;&quot;   9 minutes ago       Up 5 minutes        0.0.0.0:5432-&gt;5432/tcp          skillup-php-step1_pgsql_1
-</code></pre></li>
-<li>&#x3053;&#x306E;&#x6642;&#x70B9;&#x3067;&#x958B;&#x767A;&#x74B0;&#x5883;&#x304C;&#x6B63;&#x5E38;&#x306B;&#x7ACB;&#x3061;&#x4E0A;&#x304C;&#x3063;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x306A;&#x306E;&#x3067;&#x5B9F;&#x969B;&#x306B;&#x52D5;&#x4F5C;&#x3067;&#x304D;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3001;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;<pre><code>$ docker-machine ip
+</code></pre>
+<ul>
+<li>&#x3053;&#x306E;&#x6642;&#x70B9;&#x3067;&#x958B;&#x767A;&#x74B0;&#x5883;&#x304C;&#x6B63;&#x5E38;&#x306B;&#x7ACB;&#x3061;&#x4E0A;&#x304C;&#x3063;&#x3066;&#x3044;&#x308B;&#x306F;&#x305A;&#x306A;&#x306E;&#x3067;&#x5B9F;&#x969B;&#x306B;&#x52D5;&#x4F5C;&#x3067;&#x304D;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x3001;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<pre><code class="lang-html:~/Downloads/skillup-php-step1-master">$ docker-machine ip
 192.168.99.100&#x3000;&#x2190;&#x3000;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;
-</code></pre></li>
+</code></pre>
+<ul>
 <li><p>&#x30D6;&#x30E9;&#x30A6;&#x30B6;&#x3092;&#x958B;&#x3044;&#x3066;&#x300C;<a href="">http://&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;:9000/index.html</a>&#x300D;&#xFF08;&#x2191;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x300C;<a href="http://192.168.99.100:9000/index.html" target="_blank">http://192.168.99.100:9000/index.html</a>&#x300D;&#xFF09;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;&#x4EE5;&#x4E0B;&#x306F;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;&#x3092; 192.168.99.10&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;<br><img src="../images/1_4_2.png" width="300"><br>&#x6B21;&#x306B;<a href="">http://&#x300C;Docker&#x74B0;&#x5883;&#x306E;IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;:9000/check_db.php</a>&#x300D;&#xFF08;&#x2191;&#x306E;&#x4F8B;&#x3067;&#x306F;&#x300C;<a href="http://192.168.99.100:9000/check_db.php" target="_blank">http://192.168.99.100:9000/check_db.php</a>&#x300D;&#xFF09;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3068;DB&#x304C;&#x9023;&#x643A;&#x3067;&#x304D;&#x3066;&#x3044;&#x308B;&#x304B;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br><img src="../images/1_4_3.png" width="300"><br>&#x6B21;&#x306B;&#x300C;<a href="http://192.168.99.100:5050" target="_blank">http://192.168.99.100:5050</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;&#x300C;pgAdmin&#x300D;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;<br><img src="../images/1_4_4.png" width="300">  </p>
 </li>
 <li><p>&#x6B63;&#x5E38;&#x306B;&#x52D5;&#x4F5C;&#x304C;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x305F;&#x3089;&#x3001;&#x300C;docker-compose down&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3092;&#x524A;&#x9664;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
-<pre><code>$ docker-compose down
+</li>
+</ul>
+<pre><code class="lang-html:~/Downloads/skillup-php-step1-master">$ docker-compose down
 // &#x4EE5;&#x4E0B;&#x306E;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
 Stopping skillup-php-step1_nginx_1   ... done
 Stopping skillup-php-step1_php_1     ... done
@@ -555,14 +566,16 @@ Removing skillup-php-step1_php_1     ... done
 Removing skillup-php-step1_pgadmin_1 ... done
 Removing skillup-php-step1_pgsql_1   ... done
 Removing network skillup-php-step1_default
-</code></pre></li>
-<li><p>&#x300C;docker ps&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x4E00;&#x89A7;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x5148;&#x307B;&#x3069;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-<pre><code>$ docker ps
+</code></pre>
+<ul>
+<li>&#x300C;docker ps&#x300D;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5165;&#x529B;&#x3057;&#x4E00;&#x89A7;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x307E;&#x3059;&#x3002;&#x5148;&#x307B;&#x3069;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<pre><code class="lang-html:~/Downloads/skillup-php-step1-master">$ docker ps
 // &#x4EE5;&#x4E0B;&#x306E;&#x8868;&#x793A;&#x306B;&#x306A;&#x308C;&#x3070;&#x6210;&#x529F;
 CONTAINER ID        IMAGE                   COMMAND                  CREATED             STATUS              PORTS                            NAMES
-</code></pre></li>
-<li><p>&#x300C;<a href="http://192.168.99.100:9000" target="_blank">http://192.168.99.100:9000</a>&#x300D;&#x300C;<a href="http://192.168.99.100:50501" target="_blank">http://192.168.99.100:5050</a>&#x300D;&#x306B;&#x3082;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
-</li>
+</code></pre>
+<ul>
+<li>&#x300C;<a href="http://192.168.99.100:9000" target="_blank">http://192.168.99.100:9000</a>&#x300D;&#x300C;<a href="http://192.168.99.100:50501" target="_blank">http://192.168.99.100:5050</a>&#x300D;&#x306B;&#x3082;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3067;&#x304D;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</li>
 </ul>
 
                                 
@@ -607,7 +620,7 @@ CONTAINER ID        IMAGE                   COMMAND                  CREATED    
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4-a. 【Windows】Dockerと開発環境の作り方","level":"1.2.4","depth":2,"next":{"title":"4-b. 【Mac】Dockerと開発環境の作り方","level":"1.2.5","depth":2,"path":"step1/04b-docker.md","ref":"step1/04b-docker.md","articles":[]},"previous":{"title":"3. HTMLとCSSについて","level":"1.2.3","depth":2,"path":"step1/03-html-css.md","ref":"step1/03-html-css.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step1/04a-docker.md","mtime":"2019-02-07T03:25:43.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-07T03:26:14.564Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4-a. 【Windows】Dockerと開発環境の作り方","level":"1.2.4","depth":2,"next":{"title":"4-b. 【Mac】Dockerと開発環境の作り方","level":"1.2.5","depth":2,"path":"step1/04b-docker.md","ref":"step1/04b-docker.md","articles":[]},"previous":{"title":"3. HTMLとCSSについて","level":"1.2.3","depth":2,"path":"step1/03-html-css.md","ref":"step1/03-html-css.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step1/04a-docker.md","mtime":"2019-02-14T02:11:47.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T02:12:17.993Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

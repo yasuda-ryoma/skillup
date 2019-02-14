@@ -507,35 +507,44 @@ projectname&#x306F;&#x81EA;&#x5206;&#x306E;&#x4F5C;&#x696D;&#x7528;&#x306E;&#x30
 $ cd projectname
 $ git init
 </code></pre><p>&#x4F5C;&#x6210;&#x3057;&#x305F;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;laradock&#x3092;clone&#x3067;DL&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
-<pre><code>$ git submodule add https://github.com/Laradock/laradock.git
-</code></pre><p>&#x6B21;&#x306B;laradock&#x306E;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+<pre><code class="lang-sh">file_path:/projectname
+$ git submodule add https://github.com/Laradock/laradock.git
+</code></pre>
+<p>&#x6B21;&#x306B;laradock&#x306E;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
 DL&#x3057;&#x3066;&#x304D;&#x305F;laradock&#x306E;&#x968E;&#x5C64;&#x306B;&#x79FB;&#x52D5;&#x3057;&#x3001;&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7528;&#x610F;&#x3057;&#x307E;&#x3059;&#x3002;</p>
 <pre><code>$ cd laradock
 $ cp env-example .env
 </code></pre><p>&#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB;(.env)&#x306E;APP_CODE_PATH_HOST&#x306E;&#x90E8;&#x5206;&#x3092;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-diff"><span class="hljs-deletion">- APP_CODE_PATH_HOST=../</span>
-<span class="hljs-addition">+ APP_CODE_PATH_HOST=../src</span>
+<pre><code class="lang-diff:/projectname/laradock/.env">- APP_CODE_PATH_HOST=../
++ APP_CODE_PATH_HOST=../src
 </code></pre>
 <p>&#x3053;&#x308C;&#x3067;&#x300C;projectname/src/&#x300D;&#x306E;&#x4E0B;&#x306E;&#x968E;&#x5C64;&#x304C;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x683C;&#x7D0D;&#x3059;&#x308B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3068;&#x307F;&#x306A;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x305D;&#x308C;&#x3067;&#x306F;&#x3001;&#x5B9F;&#x969B;&#x306B;workspace&#x3092;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p>
-<pre><code>$ docker-compose up -d workspace nginx
-</code></pre><p>&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x8D77;&#x52D5;&#x72B6;&#x6CC1;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
-<pre><code>$ docker-compose ps
+<pre><code class="lang-sh">file_path:/projectname/laradock
+$ docker-compose up <span class="hljs-_">-d</span> workspace nginx
+</code></pre>
+<p>&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x8D77;&#x52D5;&#x72B6;&#x6CC1;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">file_path:/projectname/laradock
+$ docker-compose ps
 Name                          Command              State                     Ports
 ---------------------------------------------------------------------------------------------------------------
 laradock_docker-in-docker_1   dockerd-entrypoint.sh           Up       2375/tcp
 laradock_nginx_1              nginx                           Up       0.0.0.0:443-&gt;443/tcp, 0.0.0.0:80-&gt;80/tcp
 laradock_php-fpm_1            docker-php-entrypoint php-fpm   Up       9000/tcp
 laradock_workspace_1          /sbin/my_init                   Up       0.0.0.0:2222-&gt;22/tcp
-</code></pre><p>&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x7A3C;&#x50CD;&#x72B6;&#x614B;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x3053;&#x3053;&#x307E;&#x3067;&#x3046;&#x307E;&#x304F;&#x3044;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
+</code></pre>
+<p>&#x4E0A;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x7A3C;&#x50CD;&#x72B6;&#x614B;&#x306B;&#x306A;&#x3063;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x3053;&#x3053;&#x307E;&#x3067;&#x3046;&#x307E;&#x304F;&#x3044;&#x3063;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x3055;&#x3089;&#x306B;&#x3001;workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E2D;&#x306B;Laravel&#x306E;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x4F5C;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<pre><code>$ docker-compose exec workspace bash
-# composer create-project laravel/laravel . --prefer-dist
-# exit
-</code></pre><p>&#x3046;&#x307E;&#x304F;&#x3044;&#x3051;&#x3070;&#x300C;projectname/src/&#x300D;&#x306E;&#x4E0B;&#x306E;&#x968E;&#x5C64;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x3001;Laravel&#x304C;&#x52D5;&#x3044;&#x3066;&#x3044;&#x308B;&#x72B6;&#x614B;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x521D;&#x671F;&#x753B;&#x9762;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>Windows&#x3067;&#x3042;&#x308C;&#x3070;&#x300C;<a href="http://192.168.99.100" target="_blank">http://192.168.99.100</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;<br>Mac&#x3067;&#x3042;&#x308C;&#x3070;&#x300C;<a href="http://localhost" target="_blank">http://localhost</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;<br>&#x2192;&#x3046;&#x307E;&#x304F;&#x3044;&#x304B;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3057;&#x305F;&#x3089;&#x300C;<a href="http://127.0.0.1" target="_blank">http://127.0.0.1</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;<br>&#x300C;Laravel&#x300D;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x753B;&#x9762;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;<br><img src="../images/2_2_1.png" alt=""></p>
+<pre><code class="lang-sh">file_path:/projectname/laradock
+$ docker-compose <span class="hljs-built_in">exec</span> workspace bash
+<span class="hljs-comment"># composer create-project laravel/laravel . --prefer-dist</span>
+<span class="hljs-comment"># exit</span>
+</code></pre>
+<p>&#x3046;&#x307E;&#x304F;&#x3044;&#x3051;&#x3070;&#x300C;projectname/src/&#x300D;&#x306E;&#x4E0B;&#x306E;&#x968E;&#x5C64;&#x306B;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x304C;&#x751F;&#x6210;&#x3055;&#x308C;&#x3001;Laravel&#x304C;&#x52D5;&#x3044;&#x3066;&#x3044;&#x308B;&#x72B6;&#x614B;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;<br>&#x521D;&#x671F;&#x753B;&#x9762;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>Windows&#x3067;&#x3042;&#x308C;&#x3070;&#x300C;<a href="http://192.168.99.100" target="_blank">http://192.168.99.100</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;<br>Mac&#x3067;&#x3042;&#x308C;&#x3070;&#x300C;<a href="http://localhost" target="_blank">http://localhost</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;<br>&#x2192;&#x3046;&#x307E;&#x304F;&#x3044;&#x304B;&#x306A;&#x3044;&#x3088;&#x3046;&#x3067;&#x3057;&#x305F;&#x3089;&#x300C;<a href="http://127.0.0.1" target="_blank">http://127.0.0.1</a>&#x300D;&#x306B;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x3057;&#x3066;&#x307F;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;<br>&#x300C;Laravel&#x300D;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x753B;&#x9762;&#x304C;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;<br><img src="../images/2_2_1.png" alt=""></p>
 <h2 id="db&#x3082;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;">DB&#x3082;&#x4F7F;&#x3063;&#x3066;&#x307F;&#x3088;&#x3046;</h2>
 <p>DB&#x306F;PostgreSQL&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;<br>step1&#x3068;&#x540C;&#x69D8;&#x306B;Windows&#x74B0;&#x5883;&#x3067;&#x306F;DB&#x306E;&#x30C7;&#x30FC;&#x30BF;&#x6C38;&#x7D9A;&#x5316;&#x3092;&#x3059;&#x308B;&#x3068;&#x8D77;&#x52D5;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;&#x305D;&#x306E;&#x5834;&#x5408;&#x306F;laradock&#x968E;&#x5C64;&#x306B;&#x3042;&#x308B;&#x300C;docker-compose.yml&#x300D;&#x3092;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x66F8;&#x304D;&#x63DB;&#x3048;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p>
-<pre><code class="lang-diff">### PostgreSQL ###########################################
+<pre><code class="lang-diff">file_path:/projectname/laradock/docker-compose.yml
+### PostgreSQL ###########################################
     postgres:
       build: ./postgres
 <span class="hljs-deletion">-      volumes:</span>
@@ -554,9 +563,12 @@ laradock_workspace_1          /sbin/my_init                   Up       0.0.0.0:2
         - backend
 </code></pre>
 <p>PostgreSQL&#x306E;&#x8D77;&#x52D5;&#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x3057;&#x307E;&#x3059;</p>
-<pre><code>$ docker-compose up -d postgres
-</code></pre><p>&#x8D77;&#x52D5;&#x5F8C;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x8D77;&#x52D5;&#x72B6;&#x6CC1;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
-<pre><code>$ docker-compose ps
+<pre><code class="lang-sh">file_path:/projectname/laradock
+$ docker-compose up <span class="hljs-_">-d</span> postgres
+</code></pre>
+<p>&#x8D77;&#x52D5;&#x5F8C;&#x306B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x8D77;&#x52D5;&#x72B6;&#x6CC1;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3068;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x306F;&#x305A;&#x3067;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">file_path:/projectname/laradock
+$ docker-compose ps
 Name                          Command              State                    Ports
 --------------------------------------------------------------------------------------------------------------
 laradock_docker-in-docker_1   dockerd-entrypoint.sh           Up      2375/tcp
@@ -564,8 +576,10 @@ laradock_nginx_1              nginx                           Up      0.0.0.0:44
 laradock_php-fpm_1            docker-php-entrypoint php-fpm   Up      9000/tcp
 laradock_postgres_1           docker-entrypoint.sh postgres   Up      0.0.0.0:5432-&gt;5432/tcp
 laradock_workspace_1          /sbin/my_init                   Up      0.0.0.0:2222-&gt;22/tcp
-</code></pre><p>laravel&#x304B;&#x3089;&#x306E;DB&#x63A5;&#x7D9A;&#x8A2D;&#x5B9A;&#x3082;&#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>src&#x914D;&#x4E0B;&#x306B;&#x751F;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x300C;.env&#x300D;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x307E;&#x3059;&#x3002;</p>
-<pre><code class="lang-diff"><span class="hljs-deletion">- DB_CONNECTION=mysql</span>
+</code></pre>
+<p>laravel&#x304B;&#x3089;&#x306E;DB&#x63A5;&#x7D9A;&#x8A2D;&#x5B9A;&#x3082;&#x3057;&#x3066;&#x304A;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;<br>src&#x914D;&#x4E0B;&#x306B;&#x751F;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x300C;.env&#x300D;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x7DE8;&#x96C6;&#x3057;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-diff">file_path:/projectname/src/.env
+<span class="hljs-deletion">- DB_CONNECTION=mysql</span>
 <span class="hljs-deletion">- DB_HOST=127.0.0.1</span>
 <span class="hljs-deletion">- DB_PORT=3306</span>
 <span class="hljs-deletion">- DB_DATABASE=homestead</span>
@@ -582,10 +596,14 @@ laradock_workspace_1          /sbin/my_init                   Up      0.0.0.0:22
 <h2 id="workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3068;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306B;&#x3064;&#x3044;&#x3066;">workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3068;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306B;&#x3064;&#x3044;&#x3066;</h2>
 <p>&#x4ECA;&#x5F8C;&#x306E;&#x7BC0;&#x3067;&#x306F;&#x3001;&#x4ECA;&#x56DE;&#x7ACB;&#x3061;&#x4E0A;&#x3052;&#x305F;workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5185;&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x4F55;&#x56DE;&#x304B;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;<br>workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306F;&#x3001;&#x4ECA;&#x56DE;&#x4F7F;&#x7528;&#x3059;&#x308B;laravel&#x306E;&#x5B9F;&#x614B;&#x304C;&#x3042;&#x308B;&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x3067;&#x3059;&#x3002;<br>&#x65B0;&#x3057;&#x304F;&#x4F7F;&#x7528;&#x3057;&#x305F;&#x3044;PHP&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x308A;&#x3001;laravel&#x306E;&#x958B;&#x767A;&#x7528;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;&#x306B;&#x306F;&#x3001;workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306E;&#x4E2D;&#x3067;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
 <p>&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x306B;&#x5165;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<pre><code>$ docker-compose exec workspace bash
-</code></pre><p>&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304B;&#x3089;&#x51FA;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
-<pre><code># exit
-</code></pre><p>workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5185;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F;&#x304A;&#x305D;&#x3089;&#x304F;&#x4EE5;&#x4E0B;&#x306E;&#xFF12;&#x7A2E;&#x985E;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;  </p>
+<pre><code class="lang-sh">file_path:/projectname/laradock
+$ docker-compose <span class="hljs-built_in">exec</span> workspace bash
+</code></pre>
+<p>&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304B;&#x3089;&#x51FA;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F;&#x6B21;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p>
+<pre><code class="lang-sh">file_path:/var/www<span class="hljs-comment"># </span>
+<span class="hljs-comment"># exit</span>
+</code></pre>
+<p>workspace&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x5185;&#x3067;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F;&#x304A;&#x305D;&#x3089;&#x304F;&#x4EE5;&#x4E0B;&#x306E;&#xFF12;&#x7A2E;&#x985E;&#x306B;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;  </p>
 <h3 id="composer">composer</h3>
 <p>PHP&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x7BA1;&#x7406;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x3059;&#x3002;<br>Laravel&#x306E;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x305F;&#x308A;&#x3001;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x308A;&#x3001;&#x524A;&#x9664;&#x3057;&#x305F;&#x308A;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;<br>&#x672C;&#x7BC0;&#x4E2D;&#x3067;&#x3082;&#x3001;&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x4F5C;&#x6210;&#x306B;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p>
 <h3 id="php-artisan">php artisan</h3>
@@ -633,7 +651,7 @@ laradock_workspace_1          /sbin/my_init                   Up      0.0.0.0:22
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2. Laravelを導入してみよう","level":"1.3.2","depth":2,"next":{"title":"3. Laravelを触ってみよう","level":"1.3.3","depth":2,"path":"step2/03-laravel-demo.md","ref":"step2/03-laravel-demo.md","articles":[]},"previous":{"title":"1. フレームワークについて","level":"1.3.1","depth":2,"path":"step2/01-framework.md","ref":"step2/01-framework.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/02-environment.md","mtime":"2019-02-07T03:25:43.124Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-07T03:26:14.564Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2. Laravelを導入してみよう","level":"1.3.2","depth":2,"next":{"title":"3. Laravelを触ってみよう","level":"1.3.3","depth":2,"path":"step2/03-laravel-demo.md","ref":"step2/03-laravel-demo.md","articles":[]},"previous":{"title":"1. フレームワークについて","level":"1.3.1","depth":2,"path":"step2/01-framework.md","ref":"step2/01-framework.md","articles":[]},"dir":"ltr"},"config":{"plugins":["custom-favicon","hide-published-with","scripts"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"scripts":{"files":["./scripts/cheet.min.js","./scripts/myscript.js"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"images/logo.png","custom-favicon":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"teamLab inc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"INDEX.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"チームラボオンラインスキルアップ課題","language":"ja","gitbook":"3.x.x","description":"チームラボのオンラインスキルアップ課題の資料ページ"},"file":{"path":"step2/02-environment.md","mtime":"2019-02-14T02:11:47.249Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-14T02:12:17.993Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
