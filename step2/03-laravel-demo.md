@@ -18,7 +18,9 @@ MVCにおいて、コントローラが担う役割は以下の通りです。
 では実際にuserコントローラを作成し、「/user」にアクセスがあった際にuserコントローラに記述された処理が実行されるようにしましょう。
 
 「/app/http/controllers/UserController.php」を作成し、以下を記述してください。
-```/app/http/controllers/UserController.php
+
+```php
+file_path:/app/http/controllers/UserController.php
 <?php
 namespace App\Http\Controllers;
 class UserController extends Controller
@@ -43,8 +45,8 @@ class UserController extends Controller
 /resources/views/内に以下の内容をuser.blade.phpという名前で保存し、  
 こちらのファイルに実際の表示内容を記述します。  
 
-
-```/resources/views/user.blade.php
+```html
+file_path:/resources/views/user.blade.php
 <!-- UserControllerから渡されたnameを表示する -->
 <h1>Hello!! {{$name}}</h1>
 ```
@@ -56,7 +58,9 @@ Laravelでは/routes/web.phpにルーティングの設定を行うことによ�
 
 では実際にURLの「/user」部分と、先ほど作成したUserControllerを紐づけてみましょう。  
 /routes/web.phpに以下を追記してください。
-```/routes/web.php
+
+```php
+file_path:/routes/web.php
 Route::get('/user', 'UserController@index');
 ```
 
@@ -75,7 +79,9 @@ Route::get('/user', 'UserController@index');
 
 まずはデータベースを作成しましょう。
 「projectname/laradock/」ディレクトリに入り、以下のコマンドを実行しましょう。
-```
+
+```php
+file_path:projectname/laradock
 $ docker-compose exec workspace bash
 $ php artisan migrate
 ```
@@ -84,7 +90,9 @@ $ php artisan migrate
 
 ではコントローラからモデルを呼び出し、実際にDBを使用したデータの処理を行わせてみましょう。
 /app/http/controllers/UserController.phpを以下のように編集してください。
-```/app/http/controllers/UserController.php
+
+```php
+file_path:/app/http/controllers/UserController.php
 <?php
 namespace App\Http\Controllers;
 use App\User;
@@ -108,7 +116,8 @@ class UserController extends Controller
 
 また、対応するビュー「user.blade.php」を以下のように変更します。
 
-```
+```php
+file_path:/resources/views/user.blade.php
 @foreach ($users as $user)
     <h1>Your name is {{$user->name}}. Your mail address is {{$user->email}}</h1>
 @endforeach

@@ -15,7 +15,9 @@ $ git init
 ```
 
 作成したディレクトリにlaradockをcloneでDLしましょう。
-```
+
+```sh
+file_path:/projectname
 $ git submodule add https://github.com/Laradock/laradock.git
 ```
 
@@ -27,19 +29,24 @@ $ cp env-example .env
 ```
 
 設定ファイル(.env)のAPP_CODE_PATH_HOSTの部分を書き換えます。
-```diff
+
+```diff:/projectname/laradock/.env
 - APP_CODE_PATH_HOST=../
 + APP_CODE_PATH_HOST=../src
 ```
 これで「projectname/src/」の下の階層がアプリケーションのコードを格納するディレクトリとみなされるようになります。
 
 それでは、実際にworkspaceを立ち上げてみましょう。
-```
+
+```sh
+file_path:/projectname/laradock
 $ docker-compose up -d workspace nginx
 ```
 
 コンテナの起動状況を確認してみます。
-```
+
+```sh
+file_path:/projectname/laradock
 $ docker-compose ps
 Name                          Command              State                     Ports
 ---------------------------------------------------------------------------------------------------------------
@@ -51,7 +58,9 @@ laradock_workspace_1          /sbin/my_init                   Up       0.0.0.0:2
 上記のようなコンテナ稼働状態になっていれば、ここまでうまくいっています。
 
 さらに、workspaceコンテナの中にLaravelのアプリケーションを作ります。
-```
+
+```sh
+file_path:/projectname/laradock
 $ docker-compose exec workspace bash
 # composer create-project laravel/laravel . --prefer-dist
 # exit
@@ -69,6 +78,7 @@ DBはPostgreSQLを利用します。
 step1と同様にWindows環境ではDBのデータ永続化をすると起動しない場合があるので、その場合はlaradock階層にある「docker-compose.yml」を以下のように書き換えてください。
 
 ```diff
+file_path:/projectname/laradock/docker-compose.yml
 ### PostgreSQL ###########################################
     postgres:
       build: ./postgres
@@ -89,12 +99,16 @@ step1と同様にWindows環境ではDBのデータ永続化をすると起動し
 ```
 
 PostgreSQLの起動には以下のようにします
-```
+
+```sh
+file_path:/projectname/laradock
 $ docker-compose up -d postgres
 ```
 
 起動後にコンテナ起動状況を確認すると以下のようになるはずです。
-```
+
+```sh
+file_path:/projectname/laradock
 $ docker-compose ps
 Name                          Command              State                    Ports
 --------------------------------------------------------------------------------------------------------------
@@ -107,7 +121,9 @@ laradock_workspace_1          /sbin/my_init                   Up      0.0.0.0:22
 
 laravelからのDB接続設定もしておきましょう。  
 src配下に生成されている「.env」ファイルを編集します。
+
 ```diff
+file_path:/projectname/src/.env
 - DB_CONNECTION=mysql
 - DB_HOST=127.0.0.1
 - DB_PORT=3306
@@ -133,12 +149,16 @@ workspaceコンテナは、今回使用するlaravelの実態があるコンテ�
 新しく使用したいPHPのパッケージを追加したり、laravelの開発用コマンドを使う場合には、workspaceコンテナの中でコマンドを実行することになります。
 
 コンテナに入るコマンドは以下のようなコマンドになります。
-```
+
+```sh
+file_path:/projectname/laradock
 $ docker-compose exec workspace bash
 ```
 
 コンテナから出るコマンドは次のようになります。
-```
+
+```sh
+file_path:/var/www# 
 # exit
 ```
 
