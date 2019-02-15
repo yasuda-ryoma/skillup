@@ -29,6 +29,17 @@ IDの認証には外部のサービスが提供している認証基盤を利用
 
 [公式](https://developer.github.com/apps/building-oauth-apps/creating-an-oauth-app/)の言われるがままにアプリ登録を行います
 
+![](../images/2_6_0.png)
+
+それぞれ入力項目には以下の内容を入力してください
+* Application name:自由に入力してください
+* Homepage URL:自分が起動してるlaravelのアドレス(例:http://localhost)
+* Application description:アプリに詳細
+* Authorization callback URL:自分が起動してるlaravelのアドレスに/login/github/callbackを追加したもの
+(例:http://localhost/login/github/callback)
+
+
+
 ## 実装 - 認証・認可
 
 
