@@ -41,5 +41,4 @@ action "deploy" {
     GIT_USER_EMAIL = "ikedanatsuko@team-lab.com"
     GIT_USER_NAME = "ikedanatsuko"
   }
-  secrets = ["GITHUB_TOKEN"]
 }
