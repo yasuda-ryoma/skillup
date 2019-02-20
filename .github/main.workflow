@@ -14,7 +14,7 @@ action "install" {
 action "ignore gh-pages branch" {
   uses = "actions/bin/filter@707718ee26483624de00bd146e073d915139a3d8"
   needs = ["install"]
-  args = "branch !gh-pages"
+  args = "not branch gh-pages"
 }
 
 action "build" {
