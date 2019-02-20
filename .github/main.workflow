@@ -38,6 +38,8 @@ action "deploy" {
   args = "run deploy"
   env = {
     TZ = "/usr/share/zoneinfo/Asia/Tokyo"
+    GIT_USER_EMAIL = "ikedanatsuko@team-lab.com"
+    GIT_USER_NAME = "ikedanatsuko"
   }
   secrets = ["GITHUB_TOKEN"]
 }
