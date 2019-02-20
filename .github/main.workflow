@@ -33,7 +33,7 @@ action "only master branch" {
 }
 
 action "deploy" {
-  uses = "actions/npm@de7a3705a9510ee12702e124482fad6af249991b"
+  uses = "team-lab/npm-github-actions@master"
   needs = ["only master branch"]
   args = "run deploy"
   env = {
